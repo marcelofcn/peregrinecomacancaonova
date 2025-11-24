@@ -6,10 +6,11 @@
 <div class="lista">
     {% for r in roteiros %}
         <div class="card">
-            <img src="{{ r.img }}">
-            <h3>{{ r.title }}</h3>
-            <p>{{ r.start }} a {{ r.end }}</p>
-            <a href="/roteiro/{{ r.id }}/">Ver detalhes</a>
+            <img src="{{ r['img'] }}">
+            <h3>{{ r['titulo'] }}</h3>
+            <p>{{ r['inicio'] }} a {{ r['fim'] }}</p>
+            <a href="/roteiro/{{ r['id'] }}/">Ver detalhes</a>       
+                        
         </div>
     {% endfor %}
 </div>
