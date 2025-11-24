@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-<h2>{{ roteiro.title }}</h2>
+<h2>{{ roteiro['titulo'] }}</h2>
 
-<img src="{{ roteiro.img }}" width="400">
+<img src="{{ roteiro['img'] }}" width="400">
 
-<p><b>Datas:</b> {{ roteiro.start }} a {{ roteiro.end }}</p>
-<p><b>Direção:</b> {{ roteiro.director }}</p>
+<p><b>Datas:</b> {{ roteiro['inicio'] }} a {{ roteiro['fim'] }}</p>
+<p><b>Direção:</b> {{ roteiro['diretor'] }}</p>
 
-<p>{{ roteiro.descricao }}</p>
+<p>{{ roteiro['descricao'] }}</p>
+
 {% endblock %}
