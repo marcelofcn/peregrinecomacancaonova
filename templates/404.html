@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Página não encontrada — São José Peregrinações{% endblock %}
+
+{% block content %}
+<section class="container error-page">
+  <div class="error-content">
+    <div class="error-icon">🗺️</div>
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">Ops! Caminho não encontrado</h2>
+    <p class="error-message">
+      Parece que você se perdeu nesta jornada. A página que você procura não existe ou foi movida.
+    </p>
+    
+    <div class="error-actions">
+      <a href="/" class="btn btn-primary">
+        <span class="btn-icon">🏠</span>
+        Voltar para o Início
+      </a>
+      <a href="javascript:history.back()" class="btn btn-secondary">
+        <span class="btn-icon">←</span>
+        Página Anterior
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.error-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px 20px;
+}
+
+.error-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--dourado);
+  margin: 0;
+  line-height: 1;
+}
+
+.error-title {
+  font-size: 2rem;
+  color: var(--verde-escuro);
+  margin: 20px 0 15px 0;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  background: var(--verde-escuro);
+  color: var(--branco);
+}
+
+.btn-primary:hover {
+  background: var(--verde-claro);
+}
+</style>
+{% endblock %}

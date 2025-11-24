@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block title %}Início — São José Peregrinações{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-carousel">
+    {% for txt in hero_texts %}
+      <div class="hero-slide">{{ txt }}</div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="espiritualidade" class="container">
+  <div class="section-header-with-link">
+    <h2>Roteiros de Espiritualidade</h2>
+    <div class="header-links">
+      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/sao-jose/" class="link-ver-mais">Ver São José →</a>
+      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/" class="link-ver-mais">Ver Canção Nova →</a>
+    </div>
+  </div>
+  
+  <div class="cards">
+    {% for r in roteiros_espirituais %}
+      <article class="card">
+        <img src="{{ BASE_PATH }}/static/img/{{ r.img }}" alt="{{ r.title }}">
+        <h3>{{ r.title }}</h3>
+        <p class="card-date">📅 {{ r.date }}</p>
+        <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ r.id }}/">Ver detalhes</a>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="turismo" class="container">
+  <div class="section-header-with-link">
+    <h2>Roteiros Turísticos</h2>
+    <a href="{{ BASE_PATH }}/roteiros/turisticos/" class="link-ver-mais">Ver todos →</a>
+  </div>
+  
+  <div class="cards">
+    {% for t in roteiros_turisticos %}
+      <article class="card">
+        <img src="{{ BASE_PATH }}/static/img/{{ t.img }}" alt="{{ t.title }}">
+        <h3>{{ t.title }}</h3>
+        <p class="card-date">📅 {{ t.date }}</p>
+        <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ t.id }}">Ver detalhes</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Pronto para sua próxima jornada espiritual?</h2>
+      <p>Entre em contato conosco e descubra o roteiro perfeito para você!</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/5567998927001?text=Olá! Gostaria de mais informações sobre os roteiros" 
+           class="btn btn-whatsapp-cta" 
+           target="_blank">
+          💬 Falar no WhatsApp
+        </a>
+        <a href="tel:+556732117001" class="btn btn-phone-cta">
+          📞 (67) 3211-7001
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.section-header-with-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--dourado);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-header-with-link h2 {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.header-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.link-ver-mais {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 6px;
+  background: rgba(111, 191, 115, 0.1);
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.link-ver-mais:hover {
+  background: var(--verde-claro);
+  color: var(--branco);
+  transform: translateX(5px);
+}
+
+.card-date {
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-claro) 100%);
+  color: var(--branco);
+  padding: 60px 20px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--branco);
+  border: none;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp-cta {
+  background: #25D366;
+  color: var(--branco);
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp-cta:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-phone-cta {
+  background: var(--dourado);
+  color: var(--verde-escuro);
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-phone-cta:hover {
+  background: var(--branco);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .section-header-with-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-links {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .link-ver-mais {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-whatsapp-cta,
+  .btn-phone-cta {
+    width: 100%;
+  }
+}
+</style>
+{% endblock %}

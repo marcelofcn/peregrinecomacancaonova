@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% block title %}{{ roteiro.title }} — São José Peregrinações{% endblock %}
+
+{% block content %}
+<section class="container detalhe-roteiro">
+  <nav class="breadcrumb">
+  <a href="{{ BASE_PATH }}/">Início</a>
+  <span class="separator">›</span>
+
+  {% if roteiro.categoria == 'espiritualidade' %}
+    {% if roteiro.empresa == 'sao-jose' %}
+      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/sao-jose/">São José</a>
+    {% elif roteiro.empresa == 'cancaonova' %}
+      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/">Canção Nova</a>
+    {% endif %}
+  {% else %}
+      <a href="{{ BASE_PATH }}/roteiros/turisticos/">Roteiros Turísticos</a>
+  {% endif %}
+
+  <span class="separator">›</span>
+  <span class="current">{{ roteiro.title }}</span>
+</nav>
+
+
+  <div class="detalhe-header">
+    <h1>{{ roteiro.title }}</h1>
+    <div class="badge-container">
+      {% if roteiro.categoria == 'espiritualidade' %}
+        <span class="badge badge-espiritual">Roteiro Espiritual</span>
+      {% else %}
+        <span class="badge badge-turistico">Roteiro Turístico</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="detalhe-image-container">
+  <img src="{{ BASE_PATH }}/static/img/{{ roteiro.img }}" alt="{{ roteiro.title }}" class="img-detalhe">
+  </div>
+
+
+  <div class="detalhe-info-grid">
+    <div class="info-card">
+      <div class="info-icon">📅</div>
+      <div class="info-content">
+        <h4>Período</h4>
+        <p>{{ roteiro.start }} a {{ roteiro.end }}</p>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon">⛪</div>
+      <div class="info-content">
+        <h4>Diretor Espiritual</h4>
+        <p>{{ roteiro.director }}</p>
+      </div>
+    </div>
+
+    {% if roteiro.preco %}
+    <div class="info-card info-card-destaque">
+      <div class="info-icon">💰</div>
+      <div class="info-content">
+        <h4>Investimento</h4>
+        <p class="preco">{{ roteiro.preco }}</p>
+        <small>Consulte formas de pagamento</small>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="detalhe-section">
+    <div class="section-header">
+      <h2>📍 Itinerário Completo</h2>
+    </div>
+    <div class="itinerario-timeline">
+      {% for dia in roteiro.itinerario %}
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p>{{ dia }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="detalhe-section">
+    <div class="section-header">
+      <h2>✓ O que está incluído</h2>
+    </div>
+    <div class="lista-grid">
+      {% for item in roteiro.incluso %}
+        <div class="lista-item lista-incluso">
+          <span class="check-icon">✓</span>
+          <span>{{ item }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="detalhe-section">
+    <div class="section-header">
+      <h2>✗ O que não está incluído</h2>
+    </div>
+    <div class="lista-grid">
+      {% for item in roteiro.nao_incluso %}
+        <div class="lista-item lista-nao-incluso">
+          <span class="x-icon">✗</span>
+          <span>{{ item }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="detalhe-actions">
+    <a href="https://wa.me/5567998927001?text=Olá! Gostaria de mais informações sobre: {{ roteiro.title }}" 
+       class="btn btn-whatsapp" 
+       target="_blank">
+      <span class="btn-icon">💬</span>
+      Falar no WhatsApp
+    </a>
+    
+    <a href="tel:+556732117001" class="btn btn-phone">
+      <span class="btn-icon">📞</span>
+      Ligar Agora
+    </a>
+    
+    <a href="javascript:history.back()" class="btn btn-secondary">
+      <span class="btn-icon">←</span>
+      Voltar
+    </a>
+  </div>
+</section>
+{% endblock %}
