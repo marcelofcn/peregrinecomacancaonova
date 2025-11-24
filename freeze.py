@@ -1,14 +1,13 @@
 from flask_frozen import Freezer
-from main import app
-from data_roteiros import ROTEIROS_DB
+from main import app, ROTEIROS_DB
 
 freezer = Freezer(app)
 
-# Rotas dinâmicas de roteiros
+# Gerar páginas individuais de cada roteiro
 @freezer.register_generator
-def roteiro():
-    for r in ROTEIROS_DB:
-        yield {"id": r["id"]}
+def roteiro_detalhe():
+    for rid in ROTEIROS_DB.keys():
+        yield {'roteiro_id': int(rid)}
 
 if __name__ == "__main__":
     freezer.freeze()
