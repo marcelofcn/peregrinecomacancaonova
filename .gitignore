@@ -1,0 +1,14 @@
+**`.gitignore`:**
+```
+__pycache__/
+*.pyc
+.env
+env/
+venv/
+bin/
+lib/
+include/
+*.DS_Store
+.vscode/
+build/
+```
