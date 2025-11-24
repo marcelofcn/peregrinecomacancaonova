@@ -7,8 +7,9 @@ freezer = Freezer(app)
 # Rotas dinâmicas
 @freezer.register_generator
 def roteiro_detalhe():
-    for id_str, r in ROTEIROS_DB.items():
+    for id_str in ROTEIROS_DB:
         yield {"roteiro_id": int(id_str)}
+
 
 if __name__ == "__main__":
     freezer.freeze()
