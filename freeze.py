@@ -5,10 +5,9 @@ freezer = Freezer(app)
 
 # Gerar páginas individuais de cada roteiro
 @freezer.register_generator
-def roteiro():
-    for r in ROTEIROS_DB:
-        yield {"id": r["id"]}
-
+def roteiro_detalhe():
+    for id, r in ROTEIROS_DB.items():
+        yield {"roteiro_id": int(id)}
 
 if __name__ == "__main__":
     freezer.freeze()
