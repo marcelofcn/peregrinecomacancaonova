@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Lista de Roteiros</h1>
+
+<ul>
+    {% for r in roteiros %}
+    <li>
+        <a href="/roteiros/{{ r['id'] }}/">{{ r['titulo'] }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
