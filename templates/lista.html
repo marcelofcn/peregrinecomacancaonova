@@ -9,7 +9,7 @@
             <img src="{{ url_for('static', filename='img/' ~ r.img) }}">
             <h3>{{ r.title }}</h3>
             <p>{{ r.start }} a {{ r.end }}</p>
-            <a href="/roteiro/{{ r.id }}/">Ver detalhes</a>
+            <a href="{{ url_for('roteiro_detalhe', roteiro_id=r.id) }}">Ver detalhes</a>
         </div>
     {% endfor %}
 </div>
