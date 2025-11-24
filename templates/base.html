@@ -2,81 +2,26 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}São José Peregrinações{% endblock %}</title>
-    <link rel="stylesheet" href="{{ BASE_PATH }}/static/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Canção Nova Peregrinações</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <header class="site-header">
-      <div class="logo-container">
-        <a href="{{ BASE_PATH }}/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-          <img src="{{ BASE_PATH }}/static/img/logo.jpeg" alt="Logo" style="height: 55px; border-radius: 8px;">
-          <h1>São José Peregrinações</h1>
-        </a>
-      </div>
 
-      <nav class="menu">
-  <a href="{{ BASE_PATH }}/">Início</a>
-  
-  <div class="dropdown">
-    <button class="dropbtn">Roteiros de Espiritualidade ▼</button>
-    <div class="dropdown-content">
-      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/sao-jose/">São José</a>
-      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/">Canção Nova</a>
-    </div>
-  </div>
+<header>
+    <h1>Canção Nova Peregrinações</h1>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/roteiros/">Roteiros</a>
+    </nav>
+</header>
 
-  <a href="{{ BASE_PATH }}/roteiros/turisticos/">Roteiros Turísticos</a>
-  <a href="#contato">Contato</a>
-</nav>
+<main>
+    {% block conteudo %}{% endblock %}
+</main>
 
-    </header>
+<footer>
+    <p>© 2025 Canção Nova</p>
+</footer>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
-
-    <footer id="contato">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>São José Peregrinações</h3>
-            <p>Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
-          </div>
-          
-          <div class="footer-section">
-            <h3>Contato</h3>
-            <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
-            <p>💬 <a href="https://wa.me/5567998927001" target="_blank">WhatsApp</a></p>
-          </div>
-
-          <div class="footer-section">
-            <h3>Links Rápidos</h3>
-            <p><a href="{{ BASE_PATH }}/">Início</a></p>
-            <p><a href="{{ BASE_PATH }}/roteiros/espiritualidade/sao-jose/">Roteiros Espirituais</a></p>
-            <p><a href="{{ BASE_PATH }}/roteiros/turisticos/">Roteiros Turísticos</a></p>
-          </div>
-        </div>
-        
-        <div class="footer-bottom">
-          <p>&copy; 2025 São José Peregrinações — Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-    const backToTopButton = document.getElementById('backToTop');
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-    backToTopButton.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-    </script>
 </body>
 </html>
