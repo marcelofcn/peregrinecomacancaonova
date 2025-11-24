@@ -1,6 +1,6 @@
 # freeze.py
 from flask_frozen import Freezer
-from app import app
+from main import app
 from data_roteiros import ROTEIROS_DB
 
 app.config['FREEZER_DESTINATION'] = 'build'
