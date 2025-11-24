@@ -1,30 +1,38 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, url_for
 import json
 import os
 
-app = Flask(__name__)
+# ---------------------------------------
+# Configuração principal do Flask
+# ---------------------------------------
+app = Flask(__name__, static_folder="static", template_folder="templates")
 
-# ----------------------------
-# Carregar dados
-# ----------------------------
-with open("roteiros.json", "r", encoding="utf-8") as f:
+# ---------------------------------------
+# Configurações do Frozen-Flask
+# ---------------------------------------
+app.config["FREEZER_DESTINATION"] = "docs"
+app.config["FREEZER_RELATIVE_URLS"] = True
+app.config["FREEZER_REMOVE_EXTRA_FILES"] = False
+
+# ---------------------------------------
+# Carregar dados de roteiros
+# ---------------------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_PATH = os.path.join(BASE_DIR, "roteiros.json")
+
+with open(JSON_PATH, "r", encoding="utf-8") as f:
     ROTEIROS_DB = json.load(f)
 
-# Config Frozen
-app.config["FREEZER_RELATIVE_URLS"] = True
-
-# ----------------------------
+# ---------------------------------------
 # Rotas
-# ----------------------------
+# ---------------------------------------
 
 @app.route("/")
 def home():
-    # SOMENTE roteiros Canção Nova
     roteiros = [
         r for r in ROTEIROS_DB.values()
-        if r["empresa"] == "cancaonova"
+        if r.get("empresa") == "cancaonova"
     ]
-
     return render_template("home.html", roteiros=roteiros)
 
 
@@ -32,7 +40,7 @@ def home():
 def lista_roteiros():
     roteiros = [
         r for r in ROTEIROS_DB.values()
-        if r["empresa"] == "cancaonova"
+        if r.get("empresa") == "cancaonova"
     ]
     return render_template("lista.html", roteiros=roteiros)
 
