@@ -1,12 +1,16 @@
 {% extends "base.html" %}
-{% block content %}
-<h1>Lista de Roteiros</h1>
 
-<ul>
+{% block conteudo %}
+<h2>Próximos Roteiros</h2>
+
+<div class="lista">
     {% for r in roteiros %}
-    <li>
-        <a href="/roteiro/{{ r['id'] }}/">{{ r['titulo'] }}</a>
-    </li>
+        <div class="card">
+            <img src="/static/img/{{ r.img }}">
+            <h3>{{ r.title }}</h3>
+            <p>{{ r.start }} a {{ r.end }}</p>
+            <a href="/roteiro/{{ r.id }}/">Ver detalhes</a>
+        </div>
     {% endfor %}
-</ul>
+</div>
 {% endblock %}
