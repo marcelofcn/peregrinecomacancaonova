@@ -1,1 +1,42 @@
-teste
+name: Build and Deploy Frozen Flask
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Instalar dependências
+        working-directory: ./
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install Frozen-Flask
+
+      - name: Gerar site estático com Frozen Flask
+        working-directory: ./
+        run: python freeze.py
+
+      - name: Adicionar arquivo .nojekyll (garantia)
+        run: echo > docs/.nojekyll
+
+      - name: Commit & Push dos arquivos gerados
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add docs
+          git commit -m "Atualiza site estático [auto]" || echo "Nada novo para commitar"
+          git push
+
+# Deploy corrigido em 24/11/2025 15h02
