@@ -1,12 +1,232 @@
 {% extends "base.html" %}
-{% block conteudo %}
 
-<h1>{{ roteiro.titulo }}</h1>
+{% block title %}{{ roteiro.titulo }} - {{ site_name }}{% endblock %}
 
-<img src="{{ url_for('static', filename='img/' ~ roteiro.img) }}" width="400">
+{% block content %}
+<div class="fade-in">
+    <!-- Hero Section com Imagem -->
+    <section class="relative h-96 bg-gray-900">
+        <div class="absolute inset-0">
+            <img src="{{ url_for('static', filename='images/' + roteiro.imagem) }}" 
+                 alt="{{ roteiro.titulo }}"
+                 class="w-full h-full object-cover opacity-60"
+                 onerror="this.src='https://images.unsplash.com/photo-1464207687429-7505649dae38?w=1200&q=80'">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+        <div class="container mx-auto px-4 h-full flex items-end pb-12 relative z-10">
+            <div class="text-white">
+                <div class="flex items-center gap-2 mb-4">
+                    <a href="{{ url_for('home') }}" class="hover:underline">Início</a>
+                    <span>/</span>
+                    <a href="{{ url_for('home') }}#roteiros" class="hover:underline">Roteiros</a>
+                    <span>/</span>
+                    <span>{{ roteiro.titulo }}</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ roteiro.titulo }}</h1>
+                <div class="flex flex-wrap gap-4">
+                    <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                        {{ roteiro.duracao }}
+                    </span>
+                    <span class="bg-cancao-blue px-4 py-2 rounded-lg font-semibold">
+                        A partir de R$ {{ "{:,.2f}".format(roteiro.preco_a_partir).replace(',', 'X').replace('.', ',').replace('X', '.') }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>{{ roteiro.descricao }}</p>
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Conteúdo Principal -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Descrição -->
+                <section class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-cancao-blue mb-4">Sobre este Roteiro</h2>
+                    <p class="text-gray-700 leading-relaxed">{{ roteiro.descricao_completa }}</p>
+                </section>
 
-<a href="{{ url_for('index') }}">Voltar</a>
+                <!-- Destaques -->
+                <section class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-cancao-blue mb-6 flex items-center gap-2">
+                        <i data-lucide="star" class="w-6 h-6"></i>
+                        Destaques do Roteiro
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        {% for destaque in roteiro.destaques %}
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <span class="text-gray-700">{{ destaque }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
 
+                <!-- Roteiro Detalhado -->
+                <section class="bg-white rounded-xl shadow-lg p-8">
+                    <h2 class="text-2xl font-bold text-cancao-blue mb-6 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        Roteiro Detalhado
+                    </h2>
+                    <div class="space-y-6">
+                        {% for item in roteiro.roteiro_detalhado %}
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    {{ item.horario if item.horario else item.dia }}
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">
+                                    {{ item.atividade if item.atividade else item.local }}
+                                </h3>
+                                <p class="text-gray-600 text-sm">{{ item.descricao }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <!-- Incluso e Não Incluso -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <section class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-green-600 mb-4 flex items-center gap-2">
+                            <i data-lucide="check" class="w-5 h-5"></i>
+                            Incluso
+                        </h3>
+                        <ul class="space-y-2">
+                            {% for item in roteiro.incluso %}
+                            <li class="flex items-start gap-2 text-sm text-gray-700">
+                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
+                                <span>{{ item }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+
+                    <section class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-red-600 mb-4 flex items-center gap-2">
+                            <i data-lucide="x" class="w-5 h-5"></i>
+                            Não Incluso
+                        </h3>
+                        <ul class="space-y-2">
+                            {% for item in roteiro.nao_incluso %}
+                            <li class="flex items-start gap-2 text-sm text-gray-700">
+                                <i data-lucide="x" class="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5"></i>
+                                <span>{{ item }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Observações -->
+                {% if roteiro.observacoes %}
+                <section class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-yellow-800 mb-2 flex items-center gap-2">
+                        <i data-lucide="alert-circle" class="w-5 h-5"></i>
+                        Observações Importantes
+                    </h3>
+                    <p class="text-yellow-800 text-sm">{{ roteiro.observacoes }}</p>
+                </section>
+                {% endif %}
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-28 space-y-6">
+                    <!-- Card de Reserva -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="text-center mb-6">
+                            <p class="text-gray-600 text-sm mb-2">A partir de</p>
+                            <p class="text-4xl font-bold text-cancao-blue">
+                                R$ {{ "{:,.2f}".format(roteiro.preco_a_partir).replace(',', 'X').replace('.', ',').replace('X', '.') }}
+                            </p>
+                            <p class="text-gray-500 text-sm mt-1">por pessoa</p>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center gap-3 text-gray-700">
+                                <i data-lucide="clock" class="w-5 h-5 text-cancao-blue"></i>
+                                <span class="text-sm">{{ roteiro.duracao }}</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-700">
+                                <i data-lucide="users" class="w-5 h-5 text-cancao-blue"></i>
+                                <span class="text-sm">Grupos disponíveis</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-700">
+                                <i data-lucide="calendar" class="w-5 h-5 text-cancao-blue"></i>
+                                <span class="text-sm">Várias datas</span>
+                            </div>
+                        </div>
+
+                        <a href="{{ url_for('contato') }}?roteiro={{ roteiro.id }}" 
+                           class="block w-full bg-cancao-blue hover-cancao-blue text-white text-center py-3 rounded-lg font-semibold transition">
+                            Solicitar Reserva
+                        </a>
+                    </div>
+
+                    <!-- Datas Disponíveis -->
+                    {% if roteiro.datas_disponiveis %}
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-lg font-bold text-cancao-blue mb-4 flex items-center gap-2">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
+                            Próximas Datas
+                        </h3>
+                        <ul class="space-y-2">
+                            {% for data in roteiro.datas_disponiveis[:4] %}
+                            <li class="flex items-center gap-2 text-sm text-gray-700 border-b border-gray-100 pb-2">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
+                                <span>{{ data }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                    <!-- Contato -->
+                    <div class="bg-cancao-blue text-white rounded-xl p-6">
+                        <h3 class="text-lg font-bold mb-4">Dúvidas?</h3>
+                        <p class="text-sm mb-4 text-blue-100">Entre em contato conosco!</p>
+                        <div class="space-y-3 text-sm">
+                            <a href="tel:{{ phone }}" class="flex items-center gap-2 hover:text-blue-200 transition">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                                {{ phone }}
+                            </a>
+                            <a href="mailto:{{ email }}" class="flex items-center gap-2 hover:text-blue-200 transition">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                {{ email }}
+                            </a>
+                            <a href="https://wa.me/5512999999999" target="_blank" class="flex items-center gap-2 hover:text-blue-200 transition">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Final -->
+    <section class="bg-gradient-to-br from-cancao-blue to-blue-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Pronto para esta Experiência?</h2>
+            <p class="text-xl mb-8 text-blue-100">Venha peregrinar com a Canção Nova!</p>
+            <a href="{{ url_for('contato') }}?roteiro={{ roteiro.id }}" 
+               class="inline-block bg-white text-cancao-blue px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
+                Solicitar Orçamento
+            </a>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Reinitialize Lucide icons after content load
+    document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+    });
+</script>
 {% endblock %}
