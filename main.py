@@ -35,10 +35,10 @@ def home():
 
 
 @app.route("/roteiro/<int:id>")
-def detalhe(id):
-    roteiro = next((r for r in ROTEIROS_DB if r["id"] == id), None)
+def roteiro_detalhe(roteiro_id):
+    roteiro = ROTEIROS_DB.get(str(roteiro_id))
     if not roteiro:
-        return "Roteiro não encontrado", 404
+        abort(404)
     return render_template("detalhe.html", roteiro=roteiro)
 
 @app.errorhandler(404)
