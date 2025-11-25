@@ -1,11 +1,16 @@
 from flask import Flask, render_template, redirect, url_for, abort
-from data import ROTEIROS_BY_ID, ROTEIROS_DB 
-# Importe também as variáveis de configuração globais para o Freezer, se necessário (ex: site_name)
-from data import SITE_CONFIG 
+from data import ROTEIROS_BY_ID, ROTEIROS_DB, SITE_CONFIG 
 
 app = Flask(__name__)
+
+# --- Configuração do Flask/Freezer para GitHub Pages ---
+# 1. Definir o nome do servidor (importante para url_for funcionar corretamente com subdiretórios)
+app.config['SERVER_NAME'] = 'marcelofcn.github.io' # O domínio raiz
 app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
-app.config['FREEZER_BASE_URL'] = '/peregrinecomacancaonova/'
+
+# 2. Definir o Base URL com a barra final (CRÍTICO)
+app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova/'
+# --------------------------------------------------------
 
 # --- VARIÁVEIS DE CONTATO (E outras globais) ---
 CONTACT_INFO = {
@@ -25,6 +30,8 @@ def inject_global_vars():
 # Rota para a página inicial
 @app.route('/')
 def home():
+    # Use _external=True para que o Flask use o SERVER_NAME e FREEZER_BASE_URL para construir a URL
+    # mas o Freezer já deve cuidar disso.
     return render_template('home.html', roteiros=ROTEIROS_DB)
 
 # Rota para detalhes do roteiro
