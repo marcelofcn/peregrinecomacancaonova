@@ -1,5 +1,4 @@
 from flask_frozen import Freezer
-from main import app
 from data_roteiros import ROTEIROS_DB
 
 freezer = Freezer(app)
