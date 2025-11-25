@@ -1,4 +1,4 @@
-# freeze.py (Versão Corrigida para GitHub Pages Subdiretório)
+# freeze.py (Versão Corrigida para GitHub Pages Subdiretório e rotas)
 
 from flask_frozen import Freezer
 # Importa os dados do novo módulo
@@ -17,6 +17,11 @@ def roteiro_detalhe():
         # NOTE: O generator do Flask-Frozen precisa que você use a rota do Flask
         # Certifique-se que o 'id' seja passado como string se for a chave do JSON
         yield 'roteiro_detalhe', {'id': r["id"]} 
+
+@freezer.register_generator
+def sobre():
+    # Se a rota for @app.route('/sobre.html'), o nome da função é 'sobre'
+    yield 'sobre' 
 
 
 if __name__ == "__main__":
