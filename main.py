@@ -40,17 +40,12 @@ def contato():
     # Redireciona para a home e força o scroll para a âncora do rodapé
     return redirect(url_for('home') + '#rodape-contato')
 
-# Rota para a página "Sobre"
+# main.py
+# ... (outras rotas) ...
+
 @app.route('/sobre')
 def sobre():
-    # Por enquanto, podemos usar um template básico ou redirecionar para uma seção da home.
-    # Se você não tiver um 'sobre.html', pode criar um simples:
-    # return render_template('sobre.html')
-    
-    # Ou, se o conteúdo Sobre for no rodapé ou na Home:
-    # Retornar um 404 temporário é arriscado para o Freezer. 
-    # O ideal é criar o arquivo 'sobre.html' ou fazer um redirecionamento útil:
-    return render_template('home.html', roteiros=ROTEIROS_DB) # Ou use um template simples "placeholder.html"
+    return render_template('home.html', roteiros=ROTEIROS_DB)
 
 # Certifique-se de que todas as rotas mencionadas no base.html existam aqui!
 
