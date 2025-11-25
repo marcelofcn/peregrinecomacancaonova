@@ -6,8 +6,9 @@ freezer = Freezer(app)
 
 @freezer.register_generator
 def roteiro_detalhe():
-    for r in obter_roteiros_do_banco():
-        yield {'id': r.id}
+    for r in ROTEIROS_DB:
+        yield {'id': r["id"]}
+
 
 
 if __name__ == "__main__":
