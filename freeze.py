@@ -6,9 +6,10 @@ from data import ROTEIROS_DB
 from main import app # Você precisa importar a instância 'app' de main
 
 # Garante que o Freezer use o Base URL completo para URLs absolutas no GitHub Pages
-# Isso é duplicado do main.py, mas essencial para o Freezer funcionar corretamente.
-# REMOVER a barra final para melhor compatibilidade com o Werkzeug/Flask-Frozen
-app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova'
+# A configuração no main.py (com SERVER_NAME) e SCRIPT_NAME aqui deve resolver o erro.
+# O FREEZER_BASE_URL para o Freezer deve ser o caminho absoluto para o script_name
+# para satisfazer a asserção do Werkzeug.
+app.config['FREEZER_BASE_URL'] = '/peregrinecomacancaonova' 
 app.config['FREEZER_DESTINATION'] = 'docs' 
 freezer = Freezer(app)
 
