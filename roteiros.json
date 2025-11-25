@@ -216,7 +216,7 @@
     "start": "18/07/2026",
     "end": "31/07/2026",
     "director": "Padre Evandro - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "18/07/2026 – Embarque no Brasil com destino a Roma. Embarque em Campo Grande/MS OU SUA CAPITAL x GUARULHOS. A partir de Guarulhos, todos os voos e roteiro em grupo.",
       "Dia 2": "19/07/2026 – Roma / Assis. Chegada em Roma, recepção no aeroporto e traslado em ônibus privativo para Assis. Acomodação no hotel. Jantar e pernoite.",
       "Dia 3": "20/07/2026 – Assis. Após o café da manhã, visita à Igreja de Santa Maria dos Anjos (Porciúncula), Basílicas de São Francisco e Santa Clara. Visitaremos o corpo de Carlo Acutis no Santuário do Despojamento, especificamente na Igreja de Santa Maria Maior. Tarde livre. Retorno no hotel. Jantar e pernoite.",
@@ -231,7 +231,7 @@
       "Dia 12": "29/07/2026 – Paris / Lisieux / Paris. Café da manhã e saída para Lisieux, cidade de Santa Terezinha. Visitas e celebrações. Retorno a Paris. Jantar e hospedagem.",
       "Dia 13": "30/07/2026 – Paris / São Paulo. Café da manhã e traslado ao aeroporto para embarque de retorno ao Brasil.",
       "Dia 14": "31/07/2026 – Guarulhos. Chegada a São Paulo e, em horário a ser informado, voo de conexão para a sua capital. Fim dos serviços."
-    },
+    ],
     "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
@@ -259,7 +259,7 @@
     "start": "03/08/2026",
     "end": "17/08/2026",
     "director": "Padre Fábio Galdino, Padre Duarte Lara e Danilo Jesualdo - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "03/08/2026 – Embarque no Brasil com destino a Roma. Embarque em Campo Grande/MS ou sua capital. A partir de Guarulhos, todos os voos e roteiro em grupo.",
       "Dia 2": "04/08/2026 – Roma / Assis. Chegada em Roma, recepção no aeroporto e traslado em ônibus privativo para Assis. Acomodação no hotel. Jantar e pernoite.",
       "Dia 3": "05/08/2026 – Assis. Após o café da manhã, visita à Igreja de Santa Maria dos Anjos (Porciúncula), Basílicas de São Francisco e Santa Clara. Visitaremos o corpo de Carlo Acutis no Santuário do Despojamento, especificamente na Igreja de Santa Maria Maior. Tarde livre. Retorno ao hotel. Jantar e pernoite.",
@@ -274,7 +274,7 @@
       "Dia 12": "14/08/2026 – Lisboa. Dia livre para atividades pessoais. Jantar e pernoite.",
       "Dia 13": "15/08/2026 – Lisboa / Brasil. Em horário apropriado, traslado ao aeroporto de Lisboa para embarque de retorno ao Brasil, com as devidas conexões.",
       "Dia 14": "16/08/2026 – Chegada ao Brasil. Chegada em Guarulhos/SP e voo de conexão para sua capital. Fim dos serviços."
-    },
+    ],
     "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
@@ -302,7 +302,7 @@
     "start": "01/10/2026",
     "end": "16/10/2026",
     "director": "Padre José Dimas e Shirley Batista - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "01/10/2026 – Campo Grande ou sua capital / Guarulhos / Lisboa. Apresentação no aeroporto para embarque com destino a Lisboa.",
       "Dia 2": "02/10/2026 – Lisboa. Chegada e tempo livre para atividades pessoais ou passeio opcional.",
       "Dia 3": "03/10/2026 – Lisboa / Óbidos / Nazaré / Fátima. Visita à cidade de Óbidos, seguida de Nazaré (Igreja de Nossa Senhora de Nazaré). Continuação para Fátima, acomodação no hotel. À noite, possibilidade de participar da procissão das velas e oração do Santo Terço. Jantar e pernoite.",
@@ -319,7 +319,7 @@
       "Dia 14": "14/10/2026 – Paris. Café da manhã e visita à Capela da Medalha Milagrosa. Tarde livre para compras e atividades pessoais. Retorno ao hotel, jantar e pernoite.",
       "Dia 15": "15/10/2026 – Paris / Brasil. Café da manhã e traslado ao aeroporto. Embarque com conexões para Guarulhos.",
       "Dia 16": "16/10/2026 – Chegada em Guarulhos. Desembarque e voo de conexão para a capital de origem. Fim dos serviços."
-    },
+    ],
     "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
@@ -347,7 +347,7 @@
     "start": "02/11/2026",
     "end": "17/11/2026",
     "director": "Padre Edilberto e Emanuel - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "02/11/2026 – Campo Grande ou sua capital / Guarulhos / Lisboa. Embarque e traslado.",
       "Dia 2": "03/11/2026 – Lisboa. Dia livre para atividades pessoais e visita opcional à cidade.",
       "Dia 3": "04/11/2026 – Lisboa / Óbidos / Nazaré / Fátima. Visita a Óbidos, Nazaré (Igreja de Nossa Senhora de Nazaré) e chegada a Fátima. Possibilidade de participar da procissão das velas à noite. Jantar e pernoite.",
@@ -364,7 +364,7 @@
       "Dia 14": "15/11/2026 – Paris. Visita à Capela da Medalha Milagrosa. Tarde livre para compras e atividades pessoais. Retorno ao hotel, jantar e pernoite.",
       "Dia 15": "16/11/2026 – Paris / Brasil. Traslado ao aeroporto e embarque com conexões para Guarulhos.",
       "Dia 16": "17/11/2026 – Chegada em Guarulhos e voo de conexão para a capital de origem. Fim dos serviços."
-    },
+    ],
     "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
@@ -392,7 +392,7 @@
     "start": "07/04/2026",
     "end": "18/04/2026",
     "director": "Diac Renné Viana e Pitter di Laura - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "07/04/2026 – São Paulo / Veneza. Apresentação no aeroporto de Guarulhos. Todos os voos e roteiro em grupo.",
       "Dia 2": "08/04/2026 – Veneza. Chegada, recepção e traslado ao hotel. Acomodação e jantar.",
       "Dia 3": "09/04/2026 – Veneza / Pádua / Veneza. Visita à Basílica de Santo Antônio em Pádua (possibilidade de Missa), retorno a Veneza, passeio de vaporetto, Praça de São Marcos, Catedral e Igreja de São Jeremias (corpo de Santa Luzia). Tempo livre. Retorno ao hotel e jantar.",
@@ -405,7 +405,7 @@
       "Dia 10": "16/04/2026 – Roma. Visita panorâmica: Coliseu (externo), Foros Romanos (externo), Circo Máximo, Praça Veneza, Termas de Caracala, Fontana de Trevi. Tarde: Basílicas de Santa Maria Maior, São João de Latrão e São Paulo Fora dos Muros (Missa). Retorno ao hotel e jantar.",
       "Dia 11": "17/04/2026 – Roma / São Paulo. Traslado ao aeroporto para retorno ao Brasil.",
       "Dia 12": "18/04/2026 – Chegada em São Paulo. Fim dos serviços."
-    },
+    ],
     "incluso": [
       "Bilhetes aéreos internacionais em classe econômica (acréscimo para executiva)",
       "Taxas de embarque",
