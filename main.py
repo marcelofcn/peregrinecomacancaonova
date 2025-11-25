@@ -15,8 +15,8 @@ app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacanc
 # --- VARIÁVEIS DE CONTATO (E outras globais) ---
 CONTACT_INFO = {
     'phone': '(12) 3186-2600',
-    'whatsapp': '5512999999999', # Apenas números
-    'email': 'viagenscn@cancaonova.com'
+    'whatsapp': '5567998927001', # Apenas números
+    
 }
 # Juntar info de contato com outras configurações do SITE_CONFIG para uso global
 GLOBAL_VARS = {**CONTACT_INFO, **SITE_CONFIG} 
