@@ -6,12 +6,16 @@ from data import ROTEIROS_DB # <--- 💡 MUDANÇA AQUI!
 from main import app # Você precisa importar a instância 'app' de main
 
 freezer = Freezer(app) # <--- 💡 MUDANÇA AQUI: Passar a instância do app
+app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova/'
+app.config['FREEZER_DESTINATION'] = 'docs' 
+freezer = Freezer(app)
 
 @freezer.register_generator
 def roteiro_detalhe():
     for r in ROTEIROS_DB:
         # NOTE: O generator do Flask-Frozen precisa que você use a rota do Flask
         yield 'roteiro_detalhe', {'id': r["id"]} # <--- 💡 MUDANÇA AQUI: Passar o nome da função e os argumentos
+
 
 if __name__ == "__main__":
     print("Iniciando o processo de congelamento (freezing)...")
