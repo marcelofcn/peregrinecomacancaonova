@@ -1,13 +1,12 @@
 {% extends "base.html" %}
-
 {% block conteudo %}
-<h2>{{ roteiro.title }}</h2>
+
+<h1>{{ roteiro.titulo }}</h1>
 
 <img src="{{ url_for('static', filename='img/' ~ roteiro.img) }}" width="400">
 
-<p><b>Datas:</b> {{ roteiro.start }} a {{ roteiro.end }}</p>
-<p><b>Direção:</b> {{ roteiro.director }}</p>
-
 <p>{{ roteiro.descricao }}</p>
+
+<a href="{{ url_for('index') }}">Voltar</a>
 
 {% endblock %}
