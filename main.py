@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, abort
 from data import ROTEIROS_BY_ID, ROTEIROS_DB 
 # Importe também as variáveis de configuração globais para o Freezer, se necessário (ex: site_name)
 from data import SITE_CONFIG 
-
+app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
 app = Flask(__name__)
 
 # --- VARIÁVEIS DE CONTATO (E outras globais) ---
@@ -39,9 +39,6 @@ def roteiro_detalhe(id):
 def contato():
     # Redireciona para a home e força o scroll para a âncora do rodapé
     return redirect(url_for('home') + '#rodape-contato')
-
-# main.py
-# ... (outras rotas) ...
 
 @app.route('/sobre')
 def sobre():
