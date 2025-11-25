@@ -35,7 +35,7 @@ def home():
 
 
 @app.route("/roteiro/<int:id>/")
-def roteiro_detalhe(id):
+def roteiro_detalhe(roteiro_id):
     roteiro = ROTEIROS_DB.get(str(id))
     if not roteiro:
         abort(404)
