@@ -34,9 +34,9 @@ def home():
     return render_template("home.html", roteiros=ROTEIROS_DB)
 
 
-@app.route("/roteiro/<int:id>")
-def roteiro_detalhe(roteiro_id):
-    roteiro = ROTEIROS_DB.get(str(roteiro_id))
+@app.route("/roteiro/<int:id>/")
+def roteiro_detalhe(id):
+    roteiro = ROTEIROS_DB.get(str(id))
     if not roteiro:
         abort(404)
     return render_template("detalhe.html", roteiro=roteiro)
