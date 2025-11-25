@@ -175,11 +175,11 @@
                 </li>
                 <li class="flex items-center gap-3 font-bold bg-green-500/20 p-2 rounded">
                     <i data-lucide="message-circle" class="w-5 h-5 text-green-400"></i>
-                    <a href="https://wa.me/5512999999999" target="_blank" class="hover:text-white transition">Chamar no **WhatsApp**</a>
+                    <a href="https://wa.me/5567998927001" target="_blank" class="hover:text-white transition">Chamar no **WhatsApp**</a>
                 </li>
                 <li class="flex items-center gap-3">
                     <i data-lucide="mail" class="w-5 h-5 text-cancao-blue"></i>
-                    <a href="mailto:viagenscn@cancaonova.com" class="hover:text-white transition">viagenscn@cancaonova.com</a>
+                    <a href="mailto:" class="hover:text-white transition"></a>
                 </li>
             </ul>
         </div>
