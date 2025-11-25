@@ -30,8 +30,8 @@ with open(JSON_PATH, "r", encoding="utf-8") as f:
 # ---------------------------------------
 
 @app.route("/")
-def index():
-    return render_template("index.html", roteiros=ROTEIROS_DB)
+def home():
+    return render_template("home.html", roteiros=ROTEIROS_DB)
 
 
 @app.route("/roteiro/<int:id>")
