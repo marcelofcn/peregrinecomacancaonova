@@ -1,69 +1,44 @@
-# main.py (Versão Corrigida/Refatorada)
-
-from flask import Flask, render_template, abort
-# Importa os dados do novo módulo
-from data import ROTEIROS_DB, ROTEIROS_BY_ID # <--- 💡 MUDANÇA AQUI!
-import os # Manter se necessário para outras coisas, mas não para o JSON
-
-# ... Configuração principal do Flask (igual) ...
-
-# ---------------------------------------
-# Rotas
-# ---------------------------------------
-@app.route("/")
-def home():
-    """Página inicial com todos os roteiros"""
-    return render_template("home.html", roteiros=ROTEIROS_DB)
-
-@app.route("/roteiro/<int:id>/")
-def roteiro_detalhe(id):
-    """Página de detalhe de um roteiro específico"""
-    roteiro = ROTEIROS_BY_ID.get(str(id))
-    # ... (Restante da rota igual) ...
-
-# main.py (Exemplo de como adicionar as informações de contato)
-
 from flask import Flask, render_template, redirect, url_for, abort
-from data import ROTEIROS_BY_ID, ROTEIROS_DB # Garanta que estas variáveis estão corretas após a correção
+from data import ROTEIROS_BY_ID, ROTEIROS_DB 
+# Importe também as variáveis de configuração globais para o Freezer, se necessário (ex: site_name)
+from data import SITE_CONFIG 
 
 app = Flask(__name__)
 
-# --- VARIÁVEIS DE CONTATO ---
+# --- VARIÁVEIS DE CONTATO (E outras globais) ---
 CONTACT_INFO = {
     'phone': '(12) 3186-2600',
-    'whatsapp': '5512999999999', # Apenas números para link no WhatsApp
+    'whatsapp': '5512999999999', # Apenas números
     'email': 'viagenscn@cancaonova.com'
 }
+# Juntar info de contato com outras configurações do SITE_CONFIG para uso global
+GLOBAL_VARS = {**CONTACT_INFO, **SITE_CONFIG} 
 # -----------------------------
 
-# Adicione estas informações ao contexto de todos os templates, se necessário
+# Adiciona variáveis ao contexto de todos os templates
 @app.context_processor
 def inject_global_vars():
-    # Isso permite usar 'phone', 'whatsapp', 'email' em qualquer template sem passar na rota
-    return CONTACT_INFO
-
-# ... (outras rotas) ...
+    return GLOBAL_VARS
 
 # Rota para a página inicial
 @app.route('/')
 def home():
     return render_template('home.html', roteiros=ROTEIROS_DB)
 
-# Rota de redirecionamento para o contato (Ancora)
-@app.route('/contato')
-def contato():
-    # Redireciona para a página inicial (ou detalhe), forçando o scroll para o rodapé ou CTA
-    # Redirecionar para a home com uma âncora é a forma mais simples de "simular" a rota
-    # Se você quiser uma página de contato separada futuramente, mude esta função.
-    return redirect(url_for('home') + '#rodape-contato') # Vamos criar esta âncora no base.html
-    # OU se você quiser ser mais simples, basta pedir ao usuário para ligar/chamar.
-    # Como não temos um contato.html, usaremos o link do WhatsApp/Telefone diretamente no template.
-
-
 # Rota para detalhes do roteiro
 @app.route('/roteiro/<int:id>/')
 def roteiro_detalhe(id):
-    roteiro = ROTEIROS_BY_ID.get(id)
+    # Usando o ID como string se as chaves do ROTEIROS_BY_ID forem strings (mais comum em JSON)
+    roteiro = ROTEIROS_BY_ID.get(str(id)) 
     if not roteiro:
         abort(404)
     return render_template('detalhe.html', roteiro=roteiro)
+
+# Rota de redirecionamento para o contato (Ancora no Rodapé)
+@app.route('/contato')
+def contato():
+    # Redireciona para a home e força o scroll para a âncora do rodapé
+    return redirect(url_for('home') + '#rodape-contato')
+
+if __name__ == "__main__":
+    app.run(debug=True)
