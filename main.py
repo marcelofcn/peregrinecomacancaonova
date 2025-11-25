@@ -2,8 +2,9 @@ from flask import Flask, render_template, redirect, url_for, abort
 from data import ROTEIROS_BY_ID, ROTEIROS_DB 
 # Importe também as variáveis de configuração globais para o Freezer, se necessário (ex: site_name)
 from data import SITE_CONFIG 
-app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
+
 app = Flask(__name__)
+app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
 
 # --- VARIÁVEIS DE CONTATO (E outras globais) ---
 CONTACT_INFO = {
