@@ -1,6 +1,8 @@
 from flask import Flask, render_template, abort, url_for
+
 import json
 import os
+from data_roteiros import ROTEIROS_DB
 
 # ---------------------------------------
 # Configuração principal do Flask
@@ -28,30 +30,16 @@ with open(JSON_PATH, "r", encoding="utf-8") as f:
 # ---------------------------------------
 
 @app.route("/")
-def home():
-    roteiros = [
-        r for r in ROTEIROS_DB.values()
-        if r.get("empresa") == "cancaonova"
-    ]
-    return render_template("home.html", roteiros=roteiros)
+def index():
+    return render_template("index.html", roteiros=ROTEIROS_DB)
 
 
-@app.route("/roteiros/")
-def lista_roteiros():
-    roteiros = [
-        r for r in ROTEIROS_DB.values()
-        if r.get("empresa") == "cancaonova"
-    ]
-    return render_template("lista.html", roteiros=roteiros)
-
-
-@app.route("/roteiro/<int:roteiro_id>/")
-def roteiro_detalhe(roteiro_id):
-    roteiro = ROTEIROS_DB.get(str(roteiro_id))
+@app.route("/roteiro/<int:id>")
+def detalhe(id):
+    roteiro = next((r for r in ROTEIROS_DB if r["id"] == id), None)
     if not roteiro:
-        abort(404)
+        return "Roteiro não encontrado", 404
     return render_template("detalhe.html", roteiro=roteiro)
-
 
 @app.errorhandler(404)
 def erro_404(e):
