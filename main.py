@@ -43,15 +43,20 @@ def roteiro_detalhe(id):
         abort(404)
     return render_template('detalhe.html', roteiro=roteiro)
 
+# main.py
+# ...
+
 # Rota de redirecionamento para o contato (Ancora no Rodapé)
-@app.route('/contato')
+# Mude de @app.route('/contato') para:
+@app.route('/contato.html') # Salvar como arquivo .html explícito
 def contato():
     # Redireciona para a home e força o scroll para a âncora do rodapé
     return redirect(url_for('home') + '#rodape-contato')
 
-@app.route('/sobre')
+# Mude de @app.route('/sobre') para:
+@app.route('/sobre.html') # Salvar como arquivo .html explícito
 def sobre():
-    return render_template('home.html', roteiros=ROTEIROS_DB)
+    return render_template('sobre.html', roteiros=ROTEIROS_DB) # Assumindo que sobre.html existe
 
 # Certifique-se de que todas as rotas mencionadas no base.html existam aqui!
 
