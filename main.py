@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 # --- Configuração do Flask/Freezer para GitHub Pages ---
 # 1. Definir o nome do servidor (importante para url_for funcionar corretamente com subdiretórios)
-app.config['SERVER_NAME'] = 'marcelofcn.github.io' # O domínio raiz
 app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
+
 
 # 2. Definir o Base URL com a barra final (CRÍTICO)
 app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova/'
