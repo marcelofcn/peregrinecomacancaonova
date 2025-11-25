@@ -5,6 +5,7 @@ from data import SITE_CONFIG
 
 app = Flask(__name__)
 app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
+app.config['FREEZER_BASE_URL'] = '/peregrinecomacancaonova/'
 
 # --- VARIÁVEIS DE CONTATO (E outras globais) ---
 CONTACT_INFO = {
