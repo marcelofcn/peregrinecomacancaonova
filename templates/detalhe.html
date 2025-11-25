@@ -152,6 +152,24 @@
                             Solicitar Reserva
                         </a>
                     </div>
+                    <div class="bg-cancao-blue text-white rounded-xl p-6">
+    <h3 class="text-lg font-bold mb-4">Dúvidas?</h3>
+    <p class="text-sm mb-4 text-blue-100">Entre em contato conosco!</p>
+    <div class="space-y-3 text-sm">
+        <a href="tel:{{ phone }}" class="flex items-center gap-2 hover:text-blue-200 transition">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            Ligar: {{ phone }}
+        </a>
+        <a href="https://wa.me/{{ whatsapp }}?text=Olá! Tenho interesse no roteiro {{ roteiro.title }} (ID: {{ roteiro.id }})" target="_blank" class="flex items-center gap-2 hover:text-blue-200 transition font-bold">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp
+        </a>
+        <a href="mailto:{{ email }}" class="flex items-center gap-2 hover:text-blue-200 transition">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            E-mail
+        </a>
+    </div>
+</div>
 
                     <div class="bg-cancao-blue text-white rounded-xl p-6">
                         <h3 class="text-lg font-bold mb-4">Dúvidas?</h3>
