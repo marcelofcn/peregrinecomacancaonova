@@ -2,7 +2,6 @@ from flask import Flask, render_template, abort, url_for
 
 import json
 import os
-from data_roteiros import ROTEIROS_DB
 
 # ---------------------------------------
 # Configuração principal do Flask
@@ -23,7 +22,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_PATH = os.path.join(BASE_DIR, "roteiros.json")
 
 with open(JSON_PATH, "r", encoding="utf-8") as f:
-    ROTEIROS_DB = json.load(f)
+    ROTEIROS_DB = json.load(f)   # <- isto é uma lista, não dict
+
+# Transformar lista em dicionário por ID
+ROTEIROS_BY_ID = { str(r["id"]): r for r in ROTEIROS_DB }
 
 # ---------------------------------------
 # Rotas
@@ -35,8 +37,8 @@ def home():
 
 
 @app.route("/roteiro/<int:id>/")
-def roteiro_detalhe(roteiro_id):
-    roteiro = ROTEIROS_DB.get(str(id))
+def roteiro_detalhe(id):
+    roteiro = ROTEIROS_BY_ID.get(str(id))
     if not roteiro:
         abort(404)
     return render_template("detalhe.html", roteiro=roteiro)
@@ -44,7 +46,6 @@ def roteiro_detalhe(roteiro_id):
 @app.errorhandler(404)
 def erro_404(e):
     return render_template("404.html"), 404
-
 
 if __name__ == "__main__":
     app.run(debug=True)
