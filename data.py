@@ -68,6 +68,6 @@ ROTEIROS_BY_ID = {
 
 # 3. Configurações globais (Seu main.py importa isso agora)
 SITE_CONFIG = {
-    'site_name': 'Canção Nova Viagens',
-    'operator_name': 'CN Tur'
+    'site_name': 'Peregrine com a Canção Nova',
+    'operator_name': 'São José Peregrinações CNPJ 24.397.541/0001-63'
 }
