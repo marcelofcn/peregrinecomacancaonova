@@ -5,9 +5,9 @@ from data_roteiros import ROTEIROS_DB
 freezer = Freezer(app)
 
 @freezer.register_generator
-def detalhe():
-    for r in ROTEIROS_DB:
-        yield 'detalhe', {'id': r["id"]}
+def roteiro_detalhe():
+    for id_str, r in ROTEIROS_DB.items():
+        yield {"roteiro_id": int(id_str)}
 
 if __name__ == "__main__":
     freezer.freeze()
