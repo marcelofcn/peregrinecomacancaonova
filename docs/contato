@@ -187,8 +187,8 @@
         <div>
             <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Nossa Base</h4>
             <p class="text-sm text-gray-400">
-                Av. João Paulo II, S/N - Alto da Bela Vista<br>
-                Cachoeira Paulista - SP
+                Rua Dom Aquino, 1937 - Centro - <br>
+                Campo Grande - MS
             </p>
         </div>
     </div>
@@ -207,7 +207,7 @@
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-4">Operador Logístico</h4>
+                    <h4 class="font-bold mb-4">Agencia responsável - São José Peregrinações</h4>
                     <p class="text-gray-400 text-sm mb-2">CN Tur</p>
                     <p class="text-gray-400 text-sm flex items-center gap-2">
                         <i data-lucide="phone" class="w-4 h-4"></i>
