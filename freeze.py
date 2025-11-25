@@ -4,12 +4,10 @@ from data_roteiros import ROTEIROS_DB
 
 freezer = Freezer(app)
 
-# Rotas dinâmicas
 @freezer.register_generator
-def roteiro_detalhe():
-    for id_str in ROTEIROS_DB:
-        yield {"roteiro_id": int(id_str)}
-
+def detalhe():
+    for r in ROTEIROS_DB:
+        yield 'detalhe', {'id': r["id"]}
 
 if __name__ == "__main__":
     freezer.freeze()
