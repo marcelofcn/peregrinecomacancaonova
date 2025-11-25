@@ -4,7 +4,6 @@
 
 {% block content %}
 <div class="fade-in">
-    <!-- Hero Section com Imagem -->
     <section class="relative h-96 bg-gray-900">
         <div class="absolute inset-0">
             <img src="{{ url_for('static', filename='images/' + roteiro.img) }}" 
@@ -20,16 +19,16 @@
                     <span>/</span>
                     <a href="{{ url_for('home') }}#roteiros" class="hover:underline">Roteiros</a>
                     <span>/</span>
-                    <span>{{ roteiro.title }}</span>
+                    <span class="font-light">{{ roteiro.title }}</span>
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ roteiro.title }}</h1>
                 <div class="flex flex-wrap gap-4">
                     <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2">
                         <i data-lucide="clock" class="w-5 h-5"></i>
-                        {{ roteiro.duracao }}
+                        {{ roteiro.duracao if roteiro.duracao is defined else '?' }}
                     </span>
                     <span class="bg-cancao-blue px-4 py-2 rounded-lg font-semibold">
-                        A partir de R$ {{ "{:,.2f}".format(roteiro.preco).replace(',', 'X').replace('.', ',').replace('X', '.') }}
+                        A partir de {{ roteiro.preco }}
                     </span>
                 </div>
             </div>
@@ -38,22 +37,24 @@
 
     <div class="container mx-auto px-4 py-12">
         <div class="grid lg:grid-cols-3 gap-8">
-            <!-- Conteúdo Principal -->
             <div class="lg:col-span-2 space-y-8">
-                <!-- Descrição -->
+                
                 <section class="bg-white rounded-xl shadow-lg p-8">
                     <h2 class="text-2xl font-bold text-cancao-blue mb-4">Sobre este Roteiro</h2>
-                    <p class="text-gray-700 leading-relaxed">{{ roteiro.descricao_completa }}</p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Participe desta peregrinação inesquecível: **{{ roteiro.title }}**,
+                        acompanhada por **{{ roteiro.director_display }}**.
+                        Datas: **{{ roteiro.start }} a {{ roteiro.end }}**.
+                    </p>
                 </section>
 
-                <!-- Destaques -->
                 <section class="bg-white rounded-xl shadow-lg p-8">
                     <h2 class="text-2xl font-bold text-cancao-blue mb-6 flex items-center gap-2">
                         <i data-lucide="star" class="w-6 h-6"></i>
-                        Destaques do Roteiro
+                        Destaques e o que está Incluído
                     </h2>
                     <div class="grid md:grid-cols-2 gap-4">
-                        {% for destaque in roteiro.destaques %}
+                        {% for destaque in roteiro.incluso %}
                         <div class="flex items-start gap-3">
                             <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
                             <span class="text-gray-700">{{ destaque }}</span>
@@ -62,37 +63,35 @@
                     </div>
                 </section>
 
-                <!-- Roteiro Detalhado -->
                 <section class="bg-white rounded-xl shadow-lg p-8">
                     <h2 class="text-2xl font-bold text-cancao-blue mb-6 flex items-center gap-2">
                         <i data-lucide="map-pin" class="w-6 h-6"></i>
-                        Roteiro Detalhado
+                        Itinerário Dia a Dia
                     </h2>
                     <div class="space-y-6">
                         {% for item in roteiro.itinerario %}
-                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                            <div class="flex-shrink-0">
-                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                    {{ item.horario if item.horario else item.dia }}
+                            {% set is_dict = item is mapping %}
+                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                        {{ item.Dia if is_dict else item.split(' – ')[0] }}
+                                    </div>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-gray-900 mb-1">
+                                        {{ item.split(' – ')[1] if not is_dict and ' – ' in item else (item.values()|list)[0] if is_dict else item }}
+                                    </h3>
                                 </div>
                             </div>
-                            <div class="flex-1">
-                                <h3 class="font-bold text-gray-900 mb-1">
-                                    {{ item.atividade if item.atividade else item.local }}
-                                </h3>
-                                <p class="text-gray-600 text-sm">{{ item.descricao }}</p>
-                            </div>
-                        </div>
                         {% endfor %}
                     </div>
                 </section>
 
-                <!-- Incluso e Não Incluso -->
                 <div class="grid md:grid-cols-2 gap-6">
                     <section class="bg-white rounded-xl shadow-lg p-6">
                         <h3 class="text-xl font-bold text-green-600 mb-4 flex items-center gap-2">
                             <i data-lucide="check" class="w-5 h-5"></i>
-                            Incluso
+                            Inclui
                         </h3>
                         <ul class="space-y-2">
                             {% for item in roteiro.incluso %}
@@ -107,7 +106,7 @@
                     <section class="bg-white rounded-xl shadow-lg p-6">
                         <h3 class="text-xl font-bold text-red-600 mb-4 flex items-center gap-2">
                             <i data-lucide="x" class="w-5 h-5"></i>
-                            Não Incluso
+                            Não Inclui
                         </h3>
                         <ul class="space-y-2">
                             {% for item in roteiro.nao_incluso %}
@@ -119,33 +118,32 @@
                         </ul>
                     </section>
                 </div>
-            </div>
 
-            <!-- Sidebar -->
+                </div>
+
             <div class="lg:col-span-1">
                 <div class="sticky top-28 space-y-6">
-                    <!-- Card de Reserva -->
                     <div class="bg-white rounded-xl shadow-lg p-6">
                         <div class="text-center mb-6">
-                            <p class="text-gray-600 text-sm mb-2">A partir de</p>
+                            <p class="text-gray-600 text-sm mb-2">Valor Total</p>
                             <p class="text-4xl font-bold text-cancao-blue">
-                                R$ {{ "{:,.2f}".format(roteiro.preco).replace(',', 'X').replace('.', ',').replace('X', '.') }}
+                                {{ roteiro.preco }}
                             </p>
-                            <p class="text-gray-500 text-sm mt-1">por pessoa</p>
+                            <p class="text-gray-500 text-sm mt-1">por pessoa em apto duplo</p>
                         </div>
 
                         <div class="space-y-4 mb-6">
                             <div class="flex items-center gap-3 text-gray-700">
                                 <i data-lucide="clock" class="w-5 h-5 text-cancao-blue"></i>
-                                <span class="text-sm">{{ roteiro.duracao }}</span>
+                                <span class="text-sm">{{ roteiro.duracao if roteiro.duracao is defined else 'Duração Indefinida' }}</span>
                             </div>
                             <div class="flex items-center gap-3 text-gray-700">
-                                <i data-lucide="users" class="w-5 h-5 text-cancao-blue"></i>
-                                <span class="text-sm">Grupos disponíveis</span>
+                                <i data-lucide="user-check" class="w-5 h-5 text-cancao-blue"></i>
+                                <span class="text-sm">Direção Espiritual: **{{ roteiro.director_display }}**</span>
                             </div>
                             <div class="flex items-center gap-3 text-gray-700">
                                 <i data-lucide="calendar" class="w-5 h-5 text-cancao-blue"></i>
-                                <span class="text-sm">Várias datas</span>
+                                <span class="text-sm">Data: {{ roteiro.start }} a {{ roteiro.end }}</span>
                             </div>
                         </div>
 
@@ -155,36 +153,17 @@
                         </a>
                     </div>
 
-                    <!-- Datas Disponíveis -->
-                    {% if roteiro.datas_disponiveis %}
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <h3 class="text-lg font-bold text-cancao-blue mb-4 flex items-center gap-2">
-                            <i data-lucide="calendar" class="w-5 h-5"></i>
-                            Próximas Datas
-                        </h3>
-                        <ul class="space-y-2">
-                            {% for data in roteiro.datas_disponiveis[:4] %}
-                            <li class="flex items-center gap-2 text-sm text-gray-700 border-b border-gray-100 pb-2">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-green-600"></i>
-                                <span>{{ data }}</span>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    {% endif %}
-
-                    <!-- Contato -->
                     <div class="bg-cancao-blue text-white rounded-xl p-6">
                         <h3 class="text-lg font-bold mb-4">Dúvidas?</h3>
                         <p class="text-sm mb-4 text-blue-100">Entre em contato conosco!</p>
                         <div class="space-y-3 text-sm">
                             <a href="tel:{{ phone }}" class="flex items-center gap-2 hover:text-blue-200 transition">
                                 <i data-lucide="phone" class="w-4 h-4"></i>
-                                {{ phone }}
+                                {{ phone if phone is defined else '(00) 0000-0000' }}
                             </a>
                             <a href="mailto:{{ email }}" class="flex items-center gap-2 hover:text-blue-200 transition">
                                 <i data-lucide="mail" class="w-4 h-4"></i>
-                                {{ email }}
+                                {{ email if email is defined else 'contato@email.com' }}
                             </a>
                             <a href="https://wa.me/5512999999999" target="_blank" class="flex items-center gap-2 hover:text-blue-200 transition">
                                 <i data-lucide="message-circle" class="w-4 h-4"></i>
@@ -197,7 +176,6 @@
         </div>
     </div>
 
-    <!-- CTA Final -->
     <section class="bg-gradient-to-br from-cancao-blue to-blue-800 text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-4">Pronto para esta Experiência?</h2>
@@ -213,7 +191,6 @@
 
 {% block extra_js %}
 <script>
-    // Reinitialize Lucide icons after content load
     document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     });
