@@ -1,15 +1,13 @@
-# freeze.py (Versão Corrigida)
+# freeze.py (Versão Corrigida para GitHub Pages Subdiretório)
 
 from flask_frozen import Freezer
 # Importa os dados do novo módulo
 from data import ROTEIROS_DB
 from main import app # Você precisa importar a instância 'app' de main
 
-# Garante que o Freezer use o Base URL completo para URLs absolutas no GitHub Pages
-# A configuração no main.py (com SERVER_NAME) e SCRIPT_NAME aqui deve resolver o erro.
-# O FREEZER_BASE_URL para o Freezer deve ser o caminho absoluto para o script_name
-# para satisfazer a asserção do Werkzeug.
-app.config['FREEZER_BASE_URL'] = '/peregrinecomacancaonova' 
+# Garante que o Freezer use o Base URL COMPLETO para a implantação no GitHub Pages.
+# A barra final é importante!
+app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova/' 
 app.config['FREEZER_DESTINATION'] = 'docs' 
 freezer = Freezer(app)
 
@@ -24,10 +22,8 @@ def roteiro_detalhe():
 if __name__ == "__main__":
     print("Iniciando o processo de congelamento (freezing)...")
     
-    # 🚨 SOLUÇÃO PARA O BUG/ASSERÇÃO DO WERKZEUG (script_name):
-    # O Flask-Frozen não está detectando corretamente o script_name ao usar FREEZER_BASE_URL.
-    # Forçamos o script_name para o nome do subdiretório (repositório).
-    # O Freezer injeta este valor no ambiente da requisição.
+    # 🚨 SOLUÇÃO DE CONTORNO PARA ASSERÇÃO (DEVE SER USADA JUNTO COM A CORREÇÃO NO main.py):
+    # Forçamos o script_name para o nome do subdiretório.
     app.config['FREEZER_SCRIPT_NAME'] = '/peregrinecomacancaonova'
     
     freezer.freeze()
