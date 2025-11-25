@@ -3,7 +3,7 @@
 {% block conteudo %}
 <h2>{{ roteiro.title }}</h2>
 
-<<img src="{{ url_for('static', filename='img/' ~ r.img) }} width="400">
+<img src="{{ url_for('static', filename='img/' ~ roteiro.img) }}" width="400">
 
 <p><b>Datas:</b> {{ roteiro.start }} a {{ roteiro.end }}</p>
 <p><b>Direção:</b> {{ roteiro.director }}</p>
