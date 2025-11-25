@@ -29,10 +29,10 @@
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
                     
                     <div class="h-56 overflow-hidden relative">
-                        <img src="{{ url_for('static', filename='images/' + r.img) }}" 
-                             alt="{{ r.title }}" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                             onerror="this.src='https://images.unsplash.com/photo-1542457635-43a290209598?w=500&q=80'">
+                        <img src="{{ url_for('static', filename='img/' + r.img) }}" 
+                         alt="{{ r.title }}" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://images.unsplash.com/photo-1542457635-43a290209598?w=500&q=80'">
                         
                         <span class="absolute top-3 left-3 bg-cancao-blue text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
                             {{ r.duracao }}
