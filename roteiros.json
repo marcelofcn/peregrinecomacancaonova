@@ -1,5 +1,5 @@
 {
-  "3": [
+  "3": {
     "id": 3,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -9,38 +9,38 @@
     "end": "31/03/2026",
     "director": "Padre Felipe - Canção Nova",
     "itinerario": [
-        "Dia 1 (17/03/26) – Embarque Brasil/Veneza",
-        "Dia 2 (18/03/26) – Veneza - Chegada e acomodação",
-        "Dia 3 (19/03/26) – Veneza/Pádua - Santo Antônio, Praça São Marcos",
-        "Dia 4 (20/03/26) – Florença/Assis - Catedral Santa Maria da Flor",
-        "Dia 5 (21/03/26) – Assis/Cassia - São Francisco, Santa Clara, Carlo Acutis, Santa Rita",
-        "Dia 6 (22/03/26) – Loreto/Lanciano - Santa Casa, Milagre Eucarístico",
-        "Dia 7 (23/03/26) – Monte Gargano/San Giovanni Rotondo - Padre Pio",
-        "Dia 8 (24/03/26) – Roma/Split/Medjugorje - Voo para Split",
-        "Dia 9 (25/03/26) – Medjugorje - Monte das Aparições",
-        "Dia 10 (26/03/26) – Medjugorje - Atividades religiosas",
-        "Dia 11 (27/03/26) – Medjugorje/Split/Roma - Retorno a Roma",
-        "Dia 12 (28/03/26) – Roma - Coliseu, Basílicas, Fontana de Trevi",
-        "Dia 13 (29/03/26) – Roma - Vaticano, Capela Sistina",
-        "Dia 14 (30/03/26) – Roma/Brasil - Retorno"
+      "Dia 1 (17/03/26) – Embarque Brasil/Veneza",
+      "Dia 2 (18/03/26) – Veneza - Chegada e acomodação",
+      "Dia 3 (19/03/26) – Veneza/Pádua - Santo Antônio, Praça São Marcos",
+      "Dia 4 (20/03/26) – Florença/Assis - Catedral Santa Maria da Flor",
+      "Dia 5 (21/03/26) – Assis/Cassia - São Francisco, Santa Clara, Carlo Acutis, Santa Rita",
+      "Dia 6 (22/03/26) – Loreto/Lanciano - Santa Casa, Milagre Eucarístico",
+      "Dia 7 (23/03/26) – Monte Gargano/San Giovanni Rotondo - Padre Pio",
+      "Dia 8 (24/03/26) – Roma/Split/Medjugorje - Voo para Split",
+      "Dia 9 (25/03/26) – Medjugorje - Monte das Aparições",
+      "Dia 10 (26/03/26) – Medjugorje - Atividades religiosas",
+      "Dia 11 (27/03/26) – Medjugorje/Split/Roma - Retorno a Roma",
+      "Dia 12 (28/03/26) – Roma - Coliseu, Basílicas, Fontana de Trevi",
+      "Dia 13 (29/03/26) – Roma - Vaticano, Capela Sistina",
+      "Dia 14 (30/03/26) – Roma/Brasil - Retorno"
     ],
     "incluso": [
       "Bilhetes aéreos internacionais",
-        "Hospedagem em hotéis 4 estrelas",
-        "Café da manhã e jantar",
-        "Transporte completo",
-        "Guias locais",
-        "Seguro saúde e bagagem"
-      ],
-      "nao_incluso": [
-        "Excesso de bagagens",
-        "Despesas pessoais",
-        "Ingressos extras",
-        "Marcação de assentos"
-      ],
-      "preco": "R$ 33.980,00"
-},
-   "8": [
+      "Hospedagem em hotéis 4 estrelas",
+      "Café da manhã e jantar",
+      "Transporte completo",
+      "Guias locais",
+      "Seguro saúde e bagagem"
+    ],
+    "nao_incluso": [
+      "Excesso de bagagens",
+      "Despesas pessoais",
+      "Ingressos extras",
+      "Marcação de assentos"
+    ],
+    "preco": "R$ 33.980,00"
+  },
+  "8": {
     "id": 8,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -50,32 +50,32 @@
     "end": "20/05/2026",
     "director": "Padre Jesu e Sonia Venancio - Canção Nova",
     "itinerario": [
-        "Dia 1 (12/05/26) – São Paulo/Cidade do México",
-        "Dia 2 (13/05/26) – Santuário N.Sra. Guadalupe",
-        "Dia 3 (14/05/26) – Cristo Veneno & Beata Conchita",
-        "Dia 4 (15/05/26) – Tulpetlac & Cuautitlán",
-        "Dia 5 (16/05/26) – Teotihuacán - Pirâmides",
-        "Dia 6 (17/05/26) – Tlaxcala/Puebla",
-        "Dia 7 (18/05/26) – Puebla/Cholula",
-        "Dia 8 (19/05/26) – Puebla/Cidade do México/Brasil"
-      ],
-      "incluso": [
-        "Passagens aéreas",
-        "Hospedagem",
-        "Alimentação",
-        "Transporte",
-        "Guias",
-        "Seguro"
-      ],
-      "nao_incluso": [
-        "Bagagens extras",
-        "Despesas pessoais",
-        "Extras",
-        "Assentos"
-      ],
-      "preco": "R$ 18.980,00"
-  ],
-  "9": [
+      "Dia 1 (12/05/26) – São Paulo/Cidade do México",
+      "Dia 2 (13/05/26) – Santuário N.Sra. Guadalupe",
+      "Dia 3 (14/05/26) – Cristo Veneno & Beata Conchita",
+      "Dia 4 (15/05/26) – Tulpetlac & Cuautitlán",
+      "Dia 5 (16/05/26) – Teotihuacán - Pirâmides",
+      "Dia 6 (17/05/26) – Tlaxcala/Puebla",
+      "Dia 7 (18/05/26) – Puebla/Cholula",
+      "Dia 8 (19/05/26) – Puebla/Cidade do México/Brasil"
+    ],
+    "incluso": [
+      "Passagens aéreas",
+      "Hospedagem",
+      "Alimentação",
+      "Transporte",
+      "Guias",
+      "Seguro"
+    ],
+    "nao_incluso": [
+      "Bagagens extras",
+      "Despesas pessoais",
+      "Extras",
+      "Assentos"
+    ],
+    "preco": "R$ 18.980,00"
+  },
+  "9": {
     "id": 9,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -86,38 +86,38 @@
     "director": "Padre Alessandro e Salette Ferreira - Canção Nova",
     "itinerario": [
       "Dia 1 (01/06/26) – Embarque Brasil/Paris",
-        "Dia 2 (02/06/26) – Paris/Lisieux - Santa Terezinha",
-        "Dia 3 (03/06/26) – Monte São Michel - Mosteiro Beneditino",
-        "Dia 4 (04/06/26) – Monte São Michel/Tours",
-        "Dia 5 (05/06/26) – Tours/Rocamadour - Santuário Mariano",
-        "Dia 6 (06/06/26) – Rocamadour/Lourdes",
-        "Dia 7 (07/06/26) – Lourdes - Atividades religiosas",
-        "Dia 8 (08/06/26) – Lourdes/Avignon - Cidade dos Papas",
-        "Dia 9 (09/06/26) – Avignon/La Salette",
-        "Dia 10 (10/06/26) – La Salette/Ars/Lyon - Cura D'Ars",
-        "Dia 11 (11/06/26) – Lyon/Paray-Le-Monial - Sagrado Coração",
-        "Dia 12 (12/06/26) – Paray/Nevers/Paris - Santa Bernadete",
-        "Dia 13 (13/06/26) – Paris - City tour, Sacré-Coeur",
-        "Dia 14 (14/06/26) – Paris - Medalha Milagrosa",
-        "Dia 15 (15/06/26) – Paris/Brasil - Retorno"
-      ],
-      "incluso": [
-        "Passagens aéreas",
-        "Hotéis 4 estrelas",
-        "Refeições",
-        "Transporte",
-        "Guias",
-        "Seguro"
-      ],
-      "nao_incluso": [
-        "Bagagem extra",
-        "Despesas pessoais",
-        "Extras",
-        "Assentos"
-      ],
-      "preco": "R$ 26.980,00"
-},
-   "12": [
+      "Dia 2 (02/06/26) – Paris/Lisieux - Santa Terezinha",
+      "Dia 3 (03/06/26) – Monte São Michel - Mosteiro Beneditino",
+      "Dia 4 (04/06/26) – Monte São Michel/Tours",
+      "Dia 5 (05/06/26) – Tours/Rocamadour - Santuário Mariano",
+      "Dia 6 (06/06/26) – Rocamadour/Lourdes",
+      "Dia 7 (07/06/26) – Lourdes - Atividades religiosas",
+      "Dia 8 (08/06/26) – Lourdes/Avignon - Cidade dos Papas",
+      "Dia 9 (09/06/26) – Avignon/La Salette",
+      "Dia 10 (10/06/26) – La Salette/Ars/Lyon - Cura D'Ars",
+      "Dia 11 (11/06/26) – Lyon/Paray-Le-Monial - Sagrado Coração",
+      "Dia 12 (12/06/26) – Paray/Nevers/Paris - Santa Bernadete",
+      "Dia 13 (13/06/26) – Paris - City tour, Sacré-Coeur",
+      "Dia 14 (14/06/26) – Paris - Medalha Milagrosa",
+      "Dia 15 (15/06/26) – Paris/Brasil - Retorno"
+    ],
+    "incluso": [
+      "Passagens aéreas",
+      "Hotéis 4 estrelas",
+      "Refeições",
+      "Transporte",
+      "Guias",
+      "Seguro"
+    ],
+    "nao_incluso": [
+      "Bagagem extra",
+      "Despesas pessoais",
+      "Extras",
+      "Assentos"
+    ],
+    "preco": "R$ 26.980,00"
+  },
+  "12": {
     "id": 12,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -163,7 +163,7 @@
     ],
     "preco": "R$ 28.980,00"
   },
-  "14": [
+  "14": {
     "id": 14,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -206,8 +206,8 @@
       "Marcação antecipada de assentos (somente no check-in)."
     ],
     "preco": "R$ 26.980,00"
-},
-  "15": [
+  },
+  "15": {
     "id": 15,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -216,7 +216,7 @@
     "start": "18/07/2026",
     "end": "31/07/2026",
     "director": "Padre Evandro - Canção Nova",
-    "itinerario": [
+    "itinerario": {
       "Dia 1": "18/07/2026 – Embarque no Brasil com destino a Roma. Embarque em Campo Grande/MS OU SUA CAPITAL x GUARULHOS. A partir de Guarulhos, todos os voos e roteiro em grupo.",
       "Dia 2": "19/07/2026 – Roma / Assis. Chegada em Roma, recepção no aeroporto e traslado em ônibus privativo para Assis. Acomodação no hotel. Jantar e pernoite.",
       "Dia 3": "20/07/2026 – Assis. Após o café da manhã, visita à Igreja de Santa Maria dos Anjos (Porciúncula), Basílicas de São Francisco e Santa Clara. Visitaremos o corpo de Carlo Acutis no Santuário do Despojamento, especificamente na Igreja de Santa Maria Maior. Tarde livre. Retorno no hotel. Jantar e pernoite.",
@@ -231,7 +231,7 @@
       "Dia 12": "29/07/2026 – Paris / Lisieux / Paris. Café da manhã e saída para Lisieux, cidade de Santa Terezinha. Visitas e celebrações. Retorno a Paris. Jantar e hospedagem.",
       "Dia 13": "30/07/2026 – Paris / São Paulo. Café da manhã e traslado ao aeroporto para embarque de retorno ao Brasil.",
       "Dia 14": "31/07/2026 – Guarulhos. Chegada a São Paulo e, em horário a ser informado, voo de conexão para a sua capital. Fim dos serviços."
-    ],
+    },
     "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
@@ -249,8 +249,8 @@
       "Marcação antecipada de assentos nos voos (somente no check-in da companhia aérea)"
     ],
     "preco": "R$ 26.980,00"
-},
-  "16": [
+  },
+  "16": {
     "id": 16,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -259,7 +259,7 @@
     "start": "03/08/2026",
     "end": "17/08/2026",
     "director": "Padre Fábio Galdino, Padre Duarte Lara e Danilo Jesualdo - Canção Nova",
-    "itinerario": [
+    "itinerario": {
       "Dia 1": "03/08/2026 – Embarque no Brasil com destino a Roma. Embarque em Campo Grande/MS ou sua capital. A partir de Guarulhos, todos os voos e roteiro em grupo.",
       "Dia 2": "04/08/2026 – Roma / Assis. Chegada em Roma, recepção no aeroporto e traslado em ônibus privativo para Assis. Acomodação no hotel. Jantar e pernoite.",
       "Dia 3": "05/08/2026 – Assis. Após o café da manhã, visita à Igreja de Santa Maria dos Anjos (Porciúncula), Basílicas de São Francisco e Santa Clara. Visitaremos o corpo de Carlo Acutis no Santuário do Despojamento, especificamente na Igreja de Santa Maria Maior. Tarde livre. Retorno ao hotel. Jantar e pernoite.",
@@ -274,7 +274,7 @@
       "Dia 12": "14/08/2026 – Lisboa. Dia livre para atividades pessoais. Jantar e pernoite.",
       "Dia 13": "15/08/2026 – Lisboa / Brasil. Em horário apropriado, traslado ao aeroporto de Lisboa para embarque de retorno ao Brasil, com as devidas conexões.",
       "Dia 14": "16/08/2026 – Chegada ao Brasil. Chegada em Guarulhos/SP e voo de conexão para sua capital. Fim dos serviços."
-    ],
+    },
     "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
@@ -291,9 +291,9 @@
       "Ingressos e traslados para visitas não especificadas no roteiro",
       "Marcação antecipada de assentos nos voos (somente no check-in da companhia aérea)"
     ],
-        "preco": "R$ 26.980,00"
+    "preco": "R$ 26.980,00"
   },
-  "20": [
+  "20": {
     "id": 20,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -302,7 +302,7 @@
     "start": "01/10/2026",
     "end": "16/10/2026",
     "director": "Padre José Dimas e Shirley Batista - Canção Nova",
-    "itinerario": [
+    "itinerario": {
       "Dia 1": "01/10/2026 – Campo Grande ou sua capital / Guarulhos / Lisboa. Apresentação no aeroporto para embarque com destino a Lisboa.",
       "Dia 2": "02/10/2026 – Lisboa. Chegada e tempo livre para atividades pessoais ou passeio opcional.",
       "Dia 3": "03/10/2026 – Lisboa / Óbidos / Nazaré / Fátima. Visita à cidade de Óbidos, seguida de Nazaré (Igreja de Nossa Senhora de Nazaré). Continuação para Fátima, acomodação no hotel. À noite, possibilidade de participar da procissão das velas e oração do Santo Terço. Jantar e pernoite.",
@@ -319,7 +319,7 @@
       "Dia 14": "14/10/2026 – Paris. Café da manhã e visita à Capela da Medalha Milagrosa. Tarde livre para compras e atividades pessoais. Retorno ao hotel, jantar e pernoite.",
       "Dia 15": "15/10/2026 – Paris / Brasil. Café da manhã e traslado ao aeroporto. Embarque com conexões para Guarulhos.",
       "Dia 16": "16/10/2026 – Chegada em Guarulhos. Desembarque e voo de conexão para a capital de origem. Fim dos serviços."
-    ],
+    },
     "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
@@ -336,9 +336,9 @@
       "Marcação de assentos nos voos (realizada apenas no check-in da companhia aérea)",
       "Ingressos e traslados para visitas não especificadas no roteiro"
     ],
-                        "preco": "R$ 28.980,00"
+    "preco": "R$ 28.980,00"
   },
-  "22": [
+  "22": {
     "id": 22,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -347,7 +347,7 @@
     "start": "02/11/2026",
     "end": "17/11/2026",
     "director": "Padre Edilberto e Emanuel - Canção Nova",
-    "itinerario": [
+    "itinerario": {
       "Dia 1": "02/11/2026 – Campo Grande ou sua capital / Guarulhos / Lisboa. Embarque e traslado.",
       "Dia 2": "03/11/2026 – Lisboa. Dia livre para atividades pessoais e visita opcional à cidade.",
       "Dia 3": "04/11/2026 – Lisboa / Óbidos / Nazaré / Fátima. Visita a Óbidos, Nazaré (Igreja de Nossa Senhora de Nazaré) e chegada a Fátima. Possibilidade de participar da procissão das velas à noite. Jantar e pernoite.",
@@ -364,7 +364,7 @@
       "Dia 14": "15/11/2026 – Paris. Visita à Capela da Medalha Milagrosa. Tarde livre para compras e atividades pessoais. Retorno ao hotel, jantar e pernoite.",
       "Dia 15": "16/11/2026 – Paris / Brasil. Traslado ao aeroporto e embarque com conexões para Guarulhos.",
       "Dia 16": "17/11/2026 – Chegada em Guarulhos e voo de conexão para a capital de origem. Fim dos serviços."
-    ],
+    },
     "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
@@ -381,9 +381,9 @@
       "Marcação de assentos nos voos (realizada apenas no check-in da companhia aérea)",
       "Ingressos e traslados para visitas não especificadas no roteiro"
     ],
-                                "preco": "R$ 28.980,00"
+    "preco": "R$ 28.980,00"
   },
-  "23": [
+  "23": {
     "id": 23,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -392,7 +392,7 @@
     "start": "07/04/2026",
     "end": "18/04/2026",
     "director": "Diac Renné Viana e Pitter di Laura - Canção Nova",
-    "itinerario": [
+    "itinerario": {
       "Dia 1": "07/04/2026 – São Paulo / Veneza. Apresentação no aeroporto de Guarulhos. Todos os voos e roteiro em grupo.",
       "Dia 2": "08/04/2026 – Veneza. Chegada, recepção e traslado ao hotel. Acomodação e jantar.",
       "Dia 3": "09/04/2026 – Veneza / Pádua / Veneza. Visita à Basílica de Santo Antônio em Pádua (possibilidade de Missa), retorno a Veneza, passeio de vaporetto, Praça de São Marcos, Catedral e Igreja de São Jeremias (corpo de Santa Luzia). Tempo livre. Retorno ao hotel e jantar.",
@@ -405,7 +405,7 @@
       "Dia 10": "16/04/2026 – Roma. Visita panorâmica: Coliseu (externo), Foros Romanos (externo), Circo Máximo, Praça Veneza, Termas de Caracala, Fontana de Trevi. Tarde: Basílicas de Santa Maria Maior, São João de Latrão e São Paulo Fora dos Muros (Missa). Retorno ao hotel e jantar.",
       "Dia 11": "17/04/2026 – Roma / São Paulo. Traslado ao aeroporto para retorno ao Brasil.",
       "Dia 12": "18/04/2026 – Chegada em São Paulo. Fim dos serviços."
-    ],
+    },
     "incluso": [
       "Bilhetes aéreos internacionais em classe econômica (acréscimo para executiva)",
       "Taxas de embarque",
@@ -422,6 +422,6 @@
       "Ingressos e traslados para visitas não especificadas no roteiro",
       "Marcação antecipada de assentos nos voos (realizada apenas no check-in da companhia aérea)"
     ],
-                                    "preco": "R$ 25.980,00"
-  ]
+    "preco": "R$ 25.980,00"
+  }
 }
