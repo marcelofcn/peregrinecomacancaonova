@@ -27,9 +27,7 @@ def sobre():
 if __name__ == "__main__":
     print("Iniciando o processo de congelamento (freezing)...")
     
-    # 🚨 SOLUÇÃO DE CONTORNO PARA ASSERÇÃO (DEVE SER USADA JUNTO COM A CORREÇÃO NO main.py):
-    # Forçamos o script_name para o nome do subdiretório.
-    app.config['FREEZER_SCRIPT_NAME'] = '/peregrinecomacancaonova'
+   
     
     freezer.freeze()
     print("✅ Congelamento concluído na pasta 'docs'!")
