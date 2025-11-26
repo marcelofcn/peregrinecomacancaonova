@@ -75,7 +75,7 @@
                 <nav class="hidden md:flex gap-6">
                     <!-- LINK ROTEIROS CORRIGIDO COM ÂNCORA -->
                     <a href="{{ url_for('home') }}" class="text-gray-700 hover:text-cancao-blue transition">Início</a>
-                    <a href="{{ url_for('home') }}#roteiros-list" class="text-gray-700 hover:text-cancao-blue transition">Roteiros</a>
+                    <a href="{{ url_for('home') }}#roteiros" class="text-gray-700 hover:text-cancao-blue transition">Roteiros</a>
                     <!-- LINKS SOBRE e CONTATO MANTIDOS, mas a rota no Flask DEVE ser alterada para /sobre.html e /contato.html -->
                     <a href="{{ url_for('sobre') }}" class="text-gray-700 hover:text-cancao-blue transition">Sobre</a>
                     <a href="{{ url_for('contato') }}" class="text-gray-700 hover:text-cancao-blue transition">Contato</a>
@@ -89,7 +89,7 @@
             <!-- Mobile Menu -->
             <nav id="mobileMenu" class="md:hidden mt-4 hidden flex-col gap-2 pb-2">
                 <a href="{{ url_for('home') }}" class="text-gray-700 hover:text-cancao-blue py-2">Início</a>
-                <a href="{{ url_for('home') }}#roteiros-list" class="text-gray-700 hover:text-cancao-blue py-2">Roteiros</a>
+                <a href="{{ url_for('home') }}#roteiros" class="text-gray-700 hover:text-cancao-blue py-2">Roteiros</a>
                 <a href="{{ url_for('sobre') }}" class="text-gray-700 hover:text-cancao-blue py-2">Sobre</a>
                 <a href="{{ url_for('contato') }}" class="text-gray-700 hover:text-cancao-blue py-2">Contato</a>
             </nav>
@@ -113,7 +113,7 @@
                 <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Navegação</h4>
                 <ul class="space-y-2 text-sm text-gray-400">
                     <li><a href="{{ url_for('home') }}" class="hover:text-white transition">Início</a></li>
-                    <li><a href="{{ url_for('home') }}#roteiros-list" class="hover:text-white transition">Roteiros</a></li>
+                    <li><a href="{{ url_for('home') }}#roteiros" class="hover:text-white transition">Roteiros</a></li>
                     <li><a href="{{ url_for('contato') }}" class="hover:text-white transition">Fale Conosco</a></li>
                 </ul>
             </div>
