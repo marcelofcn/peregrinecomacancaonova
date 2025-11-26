@@ -1,5 +1,5 @@
 {
-  "3": {
+  "3": [
     "id": 3,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -8,7 +8,7 @@
     "start": "17/03/2026",
     "end": "31/03/2026",
     "director": "Padre Felipe - Canção Nova",
-    "itinerario": {
+    "itinerario": [
         "Dia 1 (17/03/26) – Embarque Brasil/Veneza",
         "Dia 2 (18/03/26) – Veneza - Chegada e acomodação",
         "Dia 3 (19/03/26) – Veneza/Pádua - Santo Antônio, Praça São Marcos",
@@ -23,24 +23,24 @@
         "Dia 12 (28/03/26) – Roma - Coliseu, Basílicas, Fontana de Trevi",
         "Dia 13 (29/03/26) – Roma - Vaticano, Capela Sistina",
         "Dia 14 (30/03/26) – Roma/Brasil - Retorno"
-    },
-    "incluso": {
+    ],
+    "incluso": [
       "Bilhetes aéreos internacionais",
         "Hospedagem em hotéis 4 estrelas",
         "Café da manhã e jantar",
         "Transporte completo",
         "Guias locais",
         "Seguro saúde e bagagem"
-      },
-      "nao_incluso": {
+      ],
+      "nao_incluso": [
         "Excesso de bagagens",
         "Despesas pessoais",
         "Ingressos extras",
         "Marcação de assentos"
-      },
+      ],
       "preco": "R$ 33.980,00"
-  },
-   "8": {
+},
+   "8": [
     "id": 8,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -49,7 +49,7 @@
     "start": "12/05/2026",
     "end": "20/05/2026",
     "director": "Padre Jesu e Sonia Venancio - Canção Nova",
-    "itinerario": {
+    "itinerario": [
         "Dia 1 (12/05/26) – São Paulo/Cidade do México",
         "Dia 2 (13/05/26) – Santuário N.Sra. Guadalupe",
         "Dia 3 (14/05/26) – Cristo Veneno & Beata Conchita",
@@ -58,24 +58,24 @@
         "Dia 6 (17/05/26) – Tlaxcala/Puebla",
         "Dia 7 (18/05/26) – Puebla/Cholula",
         "Dia 8 (19/05/26) – Puebla/Cidade do México/Brasil"
-      },
-      "incluso": {
+      ],
+      "incluso": [
         "Passagens aéreas",
         "Hospedagem",
         "Alimentação",
         "Transporte",
         "Guias",
         "Seguro"
-      },
-      "nao_incluso": {
+      ],
+      "nao_incluso": [
         "Bagagens extras",
         "Despesas pessoais",
         "Extras",
         "Assentos"
-      },
+      ],
       "preco": "R$ 18.980,00"
-  },
-  "9": {
+  ],
+  "9": [
     "id": 9,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -84,7 +84,7 @@
     "start": "01/06/2026",
     "end": "16/06/2026",
     "director": "Padre Alessandro e Salette Ferreira - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1 (01/06/26) – Embarque Brasil/Paris",
         "Dia 2 (02/06/26) – Paris/Lisieux - Santa Terezinha",
         "Dia 3 (03/06/26) – Monte São Michel - Mosteiro Beneditino",
@@ -100,24 +100,24 @@
         "Dia 13 (13/06/26) – Paris - City tour, Sacré-Coeur",
         "Dia 14 (14/06/26) – Paris - Medalha Milagrosa",
         "Dia 15 (15/06/26) – Paris/Brasil - Retorno"
-      },
-      "incluso": {
+      ],
+      "incluso": [
         "Passagens aéreas",
         "Hotéis 4 estrelas",
         "Refeições",
         "Transporte",
         "Guias",
         "Seguro"
-      },
-      "nao_incluso": {
+      ],
+      "nao_incluso": [
         "Bagagem extra",
         "Despesas pessoais",
         "Extras",
         "Assentos"
-      },
+      ],
       "preco": "R$ 26.980,00"
-  },
-   "12": {
+},
+   "12": [
     "id": 12,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -126,7 +126,7 @@
     "start": "05/07/2026",
     "end": "20/07/2026",
     "director": "Padre Edilberto e Emanuel - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1 (05/07/2026) – Saída do Brasil com destino à Turquia - Istambul. Embarque em Campo Grande/MS ou sua capital x Guarulhos e conexões com destino à Turquia. A partir de Guarulhos, todos os voos e roteiro em grupo.",
       "Dia 2 (06/07/2026) – Chegada em Istambul. Bem-vindo à Turquia, um país com uma história e cultura únicas. Chegada ao Aeroporto Internacional de Istambul, encontro com a equipe local e traslado ao hotel. Acomodação.",
       "Dia 3 (07/07/2026) – Istambul. Café da manhã. Visita às antigas muralhas de Constantinopla e ao Aqueduto Romano, bairros de Balat e Fener, Catedral de São Jorge (Patriarcado Ortodoxo), Mesquita de Solimão, Bazar das Especiarias e passeio de barco pelo Estreito de Bósforo. Retorno ao hotel, jantar e acomodação.",
@@ -143,8 +143,8 @@
       "Dia 14 (18/07/2026) – Atenas / Corinto / Atenas. Café da manhã. Visita a Corinto (cartas de São Paulo), Epidauro e Micenas. Retorno ao hotel. Jantar e acomodação.",
       "Dia 15 (19/07/2026) – Atenas / Brasil. Traslado ao aeroporto e voo de retorno ao Brasil.",
       "Dia 16 (20/07/2026) – Chegada no Brasil. Fim dos nossos serviços."
-    },
-    "incluso": {
+    ],
+    "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para classe executiva).",
       "Taxas de embarque.",
       "Consultar franquia de bagagem disponível para o grupo.",
@@ -153,17 +153,17 @@
       "Ônibus de turismo luxo com ar-condicionado e aquecedor para todos os traslados.",
       "Guias locais e acompanhante Canção Nova saindo do Brasil.",
       "Seguro saúde e bagagem (acréscimo de R$ 380,00 para passageiros acima de 64 anos)."
-    },
-    "nao_incluso": {
+    ],
+    "nao_incluso": [
       "Excesso de bagagens nos aviões.",
       "Despesas de caráter pessoal: bebidas, lanches, telefonemas, frigobar, lavanderia etc.",
       "Ingressos e traslados para visitas não especificadas neste roteiro.",
       "Maleteiros.",
       "Marcação antecipada de assentos nos voos (realizada apenas no check-in)."
-    },
+    ],
     "preco": "R$ 28.980,00"
   },
-  "14": {
+  "14": [
     "id": 14,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -172,7 +172,7 @@
     "start": "10/02/2026",
     "end": "25/02/2026",
     "director": "Padre Elenildo (Canção Nova)",
-    "itinerario": {
+    "itinerario": [
       "Dia 1 (11/02/2026) – Milão: Chegada, recepção e traslado ao hotel. Hospedagem e jantar.",
       "Dia 2 (12/02/2026) – Milão / Turim: Café da manhã. City tour por Milão, visitando a Catedral Duomo, Teatro Scala e Galleria Vittorio Emanuele II. Continuação para Turim. Jantar e hospedagem.",
       "Dia 3 (13/02/2026) – Turim / Bolonha: Café da manhã. Visita à Basílica de Nossa Senhora Auxiliadora, fundada por Dom Bosco. Continuação até Bolonha. Hospedagem e jantar.",
@@ -188,8 +188,8 @@
       "Dia 13 (23/02/2026) – Roma: City tour completo por Roma: Fontana di Trevi, Praça de Espanha, Panteão, Fórum Romano, Coliseu, Castelo de Santo Ângelo, Trastevere e Basílica de São Pedro. Celebração da Eucaristia. Jantar e hospedagem.",
       "Dia 14 (24/02/2026) – Roma: Café da manhã e traslado ao aeroporto para retorno ao Brasil.",
       "Dia 15 (25/02/2026) – Chegada a Guarulhos/SP. Voo de conexão para sua capital. Fim dos serviços."
-    },
-    "incluso": {
+    ],
+    "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (para classe executiva, consultar acréscimo).",
       "Taxas de embarque.",
       "Consultar franquia de bagagem disponível para este grupo.",
@@ -198,16 +198,16 @@
       "Ônibus de turismo luxo com ar-condicionado e aquecedor para todos os traslados do roteiro.",
       "Guias locais e acompanhante Loja São José saindo do Brasil.",
       "Seguro saúde e bagagem (acréscimo de R$380,00 para passageiros acima de 64 anos)."
-    },
-    "nao_incluso": {
+    ],
+    "nao_incluso": [
       "Excesso de bagagens nos aviões.",
       "Despesas de caráter pessoal (bebidas, lanches, telefonemas, frigobar, lavanderia etc.).",
       "Ingressos e traslados para visitas não especificadas neste roteiro.",
       "Marcação antecipada de assentos (somente no check-in)."
-    },
+    ],
     "preco": "R$ 26.980,00"
-  },
-  "15": {
+},
+  "15": [
     "id": 15,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -216,7 +216,7 @@
     "start": "18/07/2026",
     "end": "31/07/2026",
     "director": "Padre Evandro - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "18/07/2026 – Embarque no Brasil com destino a Roma. Embarque em Campo Grande/MS OU SUA CAPITAL x GUARULHOS. A partir de Guarulhos, todos os voos e roteiro em grupo.",
       "Dia 2": "19/07/2026 – Roma / Assis. Chegada em Roma, recepção no aeroporto e traslado em ônibus privativo para Assis. Acomodação no hotel. Jantar e pernoite.",
       "Dia 3": "20/07/2026 – Assis. Após o café da manhã, visita à Igreja de Santa Maria dos Anjos (Porciúncula), Basílicas de São Francisco e Santa Clara. Visitaremos o corpo de Carlo Acutis no Santuário do Despojamento, especificamente na Igreja de Santa Maria Maior. Tarde livre. Retorno no hotel. Jantar e pernoite.",
@@ -231,8 +231,8 @@
       "Dia 12": "29/07/2026 – Paris / Lisieux / Paris. Café da manhã e saída para Lisieux, cidade de Santa Terezinha. Visitas e celebrações. Retorno a Paris. Jantar e hospedagem.",
       "Dia 13": "30/07/2026 – Paris / São Paulo. Café da manhã e traslado ao aeroporto para embarque de retorno ao Brasil.",
       "Dia 14": "31/07/2026 – Guarulhos. Chegada a São Paulo e, em horário a ser informado, voo de conexão para a sua capital. Fim dos serviços."
-    },
-    "incluso": {
+    ],
+    "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
       "Consultar franquia de bagagem disponível para este grupo",
@@ -241,16 +241,16 @@
       "Ônibus de luxo com ar-condicionado e aquecedor para todos os traslados do roteiro",
       "Guias locais e acompanhante Loja São José saindo do Brasil",
       "Seguro saúde e bagagem (acréscimo de R$380,00 para maiores de 64 anos)"
-    },
-    "nao_incluso": {
+    ],
+    "nao_incluso": [
       "Excesso de bagagem nos aviões",
       "Despesas pessoais: bebidas, lanches, telefonemas, frigobar, etc.",
       "Ingressos e traslados para visitas não especificadas no roteiro",
       "Marcação antecipada de assentos nos voos (somente no check-in da companhia aérea)"
-    },
+    ],
     "preco": "R$ 26.980,00"
-  },
-  "16": {
+},
+  "16": [
     "id": 16,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -259,7 +259,7 @@
     "start": "03/08/2026",
     "end": "17/08/2026",
     "director": "Padre Fábio Galdino, Padre Duarte Lara e Danilo Jesualdo - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "03/08/2026 – Embarque no Brasil com destino a Roma. Embarque em Campo Grande/MS ou sua capital. A partir de Guarulhos, todos os voos e roteiro em grupo.",
       "Dia 2": "04/08/2026 – Roma / Assis. Chegada em Roma, recepção no aeroporto e traslado em ônibus privativo para Assis. Acomodação no hotel. Jantar e pernoite.",
       "Dia 3": "05/08/2026 – Assis. Após o café da manhã, visita à Igreja de Santa Maria dos Anjos (Porciúncula), Basílicas de São Francisco e Santa Clara. Visitaremos o corpo de Carlo Acutis no Santuário do Despojamento, especificamente na Igreja de Santa Maria Maior. Tarde livre. Retorno ao hotel. Jantar e pernoite.",
@@ -274,8 +274,8 @@
       "Dia 12": "14/08/2026 – Lisboa. Dia livre para atividades pessoais. Jantar e pernoite.",
       "Dia 13": "15/08/2026 – Lisboa / Brasil. Em horário apropriado, traslado ao aeroporto de Lisboa para embarque de retorno ao Brasil, com as devidas conexões.",
       "Dia 14": "16/08/2026 – Chegada ao Brasil. Chegada em Guarulhos/SP e voo de conexão para sua capital. Fim dos serviços."
-    },
-    "incluso": {
+    ],
+    "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
       "Consultar franquia de bagagem disponível para este grupo",
@@ -284,16 +284,16 @@
       "Ônibus de luxo com ar-condicionado e aquecedor para todos os traslados do roteiro",
       "Guias locais e acompanhante Loja São José saindo do Brasil",
       "Seguro saúde e bagagem (acréscimo de R$380,00 para maiores de 64 anos)"
-    },
-    "nao_incluso": {
+    ],
+    "nao_incluso": [
       "Excesso de bagagem nos aviões",
       "Despesas pessoais: bebidas, lanches, telefonemas, frigobar, etc.",
       "Ingressos e traslados para visitas não especificadas no roteiro",
       "Marcação antecipada de assentos nos voos (somente no check-in da companhia aérea)"
-    },
+    ],
         "preco": "R$ 26.980,00"
   },
-  "20": {
+  "20": [
     "id": 20,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -302,7 +302,7 @@
     "start": "01/10/2026",
     "end": "16/10/2026",
     "director": "Padre José Dimas e Shirley Batista - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "01/10/2026 – Campo Grande ou sua capital / Guarulhos / Lisboa. Apresentação no aeroporto para embarque com destino a Lisboa.",
       "Dia 2": "02/10/2026 – Lisboa. Chegada e tempo livre para atividades pessoais ou passeio opcional.",
       "Dia 3": "03/10/2026 – Lisboa / Óbidos / Nazaré / Fátima. Visita à cidade de Óbidos, seguida de Nazaré (Igreja de Nossa Senhora de Nazaré). Continuação para Fátima, acomodação no hotel. À noite, possibilidade de participar da procissão das velas e oração do Santo Terço. Jantar e pernoite.",
@@ -319,8 +319,8 @@
       "Dia 14": "14/10/2026 – Paris. Café da manhã e visita à Capela da Medalha Milagrosa. Tarde livre para compras e atividades pessoais. Retorno ao hotel, jantar e pernoite.",
       "Dia 15": "15/10/2026 – Paris / Brasil. Café da manhã e traslado ao aeroporto. Embarque com conexões para Guarulhos.",
       "Dia 16": "16/10/2026 – Chegada em Guarulhos. Desembarque e voo de conexão para a capital de origem. Fim dos serviços."
-    },
-    "incluso": {
+    ],
+    "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
       "Consultar franquia de bagagem disponível para o grupo",
@@ -329,16 +329,16 @@
       "Ônibus de luxo com ar-condicionado e aquecedor para todos os traslados do roteiro",
       "Guias locais e acompanhante Loja São José saindo do Brasil",
       "Seguro saúde e bagagem (acréscimo de R$380,00 para maiores de 64 anos)"
-    },
-    "nao_incluso": {
+    ],
+    "nao_incluso": [
       "Excesso de bagagem nos aviões",
       "Despesas pessoais: bebidas, lanches, telefonemas, consumo de frigobar, etc.",
       "Marcação de assentos nos voos (realizada apenas no check-in da companhia aérea)",
       "Ingressos e traslados para visitas não especificadas no roteiro"
-    },
+    ],
                         "preco": "R$ 28.980,00"
   },
-  "22": {
+  "22": [
     "id": 22,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -347,7 +347,7 @@
     "start": "02/11/2026",
     "end": "17/11/2026",
     "director": "Padre Edilberto e Emanuel - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "02/11/2026 – Campo Grande ou sua capital / Guarulhos / Lisboa. Embarque e traslado.",
       "Dia 2": "03/11/2026 – Lisboa. Dia livre para atividades pessoais e visita opcional à cidade.",
       "Dia 3": "04/11/2026 – Lisboa / Óbidos / Nazaré / Fátima. Visita a Óbidos, Nazaré (Igreja de Nossa Senhora de Nazaré) e chegada a Fátima. Possibilidade de participar da procissão das velas à noite. Jantar e pernoite.",
@@ -364,8 +364,8 @@
       "Dia 14": "15/11/2026 – Paris. Visita à Capela da Medalha Milagrosa. Tarde livre para compras e atividades pessoais. Retorno ao hotel, jantar e pernoite.",
       "Dia 15": "16/11/2026 – Paris / Brasil. Traslado ao aeroporto e embarque com conexões para Guarulhos.",
       "Dia 16": "17/11/2026 – Chegada em Guarulhos e voo de conexão para a capital de origem. Fim dos serviços."
-    },
-    "incluso": {
+    ],
+    "incluso": [
       "Bilhetes aéreos nacionais e internacionais em classe econômica (consultar acréscimo para executiva)",
       "Taxas de embarque",
       "Consultar franquia de bagagem disponível para o grupo",
@@ -374,16 +374,16 @@
       "Ônibus de luxo com ar-condicionado e aquecedor para todos os traslados do roteiro",
       "Guias locais e acompanhante Loja São José saindo do Brasil",
       "Seguro saúde e bagagem (acréscimo de R$380,00 para maiores de 64 anos)"
-    },
-    "nao_incluso": {
+    ],
+    "nao_incluso": [
       "Excesso de bagagem nos aviões",
       "Despesas pessoais: bebidas, lanches, telefonemas, consumo de frigobar, etc.",
       "Marcação de assentos nos voos (realizada apenas no check-in da companhia aérea)",
       "Ingressos e traslados para visitas não especificadas no roteiro"
-    },
+    ],
                                 "preco": "R$ 28.980,00"
   },
-  "23": {
+  "23": [
     "id": 23,
     "categoria": "espiritualidade",
     "empresa": "cancaonova",
@@ -392,7 +392,7 @@
     "start": "07/04/2026",
     "end": "18/04/2026",
     "director": "Diac Renné Viana e Pitter di Laura - Canção Nova",
-    "itinerario": {
+    "itinerario": [
       "Dia 1": "07/04/2026 – São Paulo / Veneza. Apresentação no aeroporto de Guarulhos. Todos os voos e roteiro em grupo.",
       "Dia 2": "08/04/2026 – Veneza. Chegada, recepção e traslado ao hotel. Acomodação e jantar.",
       "Dia 3": "09/04/2026 – Veneza / Pádua / Veneza. Visita à Basílica de Santo Antônio em Pádua (possibilidade de Missa), retorno a Veneza, passeio de vaporetto, Praça de São Marcos, Catedral e Igreja de São Jeremias (corpo de Santa Luzia). Tempo livre. Retorno ao hotel e jantar.",
@@ -405,8 +405,8 @@
       "Dia 10": "16/04/2026 – Roma. Visita panorâmica: Coliseu (externo), Foros Romanos (externo), Circo Máximo, Praça Veneza, Termas de Caracala, Fontana de Trevi. Tarde: Basílicas de Santa Maria Maior, São João de Latrão e São Paulo Fora dos Muros (Missa). Retorno ao hotel e jantar.",
       "Dia 11": "17/04/2026 – Roma / São Paulo. Traslado ao aeroporto para retorno ao Brasil.",
       "Dia 12": "18/04/2026 – Chegada em São Paulo. Fim dos serviços."
-    },
-    "incluso": {
+    ],
+    "incluso": [
       "Bilhetes aéreos internacionais em classe econômica (acréscimo para executiva)",
       "Taxas de embarque",
       "Consultar franquia de bagagem disponível para o grupo",
@@ -415,13 +415,13 @@
       "Ônibus de luxo com ar-condicionado e aquecedor para todos os traslados do roteiro",
       "Guias locais e acompanhante Loja São José saindo do Brasil",
       "Seguro saúde e bagagem (acréscimo de R$380,00 para maiores de 64 anos)"
-    },
-    "nao_incluso": {
+    ],
+    "nao_incluso": [
       "Excesso de bagagem nos aviões",
       "Despesas pessoais: bebidas, lanches, telefonemas, consumo de frigobar, etc.",
       "Ingressos e traslados para visitas não especificadas no roteiro",
       "Marcação antecipada de assentos nos voos (realizada apenas no check-in da companhia aérea)"
-    },
+    ],
                                     "preco": "R$ 25.980,00"
-  }
+  ]
 }
