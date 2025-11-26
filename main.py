@@ -48,7 +48,7 @@ def roteiro_detalhe(id):
 
 # Rota de redirecionamento para o contato (Ancora no Rodapé)
 # Mude de @app.route('/contato') para:
-@app.route('/contato.html') # Salvar como arquivo .html explícito
+@app.route('/contato/') # Salvar como arquivo .html explícito
 def contato():
     # Redireciona para a home e força o scroll para a âncora do rodapé
     return redirect(url_for('home') + '#rodape-contato')
