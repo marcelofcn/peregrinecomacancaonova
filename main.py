@@ -54,7 +54,7 @@ def contato():
     return redirect(url_for('home') + '#rodape-contato')
 
 # Mude de @app.route('/sobre') para:
-@app.route('/sobre.html') # Salvar como arquivo .html explícito
+@app.route('/sobre/') # Salvar como arquivo .html explícito
 def sobre():
     return render_template('sobre.html', roteiros=ROTEIROS_DB) # Assumindo que sobre.html existe
 
