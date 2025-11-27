@@ -1,22 +1,36 @@
-# freeze.py - VERSÃO CORRIGIDA
+# freeze.py - VERSÃO FINAL OTIMIZADA
 from flask_frozen import Freezer
-from main import app
-from data import ROTEIROS_DB
+from main import app, ROTEIROS_DB
 import shutil
 import os
 
-# Configurações importantes
+print("\n" + "="*70)
+print("🚀 FLASK-FROZEN - GERANDO SITE ESTÁTICO")
+print("="*70)
+print(f"📊 Roteiros carregados: {len(ROTEIROS_DB)}")
+
+if len(ROTEIROS_DB) > 0:
+    print("✅ Roteiros encontrados:")
+    for r in ROTEIROS_DB[:3]:
+        print(f"   → {r['id']}: {r['title']}")
+    if len(ROTEIROS_DB) > 3:
+        print(f"   ... e mais {len(ROTEIROS_DB) - 3}")
+else:
+    print("❌ AVISO: Nenhum roteiro carregado!")
+
+print("="*70 + "\n")
+
+# Configurações
 app.config["FREEZER_DESTINATION"] = "docs"
 app.config["FREEZER_BASE_URL"] = "https://marcelofcn.github.io/peregrinecomacancaonova/"
 app.config["FREEZER_REMOVE_EXTRA_FILES"] = False
-app.config["FREEZER_RELATIVE_URLS"] = True  # IMPORTANTE para GitHub Pages
+app.config["FREEZER_RELATIVE_URLS"] = True
 
 freezer = Freezer(app)
 
-# Limpar pasta docs ANTES (mas preservar .git se existir)
+# Limpar docs
 if os.path.exists("docs"):
-    print("🗑️  Limpando pasta docs antiga...")
-    # Preserva a pasta .git se existir
+    print("🗑️  Limpando docs...")
     git_path = os.path.join("docs", ".git")
     has_git = os.path.exists(git_path)
     
@@ -29,57 +43,77 @@ if os.path.exists("docs"):
     if has_git:
         shutil.move(".git_temp", git_path)
 
-# Registrar rotas dinâmicas
+# Registrar URLs de roteiros
 @freezer.register_generator
 def roteiro_detalhe():
-    """Gera URLs para todos os roteiros"""
     for r in ROTEIROS_DB:
-        yield {'id': r["id"]}
+        yield {'id': r['id']}
 
 if __name__ == "__main__":
-    print("🚀 Iniciando o processo de congelamento (freezing)...")
+    print("🔄 Gerando páginas...\n")
     
-    # Executar o freeze
-    freezer.freeze()
+    try:
+        freezer.freeze()
+        print("\n✅ Freeze concluído!")
+    except Exception as e:
+        print(f"\n❌ ERRO: {e}")
+        import traceback
+        traceback.print_exc()
     
-    # Criar arquivo .nojekyll (CRÍTICO para GitHub Pages)
-    nojekyll_path = os.path.join("docs", ".nojekyll")
-    with open(nojekyll_path, 'w') as f:
+    # Criar .nojekyll
+    with open("docs/.nojekyll", 'w') as f:
         f.write('')
-    print("✅ Arquivo .nojekyll criado")
+    print("✅ .nojekyll criado")
     
-    # Criar arquivo 404.html personalizado (opcional mas recomendado)
-    error_404_path = os.path.join("docs", "404.html")
-    if not os.path.exists(error_404_path):
-        with open(error_404_path, 'w', encoding='utf-8') as f:
-            f.write("""<!DOCTYPE html>
+    # Criar 404.html
+    with open("docs/404.html", 'w', encoding='utf-8') as f:
+        f.write("""<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0;url=https://marcelofcn.github.io/peregrinecomacancaonova/">
     <title>Redirecionando...</title>
 </head>
-<body>
+<body style="font-family: sans-serif; text-align: center; padding: 50px;">
+    <h1>Página não encontrada</h1>
     <p>Redirecionando para a página inicial...</p>
 </body>
 </html>""")
-        print("✅ Arquivo 404.html criado")
+    print("✅ 404.html criado")
     
-    # Verificar se os arquivos foram gerados
-    print("\n📋 Verificando arquivos gerados:")
-    for root, dirs, files in os.walk("docs"):
-        level = root.replace("docs", "").count(os.sep)
-        indent = " " * 2 * level
-        print(f"{indent}{os.path.basename(root)}/")
-        subindent = " " * 2 * (level + 1)
-        for file in files[:5]:  # Mostra apenas os primeiros 5 arquivos
-            print(f"{subindent}{file}")
-        if len(files) > 5:
-            print(f"{subindent}... e mais {len(files) - 5} arquivos")
+    # Verificar arquivos gerados
+    print("\n" + "="*70)
+    print("🔍 VERIFICAÇÃO:")
+    print("="*70)
     
-    print("\n✅ Freezer finalizado com sucesso!")
-    print("📦 Pasta 'docs' pronta para deploy no GitHub Pages")
-    print("\n🔧 Próximos passos:")
-    print("   1. git add docs/")
-    print("   2. git commit -m 'Build estático atualizado'")
-    print("   3. git push origin main")
+    index_path = "docs/index.html"
+    if os.path.exists(index_path):
+        size = os.path.getsize(index_path)
+        print(f"✅ index.html: {size:,} bytes")
+        
+        # Verificar conteúdo
+        with open(index_path, 'r', encoding='utf-8') as f:
+            html = f.read()
+            if 'Nenhum roteiro disponível' in html:
+                print("   ⚠️  HTML contém 'Nenhum roteiro disponível'")
+            elif len(ROTEIROS_DB) > 0 and ROTEIROS_DB[0]['title'] in html:
+                print(f"   ✅ Roteiro '{ROTEIROS_DB[0]['title']}' encontrado!")
+            else:
+                print("   ⚠️  Não foi possível confirmar roteiros no HTML")
+    
+    # Verificar roteiros individuais
+    roteiros_gerados = 0
+    for r in ROTEIROS_DB:
+        path = f"docs/roteiro/{r['id']}/index.html"
+        if os.path.exists(path):
+            roteiros_gerados += 1
+    
+    print(f"\n📊 Páginas de roteiros geradas: {roteiros_gerados}/{len(ROTEIROS_DB)}")
+    
+    if roteiros_gerados == len(ROTEIROS_DB) and len(ROTEIROS_DB) > 0:
+        print("\n✅ SUCESSO! Site gerado corretamente!")
+    else:
+        print("\n⚠️  Alguns roteiros podem não ter sido gerados")
+    
+    print("="*70)
+    print("\n🚀 Pronto para deploy!")
