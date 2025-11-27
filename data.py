@@ -1,73 +1,108 @@
-# data.py (Revisado para o formato do seu JSON)
-
 import json
 import os
 from datetime import datetime
+from copy import deepcopy
 
-# Define a localização do arquivo JSON
 ROTEIROS_FILE = os.path.join(os.path.dirname(__file__), 'roteiros.json')
 
-# --- Funções de Processamento ---
+# Palavras-chave para identificar e excluir roteiros "São José"
+_SAO_JOSE_KEYS = ['sao jose', 'são josé', 'sao-jose', 'loja são josé', 'loja sao jose']
+
+def _eh_sao_jose(text):
+    if not text:
+        return False
+    t = str(text).lower()
+    for k in _SAO_JOSE_KEYS:
+        if k in t:
+            return True
+    return False
 
 def calcular_duracao(start_date_str, end_date_str):
-    """Calcula a duração em dias."""
     try:
-        # Padrão DD/MM/YYYY
-        start_date = datetime.strptime(start_date_str, "%d/%m/%Y")
-        end_date = datetime.strptime(end_date_str, "%d/%m/%Y")
-        duration = (end_date - start_date).days + 1 # +1 para incluir o dia de partida/chegada
-        return f"{duration} dias"
-    except:
+        # aceita formatos dd/mm/yyyy e d/m/yyyy
+        start = datetime.strptime(start_date_str, "%d/%m/%Y")
+        end = datetime.strptime(end_date_str, "%d/%m/%Y")
+        return f"{(end - start).days + 1} dias"
+    except Exception:
         return "Duração não informada"
 
 def carregar_roteiros():
-    """Carrega os roteiros do arquivo JSON e os formata em uma lista."""
-    roteiros_processados = []
-    
     if not os.path.exists(ROTEIROS_FILE):
-        print(f"Erro: Arquivo não encontrado em {ROTEIROS_FILE}")
+        print(f"Arquivo {ROTEIROS_FILE} não encontrado.")
         return []
 
     try:
         with open(ROTEIROS_FILE, 'r', encoding='utf-8') as f:
             roteiros_dict = json.load(f)
-    except json.JSONDecodeError as e:
-        print(f"Erro ao decodificar JSON: {e}")
+    except Exception as e:
+        print("Erro ao ler JSON:", e)
         return []
 
+    lista = []
     for key, roteiro in roteiros_dict.items():
-        # O ID deve ser uma string se você usa no ROTEIROS_BY_ID.get(str(id))
-        roteiro['id'] = key 
-        
-        # Adiciona a duração calculada
-        roteiro['duracao'] = calcular_duracao(roteiro.get('start', ''), roteiro.get('end', ''))
-        
-        # Adiciona o diretor em uma única string
-        director_data = roteiro.get('director')
-        if isinstance(director_data, dict):
-            roteiro['director_display'] = ', '.join(director_data.values())
-        elif isinstance(director_data, str):
-            roteiro['director_display'] = director_data
+        # Filtra roteiros relacionados a São José (solicitado)
+        director = roteiro.get('director') or ''
+        empresa = roteiro.get('empresa') or ''
+        if _eh_sao_jose(director) or _eh_sao_jose(empresa):
+            # desconsiderar este roteiro
+            continue
+
+        r = deepcopy(roteiro)
+
+        # Garantir id como int
+        try:
+            r['id'] = int(r.get('id', key))
+        except Exception:
+            try:
+                r['id'] = int(key)
+            except:
+                r['id'] = key
+
+        # Normalizar itinerario: transformar dict -> list de strings "Dia X – texto"
+        itinerario = r.get('itinerario', [])
+        if isinstance(itinerario, dict):
+            # manter ordem por chave se possível
+            items = []
+            for k, v in sorted(itinerario.items(), key=lambda x: x[0]):
+                items.append(f"{k} – {v}")
+            r['itinerario'] = items
+        elif isinstance(itinerario, list):
+            r['itinerario'] = itinerario
         else:
-            roteiro['director_display'] = "CN Tur"
+            # string -> colocar como único item
+            r['itinerario'] = [str(itinerario)]
 
-        roteiros_processados.append(roteiro)
+        # Inclusos / nao_incluso como listas
+        if not isinstance(r.get('incluso', []), list):
+            r['incluso'] = [r.get('incluso', '')] if r.get('incluso') else []
+        if not isinstance(r.get('nao_incluso', []), list):
+            r['nao_incluso'] = [r.get('nao_incluso', '')] if r.get('nao_incluso') else []
 
-    return roteiros_processados 
+        # Preco — manter string (pode ser formatado no template)
+        r['preco'] = r.get('preco', 'Consultar')
 
-# --- VARIÁVEIS EXPORTADAS (Correção Principal) ---
+        # diretor_display (string amigável)
+        director_data = r.get('director')
+        if isinstance(director_data, list):
+            r['director_display'] = ', '.join(director_data)
+        else:
+            r['director_display'] = str(director_data) if director_data else "Equipe"
 
-# 1. Lista principal para exibição (Home, Freezer)
+        # duração calculada
+        r['duracao'] = calcular_duracao(r.get('start', ''), r.get('end', ''))
+
+        lista.append(r)
+
+    # Ordena por id para previsibilidade
+    lista.sort(key=lambda x: x['id'])
+    return lista
+
+# Exportados
 ROTEIROS_DB = carregar_roteiros()
+ROTEIROS_BY_ID = { str(r['id']): r for r in ROTEIROS_DB }
 
-# 2. Dicionário de busca rápida (main.py)
-# Usa o campo 'id' que foi adicionado na função carregar_roteiros
-ROTEIROS_BY_ID = {
-    roteiro['id']: roteiro for roteiro in ROTEIROS_DB
-}
-
-# 3. Configurações globais (Seu main.py importa isso agora)
 SITE_CONFIG = {
     'site_name': 'Peregrine com a Canção Nova',
-    'operator_name': 'São José Peregrinações CNPJ 24.397.541/0001-63'
+    'site_description': 'Roteiros de peregrinação, fé e espiritualidade — conheça nossos destinos e programe sua próxima viagem de fé.',
+    'operator_name': 'Peregrine - Operadora de Viagens'
 }
