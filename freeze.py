@@ -27,6 +27,11 @@ def sobre():
 def contato():
     yield 'contato', {}
 
+@freezer.register_generator
+def sitemap():
+    yield 'sitemap'
+
+
 if __name__ == "__main__":
     print("Iniciando o processo de congelamento (freezing)...")
 
