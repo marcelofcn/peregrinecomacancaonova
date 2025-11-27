@@ -44,4 +44,177 @@
     ],
     "preco": "R$ 26.980,00"
   }
-}
+},
+"3": {
+  "id": 3,
+  "categoria": "espiritualidade",
+  "empresa": "cancaonova",
+  "img": "img3.jpg",
+  "title": "Itália e Medjugorje",
+  "start": "17/03/2026",
+  "end": "31/03/2026",
+  "director": "Padre Felipe - Canção Nova",
+  "itinerario": [
+    "Dia 1 (17/03/2026) – Embarque Brasil / Veneza.",
+    "Dia 2 (18/03/2026) – Veneza: chegada e acomodação.",
+    "Dia 3 (19/03/2026) – Veneza / Pádua: Santo Antônio, Praça São Marcos.",
+    "Dia 4 (20/03/2026) – Florença / Assis: Catedral Santa Maria da Flor.",
+    "Dia 5 (21/03/2026) – Assis / Cássia: São Francisco, Santa Clara, Carlo Acutis, Santa Rita.",
+    "Dia 6 (22/03/2026) – Loreto / Lanciano: Santa Casa, Milagre Eucarístico.",
+    "Dia 7 (23/03/2026) – Monte Gargano / San Giovanni Rotondo: Padre Pio.",
+    "Dia 8 (24/03/2026) – Roma / Split / Medjugorje: voo para Split.",
+    "Dia 9 (25/03/2026) – Medjugorje: Monte das Aparições.",
+    "Dia 10 (26/03/2026) – Medjugorje: atividades religiosas.",
+    "Dia 11 (27/03/2026) – Medjugorje / Split / Roma: retorno para Roma.",
+    "Dia 12 (28/03/2026) – Roma: Coliseu, Basílicas, Fontana di Trevi.",
+    "Dia 13 (29/03/2026) – Roma: Vaticano, Capela Sistina.",
+    "Dia 14 (30/03/2026) – Roma / Brasil: retorno."
+  ],
+  "incluso": [
+      "Bilhetes aéreos nacionais e internacionais em classe econômica. Embarque em qualquer capital sem custo adicional.",
+      "Taxas de embarque.",
+      "Consultar franquia de bagagem.",
+      "Hospedagem em hotéis 4 estrelas.",
+      "Café da manhã e jantar.",
+      "Ônibus de turismo.",
+      "Guias locais e acompanhante.",
+      "Seguro saúde e bagagem - acréscimo para maiores de 64 anos."
+    ],
+    "nao_incluso": [
+      "Excesso de bagagens.",
+      "Despesas pessoais.",
+      "Ingressos extras.",
+      "Marcação de assentos.",
+      "Maleteiros."
+    ],
+    "preco": "R$ 26.980,00"
+  }
+},
+"23": {
+  "id": 23,
+  "categoria": "espiritualidade",
+  "empresa": "cancaonova",
+  "img": "img23.jpg",
+  "title": "Itália - Abril 2026",
+  "start": "07/04/2026",
+  "end": "18/04/2026",
+  "director": "Diac Renné Viana e Pitter di Laura - Canção Nova",
+  "itinerario": [
+    "Dia 1 – 07/04/2026: São Paulo / Veneza. Apresentação no aeroporto de Guarulhos. Todos os voos e roteiro em grupo.",
+    "Dia 2 – 08/04/2026: Veneza. Chegada, recepção e traslado ao hotel. Acomodação e jantar.",
+    "Dia 3 – 09/04/2026: Veneza / Pádua / Veneza. Visita à Basílica de Santo Antônio em Pádua, retorno a Veneza, vaporetto, Praça de São Marcos, Catedral e Igreja de São Jeremias. Jantar.",
+    "Dia 4 – 10/04/2026: Veneza / Florença / Assis. Visita panorâmica de Florença e continuação para Assis. Acomodação e jantar.",
+    "Dia 5 – 11/04/2026: Assis / Cássia / Assis. Visitas às Basílicas e locais franciscanos. Ida a Cássia. Retorno e jantar.",
+    "Dia 6 – 12/04/2026: Assis / Loreto / Lanciano. Visita ao Santuário da Santa Casa e ao Milagre Eucarístico. Jantar.",
+    "Dia 7 – 13/04/2026: Lanciano / Monte Gargano / San Giovanni Rotondo. Visita ao túmulo de São Pio e Monte Gargano. Jantar.",
+    "Dia 8 – 14/04/2026: San Giovanni Rotondo / Roma. Traslado para Roma. Jantar.",
+    "Dia 9 – 15/04/2026: Roma. Audiência Papal (a confirmar). Visita à Basílica de São Pedro, Museu do Vaticano e Capela Sistina. Jantar.",
+    "Dia 10 – 16/04/2026: Roma. Visita panorâmica: Coliseu (externo), Foros Romanos (externo), Circo Máximo, Praça Veneza, Termas de Caracala, Fontana de Trevi. Tarde nas Basílicas Papais. Jantar.",
+    "Dia 11 – 17/04/2026: Roma / São Paulo. Traslado ao aeroporto para retorno ao Brasil.",
+    "Dia 12 – 18/04/2026: Chegada ao Brasil. Fim dos serviços."
+  ],
+"incluso": [
+      "Bilhetes aéreos nacionais e internacionais em classe econômica. Embarque em qualquer capital sem custo adicional.",
+      "Taxas de embarque.",
+      "Consultar franquia de bagagem.",
+      "Hospedagem em hotéis 4 estrelas.",
+      "Café da manhã e jantar.",
+      "Ônibus de turismo.",
+      "Guias locais e acompanhante.",
+      "Seguro saúde e bagagem - acréscimo para maiores de 64 anos."
+    ],
+    "nao_incluso": [
+      "Excesso de bagagens.",
+      "Despesas pessoais.",
+      "Ingressos extras.",
+      "Marcação de assentos.",
+      "Maleteiros."
+    ],
+    "preco": "R$ 25.980,00"
+  }
+},
+"8": {
+  "id": 8,
+  "categoria": "espiritualidade",
+  "empresa": "cancaonova",
+  "img": "img8.jpg",
+  "title": "México - Guadalupe",
+  "start": "12/05/2026",
+  "end": "20/05/2026",
+  "director": "Padre Jesu e Sonia Venancio - Canção Nova",
+  "itinerario": [
+    "Dia 1 – 12/05/2026: São Paulo / Cidade do México. Embarque e chegada. Traslado ao hotel, jantar e hospedagem.",
+    "Dia 2 – 13/05/2026: Cidade do México. Visita ao Santuário de Nossa Senhora de Guadalupe.",
+    "Dia 3 – 14/05/2026: Cidade do México. Visita ao Cristo do Veneno e locais relacionados à Beata Conchita.",
+    "Dia 4 – 15/05/2026: Tulpetlac e Cuautitlán. Visita ao Santuário da Quinta Aparição e à cidade natal de São Juan Diego.",
+    "Dia 5 – 16/05/2026: Teotihuacán. Visita às Pirâmides do Sol e da Lua. Tempo para compras.",
+    "Dia 6 – 17/05/2026: Tlaxcala / Puebla. Visita aos principais santuários da região.",
+    "Dia 7 – 18/05/2026: Puebla / Cholula. City tour e visita à Grande Pirâmide de Cholula.",
+    "Dia 8 – 19/05/2026: Puebla / Cidade do México / Brasil. Traslado ao aeroporto para retorno ao Brasil.",
+    "Dia 9 – 20/05/2026: Chegada ao Brasil. Fim dos serviços."
+  ],
+  "incluso": [
+    "Bilhetes aéreos internacionais em classe econômica, para classe executiva consultar acréscimo (saída e retorno de Guarulhos/SP)",
+    "Taxas de embarque.",
+    "Consultar franquia de bagagem.",
+    "Hospedagem em hotéis categoria 4 estrelas, em quartos duplos com banheiro privativo (para apartamento individual, consultar acréscimo)",
+    "Alimentação: café da manhã e jantar, exceto em dias de voos e dias livres quando houver",
+    "Ônibus de turismo.",
+    "Guias locais e acompanhante.",
+    "Seguro saúde e bagagem - acréscimo para pessoas maiores de 64 anos"
+  ],
+  "nao_incluso": [
+    "Excesso de bagagem.",
+    "Despesas pessoais.",
+    "Ingressos não mencionados como incluídos.",
+    "Marcação antecipada de assentos.",
+    "Maleteiros."
+  ],
+  "preco": "R$ 18.980,00"
+},
+"9": {
+  "id": 9,
+  "categoria": "espiritualidade",
+  "empresa": "cancaonova",
+  "img": "img9.jpg",
+  "title": "Santuários da França",
+  "start": "01/06/2026",
+  "end": "16/06/2026",
+  "director": "Padre Alessandro e Salette Ferreira - Canção Nova",
+  "itinerario": [
+    "Dia 1 – 01/06/2026: Embarque do Brasil com destino a Paris.",
+    "Dia 2 – 02/06/2026: Paris / Lisieux. Chegada, recepção e traslado a Lisieux. Visita aos locais de Santa Teresinha do Menino Jesus. Hospedagem e jantar.",
+    "Dia 3 – 03/06/2026: Lisieux / Monte São Michel. Visita ao famoso monte medieval e ao Mosteiro Beneditino. Jantar e hospedagem.",
+    "Dia 4 – 04/06/2026: Monte São Michel / Tours. Continuação da viagem e city tour panorâmico em Tours.",
+    "Dia 5 – 05/06/2026: Tours / Rocamadour. Visita ao Santuário Mariano de Rocamadour, um dos mais antigos da França. Hospedagem e jantar.",
+    "Dia 6 – 06/06/2026: Rocamadour / Lourdes. Chegada a Lourdes e participação nas atividades religiosas. Jantar e hospedagem.",
+    "Dia 7 – 07/06/2026: Lourdes. Visita ao Santuário, Gruta das Aparições, Basílicas e possibilidade de banho nas piscinas. Tempo para devoções pessoais.",
+    "Dia 8 – 08/06/2026: Lourdes / Avignon. Viagem a Avignon, conhecida como a Cidade dos Papas. City tour e hospedagem.",
+    "Dia 9 – 09/06/2026: Avignon / La Salette. Visita ao Santuário de Nossa Senhora de La Salette, local da aparição de 1846. Hospedagem.",
+    "Dia 10 – 10/06/2026: La Salette / Ars / Lyon. Visita ao Santuário do Cura d'Ars (São João Maria Vianney). Chegada a Lyon. Hospedagem e jantar.",
+    "Dia 11 – 11/06/2026: Lyon / Paray-Le-Monial. Visita ao Santuário do Sagrado Coração de Jesus revelado a Santa Margarida Maria Alacoque.",
+    "Dia 12 – 12/06/2026: Paray-Le-Monial / Nevers / Paris. Visita ao corpo incorrupto de Santa Bernadette Soubirous em Nevers. Chegada a Paris. Hospedagem.",
+    "Dia 13 – 13/06/2026: Paris. City tour completo: Torre Eiffel (externo), Arco do Triunfo, Champs-Élysées, Sacré-Coeur e outros pontos.",
+    "Dia 14 – 14/06/2026: Paris. Visita à Capela da Medalha Milagrosa, local da aparição a Santa Catarina Labouré.",
+    "Dia 15 – 15/06/2026: Paris / Brasil. Traslado ao aeroporto e retorno ao Brasil.",
+    "Dia 16 – 16/06/2026: Chegada ao Brasil. Fim dos serviços."
+  ],
+  "incluso": [
+    "Bilhetes aéreos internacionais em classe econômica, para classe executiva consultar acréscimo (saída e retorno de Guarulhos/SP)",
+    "Taxas de embarque.",
+    "Consultar franquia de bagagem.",
+    "Hospedagem em hotéis categoria 4 estrelas, em quartos duplos com banheiro privativo (para apartamento individual, consultar acréscimo)",
+    "Alimentação: café da manhã e jantar, exceto em dias de voos e dias livres quando houver",
+    "Ônibus de turismo.",
+    "Guias locais e acompanhante.",
+    "Seguro saúde e bagagem - acréscimo para pessoas maiores de 64 anos"
+  ],
+  "nao_incluso": [
+    "Excesso de bagagem.",
+    "Despesas pessoais.",
+    "Ingressos não mencionados como incluídos.",
+    "Marcação antecipada de assentos.",
+    "Maleteiros."
+  ],
+  "preco": "R$ 26.980,00"
+},
