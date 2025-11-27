@@ -1,28 +1,20 @@
 from flask import Flask, render_template, redirect, url_for, abort
-from data import ROTEIROS_BY_ID, ROTEIROS_DB, SITE_CONFIG 
+from data import ROTEIROS_BY_ID, ROTEIROS_DB, SITE_CONFIG
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 
-# --- Configuração do Flask/Freezer para GitHub Pages ---
-# 1. Definir o nome do servidor (importante para url_for funcionar corretamente com subdiretórios)
+# Freezer / GitHub Pages config (apenas para referência durante freeze)
 app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
-
-
-# 2. Definir o Base URL com a barra final (CRÍTICO)
 app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova/'
-# --------------------------------------------------------
 
 # --- VARIÁVEIS DE CONTATO (E outras globais) ---
 CONTACT_INFO = {
     'phone': '(12) 3186-2600',
-    'whatsapp': '5567998927001', # Apenas números
-    
+    'whatsapp': '5567998927001',
+    'email': 'contato@seudominio.com'
 }
-# Juntar info de contato com outras configurações do SITE_CONFIG para uso global
-GLOBAL_VARS = {**CONTACT_INFO, **SITE_CONFIG} 
-# -----------------------------
+GLOBAL_VARS = {**CONTACT_INFO, **SITE_CONFIG}
 
-# Adiciona variáveis ao contexto de todos os templates
 @app.context_processor
 def inject_global_vars():
     return GLOBAL_VARS
@@ -30,35 +22,46 @@ def inject_global_vars():
 # Rota para a página inicial
 @app.route('/')
 def home():
-    # Use _external=True para que o Flask use o SERVER_NAME e FREEZER_BASE_URL para construir a URL
-    # mas o Freezer já deve cuidar disso.
     return render_template('home.html', roteiros=ROTEIROS_DB)
 
 # Rota para detalhes do roteiro
 @app.route('/roteiro/<int:id>/')
 def roteiro_detalhe(id):
-    # Usando o ID como string se as chaves do ROTEIROS_BY_ID forem strings (mais comum em JSON)
-    roteiro = ROTEIROS_BY_ID.get(str(id)) 
+    roteiro = ROTEIROS_BY_ID.get(str(id))
     if not roteiro:
         abort(404)
     return render_template('detalhe.html', roteiro=roteiro)
 
-# main.py
-# ...
-
-# Rota de redirecionamento para o contato (Ancora no Rodapé)
-# Mude de @app.route('/contato') para:
-@app.route('/contato/') # Salvar como arquivo .html explícito
+# Contato: cria página /contato/ que redireciona para home + âncora
+@app.route('/contato/')
 def contato():
-    # Redireciona para a home e força o scroll para a âncora do rodapé
     return redirect(url_for('home') + '#rodape-contato')
 
-# Mude de @app.route('/sobre') para:
-@app.route('/sobre/') # Salvar como arquivo .html explícito
+# Sobre: página /sobre/
+@app.route('/sobre/')
 def sobre():
-    return render_template('sobre.html', roteiros=ROTEIROS_DB) # Assumindo que sobre.html existe
+    return render_template('sobre.html', roteiros=ROTEIROS_DB)
 
-# Certifique-se de que todas as rotas mencionadas no base.html existam aqui!
+# Sitemap simples dinâmico (ajuda SEO e o freezer gera a página)
+@app.route('/sitemap.xml')
+def sitemap():
+    # Gera um sitemap básico com as URLs principais + roteiros
+    from flask import Response
+    base = app.config.get('FREEZER_BASE_URL', request.host_url)
+    urls = []
+    urls.append(base)
+    urls.append(base + 'sobre/')
+    urls.append(base + 'contato/')
+    for r in ROTEIROS_DB:
+        urls.append(base + f'roteiro/{r["id"]}/')
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    for u in urls:
+        xml += '  <url>\n'
+        xml += f'    <loc>{u}</loc>\n'
+        xml += '  </url>\n'
+    xml += '</urlset>'
+    return Response(xml, mimetype='application/xml')
 
 if __name__ == "__main__":
     app.run(debug=True)
