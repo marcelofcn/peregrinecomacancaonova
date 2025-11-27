@@ -94,7 +94,7 @@ def carregar_roteiros():
         lista.append(r)
 
     # Ordena por id para previsibilidade
-    lista.sort(key=lambda x: x['id'])
+    
     return lista
 
 # Exportados
