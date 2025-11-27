@@ -1,38 +1,43 @@
 from flask_frozen import Freezer
-from data import ROTEIROS_DB
+import shutil
+import os
 from main import app
+from data import ROTEIROS_DB
 
-# Configurações obrigatórias
+# Base URL completa para GitHub Pages (subdiretório)
 app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova/'
 app.config['FREEZER_DESTINATION'] = 'docs'
-app.config['FREEZER_RELATIVE_URLS'] = False
-app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
+# opcionalmente ajuste script name se precisar:
+# app.config['FREEZER_SCRIPT_NAME'] = '/peregrinecomacancaonova'
 
 freezer = Freezer(app)
 
-# ---------------------------
-# 🔥 GERAR DETALHES DOS ROTEIROS
-# ---------------------------
 @freezer.register_generator
 def roteiro_detalhe():
-    # ROTEIROS_DB é um dict: {'3': {...}, '8': {...}}
-    for id_str in ROTEIROS_DB.keys():
-        yield 'roteiro_detalhe', {'id': int(id_str)}
+    # ROTEIROS_DB é uma lista de dicts (cada um com 'id' int)
+    for r in ROTEIROS_DB:
+        # yield route name and params
+        yield 'roteiro_detalhe', {'id': r['id']}
 
-# ---------------------------
-# 🔥 GERAR PÁGINAS SOBRE E CONTATO
-# ---------------------------
 @freezer.register_generator
 def sobre():
-    yield 'sobre'   # sua rota é /sobre/
+    yield 'sobre', {}
 
 @freezer.register_generator
 def contato():
-    yield 'contato'  # sua rota é /contato/
-
-# ---------------------------
+    yield 'contato', {}
 
 if __name__ == "__main__":
     print("Iniciando o processo de congelamento (freezing)...")
+
+    # Remove a pasta docs antiga para evitar conflitos de diretório/arquivo
+    docs_path = os.path.join(os.path.dirname(__file__), 'docs')
+    if os.path.exists(docs_path):
+        print("Removendo pasta docs antiga...")
+        shutil.rmtree(docs_path)
+
+    # Cria pasta docs vazia
+    os.makedirs(docs_path, exist_ok=True)
+
     freezer.freeze()
-    print("✅ Congelamento concluído!")
+    print("✅ Congelamento concluído na pasta 'docs'!")
