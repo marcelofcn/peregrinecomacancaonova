@@ -1,9 +1,39 @@
 {% extends "base.html" %}
+
 {% block title %}Página não encontrada - {{ site_name }}{% endblock %}
+
 {% block content %}
-<div class="container mx-auto px-4 py-24 text-center">
-    <h1 class="text-6xl font-bold text-cancao-blue mb-4">404</h1>
-    <p class="text-xl text-gray-700 mb-6">Ops — a página que você procurou não foi encontrada.</p>
-    <a href="{{ url_for('home') }}" class="bg-cancao-blue text-white px-6 py-3 rounded-lg">Voltar para Início</a>
+<div class="container mx-auto px-4 py-20 text-center">
+    <div class="max-w-2xl mx-auto">
+        <div class="mb-8">
+            <i data-lucide="alert-circle" class="w-24 h-24 mx-auto text-cancao-blue"></i>
+        </div>
+        
+        <h1 class="text-6xl font-bold text-gray-900 mb-4">404</h1>
+        <h2 class="text-3xl font-bold text-gray-700 mb-6">Página não encontrada</h2>
+        
+        <p class="text-gray-600 mb-8 text-lg">
+            Desculpe, a página que você está procurando não existe ou foi movida.
+        </p>
+        
+        <div class="space-x-4">
+            <a href="{{ url_for('home') }}" 
+               class="inline-block bg-cancao-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                <i data-lucide="home" class="w-5 h-5 inline mr-2"></i>
+                Voltar para Início
+            </a>
+            
+            <a href="{{ url_for('home') }}#roteiros" 
+               class="inline-block bg-gray-200 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
+                Ver Roteiros
+            </a>
+        </div>
+    </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    lucide.createIcons();
+</script>
 {% endblock %}
