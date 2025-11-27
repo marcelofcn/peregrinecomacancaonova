@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, abort
+from flask import Flask, render_template, redirect, url_for, abort, request
 from data import ROTEIROS_BY_ID, ROTEIROS_DB, SITE_CONFIG
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
