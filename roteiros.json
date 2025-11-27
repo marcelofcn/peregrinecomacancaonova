@@ -43,8 +43,7 @@
       "Maleteiros."
     ],
     "preco": "R$ 26.980,00"
-  }
-},
+  },
 "3": {
   "id": 3,
   "categoria": "espiritualidade",
@@ -88,8 +87,7 @@
       "Maleteiros."
     ],
     "preco": "R$ 26.980,00"
-  }
-},
+  },
 "23": {
   "id": 23,
   "categoria": "espiritualidade",
@@ -131,8 +129,7 @@
       "Maleteiros."
     ],
     "preco": "R$ 25.980,00"
-  }
-},
+  },
 "8": {
   "id": 8,
   "categoria": "espiritualidade",
@@ -217,4 +214,4 @@
     "Maleteiros."
   ],
   "preco": "R$ 26.980,00"
-},
+}
