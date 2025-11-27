@@ -20,8 +20,8 @@ def roteiro_detalhe():
 
 
 @freezer.register_generator
-def sobre():
-    yield 'sobre'
+def contato():
+    yield 'contato'
 
 
 if __name__ == "__main__":
