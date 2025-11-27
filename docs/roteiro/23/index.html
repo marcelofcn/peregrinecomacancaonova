@@ -3,127 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Itália - Abril 20 - Canção Nova Viagens</title>
+    <meta name="description" content="Roteiros de peregrinação, fé e espiritualidade — conheça nossos destinos e programe sua próxima viagem de fé.">
+    <title>Itália - Abril 20 - Peregrine com a Canção Nova</title>
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:site_name" content="Peregrine com a Canção Nova" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Canonical (dynamic with FREEZER_BASE_URL if available) -->
     
+    <link rel="canonical" href="https://marcelofcn.github.io/peregrinecomacancaonova/roteiro/23/" />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .bg-cancao-blue {
-            background-color: #0072BC;
-        }
-        
-        .text-cancao-blue {
-            color: #0072BC;
-        }
-        
-        .hover-cancao-blue:hover {
-            background-color: #005a9c;
-        }
-        
-        .border-cancao-blue {
-            border-color: #0072BC;
-        }
-        
-        /* Animações suaves */
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .bg-cancao-blue { background-color: #0072BC; }
+        .text-cancao-blue { color: #0072BC; }
+        .hover-cancao-blue:hover { background-color: #005a9c; }
+        .border-cancao-blue { border-color: #0072BC; }
+        .fade-in { animation: fadeIn 0.45s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        html { scroll-behavior: smooth; }
     </style>
+
     
-    
+<style>
+/* pequenas customizações */
+</style>
+
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
                 <a href="/peregrinecomacancaonova/" class="flex items-center gap-3">
-                    <img src="/peregrinecomacancaonova/static/img/logo.jpeg" 
-                         alt="Canção Nova" 
-                         class="h-12"
-                         onerror="this.style.display='none'">
+                    <img src="/peregrinecomacancaonova/static/img/logo.jpeg" alt="Logo" class="h-12" onerror="this.style.display='none'">
                     <div>
-                        <h1 class="text-xl font-bold text-cancao-blue">Canção Nova Viagens</h1>
-                        <p class="text-xs text-gray-600">Operador: CN Tur</p>
+                        <h1 class="text-xl font-bold text-cancao-blue">Peregrine com a Canção Nova</h1>
+                        <p class="text-xs text-gray-600">Peregrine - Operadora de Viagens</p>
                     </div>
                 </a>
-                
                 <nav class="hidden md:flex gap-6">
-                    <a href="/peregrinecomacancaonova/" class="text-gray-700 hover:text-cancao-blue transition">Início</a>
-                    <a href="/peregrinecomacancaonova/#roteiros" class="text-gray-700 hover:text-cancao-blue transition">Roteiros</a>
-                    <a href="/peregrinecomacancaonova/sobre" class="text-gray-700 hover:text-cancao-blue transition">Sobre</a>
-                    <a href="/peregrinecomacancaonova/contato" class="text-gray-700 hover:text-cancao-blue transition">Contato</a>
+                    <a href="/peregrinecomacancaonova/" class="text-gray-700 hover:text-cancao-blue">Início</a>
+                    <a href="/peregrinecomacancaonova/#roteiros" class="text-gray-700 hover:text-cancao-blue">Roteiros</a>
+                    <a href="/peregrinecomacancaonova/sobre/" class="text-gray-700 hover:text-cancao-blue">Sobre</a>
+                    <a href="/peregrinecomacancaonova/contato/" class="text-gray-700 hover:text-cancao-blue">Contato</a>
                 </nav>
-                
                 <button id="menuBtn" class="md:hidden text-cancao-blue">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
-            
-            <!-- Mobile Menu -->
+
             <nav id="mobileMenu" class="md:hidden mt-4 hidden flex-col gap-2 pb-2">
                 <a href="/peregrinecomacancaonova/" class="text-gray-700 hover:text-cancao-blue py-2">Início</a>
                 <a href="/peregrinecomacancaonova/#roteiros" class="text-gray-700 hover:text-cancao-blue py-2">Roteiros</a>
-                <a href="/peregrinecomacancaonova/sobre" class="text-gray-700 hover:text-cancao-blue py-2">Sobre</a>
-                <a href="/peregrinecomacancaonova/contato" class="text-gray-700 hover:text-cancao-blue py-2">Contato</a>
+                <a href="/peregrinecomacancaonova/sobre/" class="text-gray-700 hover:text-cancao-blue py-2">Sobre</a>
+                <a href="/peregrinecomacancaonova/contato/" class="text-gray-700 hover:text-cancao-blue py-2">Contato</a>
             </nav>
         </div>
     </header>
-    
-    <!-- Content -->
+
     <main class="pt-24">
         
 <div class="fade-in">
     <section class="relative h-96 bg-gray-900">
         <div class="absolute inset-0">
-            <img src="/peregrinecomacancaonova/static/img/img23.jpg" 
-                 alt="Itália - Abril 20"
-                 class="w-full h-full object-cover opacity-60"
-                 onerror="this.src='https://img.unsplash.com/photo-1464207687429-7505649dae38?w=1200&q=80'">
+            <img src="/peregrinecomacancaonova/static/img/img23.jpg" alt="Itália - Abril 20" class="w-full h-full object-cover opacity-60">
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
         <div class="container mx-auto px-4 h-full flex items-end pb-12 relative z-10">
             <div class="text-white">
-                <div class="flex items-center gap-2 mb-4">
-                    <a href="/peregrinecomacancaonova/" class="hover:underline">Início</a>
-                    <span>/</span>
-                    <a href="/peregrinecomacancaonova/#roteiros" class="hover:underline">Roteiros</a>
-                    <span>/</span>
+                <div class="flex items-center gap-2 mb-4 text-sm">
+                    <a href="/peregrinecomacancaonova/" class="hover:underline">Início</a><span>/</span>
+                    <a href="/peregrinecomacancaonova/#roteiros" class="hover:underline">Roteiros</a><span>/</span>
                     <span class="font-light">Itália - Abril 20</span>
                 </div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">Itália - Abril 20</h1>
                 <div class="flex flex-wrap gap-4">
-                    <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2">
-                        <i data-lucide="clock" class="w-5 h-5"></i>
-                        12 dias
-                    </span>
-                    <span class="bg-cancao-blue px-4 py-2 rounded-lg font-semibold">
-                        A partir de R$ 25.980,00
-                    </span>
+                    <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2">12 dias</span>
+                    <span class="bg-cancao-blue px-4 py-2 rounded-lg font-semibold">A partir de R$ 25.980,00</span>
                 </div>
             </div>
         </div>
@@ -132,60 +99,52 @@
     <div class="container mx-auto px-4 py-12">
         <div class="grid lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 space-y-8">
-                
                 <section class="bg-white rounded-xl shadow-lg p-8">
                     <h2 class="text-2xl font-bold text-cancao-blue mb-4">Sobre este Roteiro</h2>
-                    <p class="text-gray-700 leading-relaxed">
-                        Participe desta peregrinação inesquecível: **Itália - Abril 20**,
-                        acompanhada por **Diac Renné Viana e Pitter di Laura - Canção Nova**.
-                        Datas: **07/04/2026 a 18/04/2026**.
-                    </p>
+                    <p class="text-gray-700 leading-relaxed">Participe desta peregrinação: <strong>Itália - Abril 20</strong>, acompanhada por <strong>Diac Renné Viana e Pitter di Laura - Canção Nova</strong>. Datas: <strong>07/04/2026 a 18/04/2026</strong>.</p>
                 </section>
 
                 <section class="bg-white rounded-xl shadow-lg p-8">
-                    <h2 class="text-2xl font-bold text-cancao-blue mb-6 flex items-center gap-2">
-                        <i data-lucide="star" class="w-6 h-6"></i>
-                        Destaques e o que está Incluído
-                    </h2>
+                    <h2 class="text-2xl font-bold text-cancao-blue mb-6">Destaques e Inclui</h2>
                     <div class="grid md:grid-cols-2 gap-4">
                         
                         <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
                             <span class="text-gray-700">Bilhetes aéreos internacionais em classe econômica (acréscimo para executiva)</span>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
                             <span class="text-gray-700">Taxas de embarque</span>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
                             <span class="text-gray-700">Consultar franquia de bagagem disponível para o grupo</span>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
                             <span class="text-gray-700">Hospedagem em hotéis categoria 4 estrelas, quartos duplos com banheiro privativo (acréscimo para individual)</span>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
                             <span class="text-gray-700">Alimentação: café da manhã e jantar (exceto em dias de voos e dias livres)</span>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
                             <span class="text-gray-700">Ônibus de luxo com ar-condicionado e aquecedor para todos os traslados do roteiro</span>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
                             <span class="text-gray-700">Guias locais e acompanhante Loja São José saindo do Brasil</span>
                         </div>
                         
                         <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
                             <span class="text-gray-700">Seguro saúde e bagagem (acréscimo de R$380,00 para maiores de 64 anos)</span>
                         </div>
                         
@@ -193,333 +152,208 @@
                 </section>
 
                 <section class="bg-white rounded-xl shadow-lg p-8">
-                    <h2 class="text-2xl font-bold text-cancao-blue mb-6 flex items-center gap-2">
-                        <i data-lucide="map-pin" class="w-6 h-6"></i>
-                        Itinerário Dia a Dia
-                    </h2>
+                    <h2 class="text-2xl font-bold text-cancao-blue mb-6">Itinerário Dia a Dia</h2>
                     <div class="space-y-6">
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 1
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 1
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 1
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">07/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 2
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 2
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 10
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">16/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 3
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 3
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 11
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">17/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 4
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 4
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 12
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">18/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 5
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 5
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 2
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">08/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 6
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 6
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 3
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">09/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 7
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 7
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 4
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">10/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 8
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 8
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 5
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">11/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 9
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 9
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 6
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">12/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 10
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 10
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 7
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">13/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 11
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 11
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 8
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">14/04/2026</h3>
+                            </div>
+                        </div>
                         
-                            
-                            <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                                <div class="flex-shrink-0">
-                                    <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                        Dia 12
-                                    </div>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-bold text-gray-900 mb-1">
-                                        Dia 12
-                                    </h3>
+                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
+                            <div class="flex-shrink-0">
+                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
+                                    Dia 9
                                 </div>
                             </div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">15/04/2026</h3>
+                            </div>
+                        </div>
                         
                     </div>
                 </section>
 
                 <div class="grid md:grid-cols-2 gap-6">
                     <section class="bg-white rounded-xl shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-green-600 mb-4 flex items-center gap-2">
-                            <i data-lucide="check" class="w-5 h-5"></i>
-                            Inclui
-                        </h3>
+                        <h3 class="text-xl font-bold text-green-600 mb-4"><i data-lucide="check" class="w-5 h-5"></i> Inclui</h3>
                         <ul class="space-y-2">
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Bilhetes aéreos internacionais em classe econômica (acréscimo para executiva)</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>Bilhetes aéreos internacionais em classe econômica (acréscimo para executiva)</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Taxas de embarque</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>Taxas de embarque</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Consultar franquia de bagagem disponível para o grupo</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>Consultar franquia de bagagem disponível para o grupo</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Hospedagem em hotéis categoria 4 estrelas, quartos duplos com banheiro privativo (acréscimo para individual)</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>Hospedagem em hotéis categoria 4 estrelas, quartos duplos com banheiro privativo (acréscimo para individual)</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Alimentação: café da manhã e jantar (exceto em dias de voos e dias livres)</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>Alimentação: café da manhã e jantar (exceto em dias de voos e dias livres)</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Ônibus de luxo com ar-condicionado e aquecedor para todos os traslados do roteiro</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>Ônibus de luxo com ar-condicionado e aquecedor para todos os traslados do roteiro</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Guias locais e acompanhante Loja São José saindo do Brasil</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>Guias locais e acompanhante Loja São José saindo do Brasil</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="check" class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Seguro saúde e bagagem (acréscimo de R$380,00 para maiores de 64 anos)</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>Seguro saúde e bagagem (acréscimo de R$380,00 para maiores de 64 anos)</li>
                             
                         </ul>
                     </section>
 
                     <section class="bg-white rounded-xl shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-red-600 mb-4 flex items-center gap-2">
-                            <i data-lucide="x" class="w-5 h-5"></i>
-                            Não Inclui
-                        </h3>
+                        <h3 class="text-xl font-bold text-red-600 mb-4"><i data-lucide="x" class="w-5 h-5"></i> Não Inclui</h3>
                         <ul class="space-y-2">
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="x" class="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Excesso de bagagem nos aviões</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="x" class="w-4 h-4 text-red-600"></i>Excesso de bagagem nos aviões</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="x" class="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Despesas pessoais: bebidas, lanches, telefonemas, consumo de frigobar, etc.</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="x" class="w-4 h-4 text-red-600"></i>Despesas pessoais: bebidas, lanches, telefonemas, consumo de frigobar, etc.</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="x" class="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Ingressos e traslados para visitas não especificadas no roteiro</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="x" class="w-4 h-4 text-red-600"></i>Ingressos e traslados para visitas não especificadas no roteiro</li>
                             
-                            <li class="flex items-start gap-2 text-sm text-gray-700">
-                                <i data-lucide="x" class="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5"></i>
-                                <span>Marcação antecipada de assentos nos voos (realizada apenas no check-in da companhia aérea)</span>
-                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="x" class="w-4 h-4 text-red-600"></i>Marcação antecipada de assentos nos voos (realizada apenas no check-in da companhia aérea)</li>
                             
                         </ul>
                     </section>
                 </div>
-
-                </div>
+            </div>
 
             <div class="lg:col-span-1">
                 <div class="sticky top-28 space-y-6">
                     <div class="bg-white rounded-xl shadow-lg p-6">
                         <div class="text-center mb-6">
                             <p class="text-gray-600 text-sm mb-2">Valor Total</p>
-                            <p class="text-4xl font-bold text-cancao-blue">
-                                R$ 25.980,00
-                            </p>
+                            <p class="text-4xl font-bold text-cancao-blue">R$ 25.980,00</p>
                             <p class="text-gray-500 text-sm mt-1">por pessoa em apto duplo</p>
                         </div>
-
                         <div class="space-y-4 mb-6">
-                            <div class="flex items-center gap-3 text-gray-700">
-                                <i data-lucide="clock" class="w-5 h-5 text-cancao-blue"></i>
-                                <span class="text-sm">12 dias</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-700">
-                                <i data-lucide="user-check" class="w-5 h-5 text-cancao-blue"></i>
-                                <span class="text-sm">Direção Espiritual: **Diac Renné Viana e Pitter di Laura - Canção Nova**</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-gray-700">
-                                <i data-lucide="calendar" class="w-5 h-5 text-cancao-blue"></i>
-                                <span class="text-sm">Data: 07/04/2026 a 18/04/2026</span>
-                            </div>
+                            <div class="flex items-center gap-3 text-gray-700"><i data-lucide="clock" class="w-5 h-5 text-cancao-blue"></i><span class="text-sm">12 dias</span></div>
+                            <div class="flex items-center gap-3 text-gray-700"><i data-lucide="user-check" class="w-5 h-5 text-cancao-blue"></i><span class="text-sm">Direção Espiritual: Diac Renné Viana e Pitter di Laura - Canção Nova</span></div>
+                            <div class="flex items-center gap-3 text-gray-700"><i data-lucide="calendar" class="w-5 h-5 text-cancao-blue"></i><span class="text-sm">Data: 07/04/2026 a 18/04/2026</span></div>
                         </div>
 
-                        <a href="/peregrinecomacancaonova/contato?roteiro=23" 
-                           class="block w-full bg-cancao-blue hover-cancao-blue text-white text-center py-3 rounded-lg font-semibold transition">
-                            Solicitar Reserva
-                        </a>
+                        <a href="/peregrinecomacancaonova/contato/?roteiro=23" class="block w-full bg-cancao-blue text-white text-center py-3 rounded-lg font-semibold">Garante a sua Presença!</a>
                     </div>
-                    <div class="bg-cancao-blue text-white rounded-xl p-6">
-    <h3 class="text-lg font-bold mb-4">Dúvidas?</h3>
-    <p class="text-sm mb-4 text-blue-100">Entre em contato conosco!</p>
-    <div class="space-y-3 text-sm">
-        <a href="tel:(12) 3186-2600" class="flex items-center gap-2 hover:text-blue-200 transition">
-            <i data-lucide="phone" class="w-4 h-4"></i>
-            Ligar: (12) 3186-2600
-        </a>
-        <a href="https://wa.me/5512999999999?text=Olá! Tenho interesse no roteiro Itália - Abril 20 (ID: 23)" target="_blank" class="flex items-center gap-2 hover:text-blue-200 transition font-bold">
-            <i data-lucide="message-circle" class="w-4 h-4"></i>
-            WhatsApp
-        </a>
-        <a href="mailto:viagenscn@cancaonova.com" class="flex items-center gap-2 hover:text-blue-200 transition">
-            <i data-lucide="mail" class="w-4 h-4"></i>
-            E-mail
-        </a>
-    </div>
-</div>
 
                     <div class="bg-cancao-blue text-white rounded-xl p-6">
                         <h3 class="text-lg font-bold mb-4">Dúvidas?</h3>
                         <p class="text-sm mb-4 text-blue-100">Entre em contato conosco!</p>
                         <div class="space-y-3 text-sm">
-                            <a href="tel:(12) 3186-2600" class="flex items-center gap-2 hover:text-blue-200 transition">
-                                <i data-lucide="phone" class="w-4 h-4"></i>
-                                (12) 3186-2600
-                            </a>
-                            <a href="mailto:viagenscn@cancaonova.com" class="flex items-center gap-2 hover:text-blue-200 transition">
-                                <i data-lucide="mail" class="w-4 h-4"></i>
-                                viagenscn@cancaonova.com
-                            </a>
-                            <a href="https://wa.me/5512999999999" target="_blank" class="flex items-center gap-2 hover:text-blue-200 transition">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                WhatsApp
-                            </a>
+                            <a href="tel:(12) 3186-2600" class="flex items-center gap-2 hover:text-blue-200"><i data-lucide="phone" class="w-4 h-4"></i>(12) 3186-2600</a>
+                            <a href="https://wa.me/5567998927001" target="_blank" class="flex items-center gap-2 hover:text-blue-200"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -531,104 +365,58 @@
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-4">Pronto para esta Experiência?</h2>
             <p class="text-xl mb-8 text-blue-100">Venha peregrinar com a Canção Nova!</p>
-            <a href="/peregrinecomacancaonova/contato?roteiro=23" 
-               class="inline-block bg-white text-cancao-blue px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition">
-                Solicitar Orçamento
-            </a>
+            <a href="/peregrinecomacancaonova/contato/?roteiro=23" class="inline-block bg-white text-cancao-blue px-8 py-3 rounded-lg font-semibold">Solicitar Orçamento</a>
         </div>
     </section>
 </div>
 
     </main>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 mt-16">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <p class="text-gray-400 text-sm">
-                        
-                    </p>
-                </div>
-                </main>
 
-</main>
-
-<footer id="rodape-contato" class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
-        <div>
-            <span class="text-2xl font-bold text-cancao-blue">Canção Nova Viagens</span>
-            <p class="text-sm text-gray-400 mt-4">Sua agência de turismo religioso. Levamos você aos santuários do mundo com fé e segurança.</p>
+    <footer id="rodape-contato" class="bg-gray-900 text-white py-12 mt-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <span class="text-2xl font-bold text-cancao-blue">Peregrine com a Canção Nova</span>
+                <p class="text-sm text-gray-400 mt-4">Sua agência de turismo religioso.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Navegação</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="/peregrinecomacancaonova/" class="hover:text-white">Início</a></li>
+                    <li><a href="/peregrinecomacancaonova/#roteiros" class="hover:text-white">Roteiros</a></li>
+                    <li><a href="/peregrinecomacancaonova/contato/" class="hover:text-white">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Fale Conosco</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-5 h-5 text-cancao-blue"></i>
+                        <a href="tel:(12) 3186-2600" class="hover:text-white">(12) 3186-2600</a>
+                    </li>
+                    <li class="flex items-center gap-3 font-bold bg-green-500/20 p-2 rounded">
+                        <i data-lucide="message-circle" class="w-5 h-5 text-green-400"></i>
+                        <a href="https://wa.me/5567998927001" target="_blank" class="hover:text-white">WhatsApp</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="mail" class="w-5 h-5 text-cancao-blue"></i>
+                        <a href="mailto:contato@seudominio.com" class="hover:text-white">contato@seudominio.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Nossa Base</h4>
+                <p class="text-sm text-gray-400">Rua Dom Aquino, 1937 - Centro<br>Campo Grande - MS</p>
+            </div>
         </div>
-
-        <div>
-            <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Navegação</h4>
-            <ul class="space-y-2 text-sm text-gray-400">
-                <li><a href="/peregrinecomacancaonova/" class="hover:text-white transition">Início</a></li>
-                <li><a href="/peregrinecomacancaonova/#roteiros" class="hover:text-white transition">Roteiros</a></li>
-                <li><a href="/peregrinecomacancaonova/contato" class="hover:text-white transition">Fale Conosco</a></li>
-            </ul>
+        <div class="container mx-auto px-4 mt-8 pt-4 border-t border-gray-700 text-center text-sm text-gray-500">
+           &copy; 2025 Peregrine com a Canção Nova. Todos os direitos reservados.
         </div>
+    </footer>
 
-        <div>
-            <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Fale Conosco</h4>
-            <ul class="space-y-3 text-sm">
-                <li class="flex items-center gap-3">
-                    <i data-lucide="phone" class="w-5 h-5 text-cancao-blue"></i>
-                    <a href="tel:(12) 3186-2600" class="hover:text-white transition">(12) 3186-2600</a>
-                </li>
-                <li class="flex items-center gap-3 font-bold bg-green-500/20 p-2 rounded">
-                    <i data-lucide="message-circle" class="w-5 h-5 text-green-400"></i>
-                    <a href="https://wa.me/5512999999999" target="_blank" class="hover:text-white transition">Chamar no **WhatsApp**</a>
-                </li>
-                <li class="flex items-center gap-3">
-                    <i data-lucide="mail" class="w-5 h-5 text-cancao-blue"></i>
-                    <a href="mailto:viagenscn@cancaonova.com" class="hover:text-white transition">viagenscn@cancaonova.com</a>
-                </li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Nossa Base</h4>
-            <p class="text-sm text-gray-400">
-                Av. João Paulo II, S/N - Alto da Bela Vista<br>
-                Cachoeira Paulista - SP
-            </p>
-        </div>
-    </div>
-    <div class="container mx-auto px-4 mt-8 pt-4 border-t border-gray-700 text-center text-sm text-gray-500">
-        &copy; 2025 Canção Nova Viagens. Todos os direitos reservados.
-    </div>
-</footer>
-                <div>
-                    <h4 class="font-bold mb-4">Links Rápidos</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="/peregrinecomacancaonova/#roteiros" class="hover:text-white transition">Roteiros</a></li>
-                        <li><a href="/peregrinecomacancaonova/sobre" class="hover:text-white transition">Sobre</a></li>
-                        <li><a href="/peregrinecomacancaonova/contato" class="hover:text-white transition">Contato</a></li>
-                        <li><a href="https://cancaonova.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Site Canção Nova</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Operador Logístico</h4>
-                    <p class="text-gray-400 text-sm mb-2">CN Tur</p>
-                    <p class="text-gray-400 text-sm flex items-center gap-2">
-                        <i data-lucide="phone" class="w-4 h-4"></i>
-                        (12) 3186-2600
-                    </p>
-                    <p class="text-gray-400 text-sm flex items-center gap-2 mt-2">                 
-                       
-    
-    <!-- Scripts -->
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
-        
-        // Mobile menu toggle
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-        
         if (menuBtn && mobileMenu) {
             menuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
@@ -636,12 +424,10 @@
             });
         }
     </script>
-    
+
     
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        lucide.createIcons();
-    });
+    document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
 </script>
 
 </body>
