@@ -47,23 +47,40 @@ def sobre():
 # Sitemap simples dinâmico (ajuda SEO e o freezer gera a página)
 @app.route('/sitemap.xml')
 def sitemap():
-    # Gera um sitemap básico com as URLs principais + roteiros
-    from flask import Response
+    from datetime import datetime
+
     base = app.config.get('FREEZER_BASE_URL', request.host_url)
-    urls = []
-    urls.append(base)
-    urls.append(base + 'sobre/')
-    urls.append(base + 'contato/')
+    pages = []
+
+    # Página inicial
+    pages.append({
+        'loc': base,
+        'lastmod': datetime.utcnow().date().isoformat()
+    })
+
+    # Roteiros
     for r in ROTEIROS_DB:
-        urls.append(base + f'roteiro/{r["id"]}/')
-    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    for u in urls:
-        xml += '  <url>\n'
-        xml += f'    <loc>{u}</loc>\n'
-        xml += '  </url>\n'
-    xml += '</urlset>'
-    return Response(xml, mimetype='application/xml')
+        pages.append({
+            'loc': f"{base}roteiro/{r['id']}/",
+            'lastmod': datetime.utcnow().date().isoformat()
+        })
+
+    # Sobre
+    pages.append({
+        'loc': f"{base}sobre/",
+        'lastmod': datetime.utcnow().date().isoformat()
+    })
+
+    # Contato
+    pages.append({
+        'loc': f"{base}contato/",
+        'lastmod': datetime.utcnow().date().isoformat()
+    })
+
+    xml = render_template('sitemap.xml', pages=pages)
+
+    return app.response_class(xml, mimetype='application/xml')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
