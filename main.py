@@ -6,6 +6,8 @@ app = Flask(__name__, static_folder="static", template_folder="templates")
 # Freezer / GitHub Pages config (apenas para referência durante freeze)
 app.config['FREEZER_REMOVE_EXTRA_FILES'] = False
 app.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova/'
+app.config['SITE_YEAR'] = 2025
+
 
 # --- VARIÁVEIS DE CONTATO (E outras globais) ---
 CONTACT_INFO = {
