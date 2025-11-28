@@ -3,93 +3,40 @@ name: Build and Deploy Frozen Flask
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:  # Permite rodar manualmente
-
-permissions:
-  contents: write  # CRÍTICO: permissão para fazer push
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Necessário para preservar histórico
-      
+
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-      
+
       - name: Instalar dependências
+        working-directory: ./
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install Frozen-Flask
-      
-      - name: Limpar pasta docs anterior
-        run: |
-          echo "🗑️  Limpando docs anterior..."
-          rm -rf docs/
-          echo "✅ Limpeza concluída"
-      
-      - name: Gerar site estático com Frozen Flask
-        run: |
-          echo "🚀 Iniciando freeze..."
-          python freeze.py
-          echo ""
-          echo "📊 Verificação rápida:"
-          ls -lh docs/ | head -10
-      
-      - name: Verificar se roteiros foram gerados
-        run: |
-          echo "🔍 Verificando index.html..."
-          if [ -f docs/index.html ]; then
-            echo "✅ index.html existe ($(wc -c < docs/index.html) bytes)"
-            
-            # Verifica se tem a mensagem de erro
-            if grep -q "Nenhum roteiro disponível" docs/index.html; then
-              echo "⚠️  AVISO: HTML contém 'Nenhum roteiro disponível'"
-            else
-              echo "✅ HTML parece OK (sem mensagem de erro)"
-            fi
-          else
-            echo "❌ ERRO: index.html NÃO FOI GERADO!"
-            exit 1
-          fi
-          
-          echo ""
-          echo "🔍 Verificando páginas de roteiros..."
-          if [ -d docs/roteiro ]; then
-            roteiro_count=$(find docs/roteiro -name "index.html" | wc -l)
-            echo "✅ Páginas de roteiros geradas: $roteiro_count"
-          else
-            echo "⚠️  Pasta docs/roteiro não existe"
-          fi
-      
-      - name: Garantir .nojekyll
-        run: echo "" > docs/.nojekyll
-      
-      - name: Criar arquivo de build info
-        run: |
-          echo "Build: $(date -u +%Y-%m-%d\ %H:%M:%S\ UTC)" > docs/build-info.txt
-          echo "Commit: ${{ github.sha }}" >> docs/build-info.txt
-          echo "Branch: ${{ github.ref_name }}" >> docs/build-info.txt
-      
-      - name: Commit e Push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/
-          
-          if git diff --staged --quiet; then
-            echo "⚠️  Nada novo para commitar"
-          else
-            git commit -m "🚀 Deploy automático: $(date -u +%Y-%m-%d\ %H:%M)"
-            git push
-            echo "✅ Push realizado com sucesso!"
-          fi
 
-# Deploy corrigido em 28/11/2025 15h25
+      - name: Gerar site estático com Frozen Flask
+        working-directory: ./
+        run: python freeze.py
+
+      - name: Adicionar arquivo .nojekyll (garantia)
+        run: echo > docs/.nojekyll
+
+      - name: Commit & Push dos arquivos gerados
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add docs
+          git commit -m "Atualiza site estático [auto]" || echo "Nada novo para commitar"
+          git push
+
+# Deploy corrigido em 25/11/2025 6h27# Deploy corrigido em 28/11/2025 16h45
