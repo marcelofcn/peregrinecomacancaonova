@@ -92,4 +92,4 @@ jobs:
             echo "✅ Push realizado com sucesso!"
           fi
 
-# Deploy corrigido em 28/11/2025 08h55
+# Deploy corrigido em 28/11/2025 09h00
