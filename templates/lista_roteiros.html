@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ titulo }} — São José Peregrinações{% endblock %}
+
+{% block content %}
+<section class="container">
+  <nav class="breadcrumb">
+  <a href="{{ BASE_PATH }}/">← Início</a>
+  <span class="separator">›</span>
+  <span class="current">{{ titulo }}</span>
+  </nav>
+
+
+  <h2>{{ titulo }}</h2>
+  
+  {% if roteiros %}
+    <div class="cards">
+      {% for r in roteiros %}
+        <article class="card">
+          <img src="{{ url_for('static', filename='img/' + r.img) }}" alt="{{ r.title }}">
+          <h3>{{ r.title }}</h3>
+          <p><strong>Período:</strong> {{ r.start }} a {{ r.end }}</p>
+          <p><strong>Diretor:</strong> {{ r.director }}</p>
+          <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ r.id }}/">Ver detalhes</a>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <p>Nenhum roteiro disponível no momento.</p>
+      <p>Entre em contato para mais informações!</p>
+      <a class="btn" href="#contato">Falar conosco</a>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}
