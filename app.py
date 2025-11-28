@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, render_template, send_from_directory, url_for, abort
+from flask import Flask, render_template, send_from_directory, abort
 import os, json
 
 app = Flask(__name__)
@@ -7,17 +7,23 @@ app = Flask(__name__)
 # Caminho base usado no GitHub Pages
 BASE_PATH = "/peregrinecomacancaonova"
 app.config['FREEZER_BASE_URL'] = f"https://marcelofcn.github.io{BASE_PATH}"
+app.config['FREEZER_DESTINATION'] = "docs"
 app.jinja_env.globals['BASE_PATH'] = BASE_PATH
-app.config['FREEZER_DESTINATION'] = 'docs'
 
-# Corrige bug do Frozen-Flask + Flask 3.x
-@app.route('/static/<path:filename>')
+# ==================== ARQUIVOS ESTÁTICOS ====================
+
+# A versão ANTERIOR criava um /static/ fora do BASE_PATH (ruim!)
+# Agora a rota é *correta* para GitHub Pages.
+@app.route(f"{BASE_PATH}/static/<path:filename>")
 def static_files(filename):
-    return send_from_directory(app.static_folder, filename)
+    return send_from_directory("static", filename)
 
-# Carregar base de dados
+
+# ==================== CARREGAR BANCO ====================
+
 with open("roteiros.json", "r", encoding="utf-8") as f:
     ROTEIROS_DB = json.load(f)
+
 
 # ==================== ROTAS ====================
 
@@ -49,19 +55,14 @@ def home():
                            roteiros_espirituais=roteiros_espirituais)
 
 
-# LISTA DE ROTEIROS (MENU “Roteiros”)
 @app.route(f"{BASE_PATH}/roteiros/")
 def lista_roteiros():
     roteiros = list(ROTEIROS_DB.values())
-
-    return render_template(
-        "lista_roteiros.html",
-        titulo="Roteiros",
-        roteiros=roteiros
-    )
+    return render_template("lista_roteiros.html",
+                           titulo="Roteiros",
+                           roteiros=roteiros)
 
 
-# DETALHES DO ROTEIRO
 @app.route(f"{BASE_PATH}/roteiro/<int:roteiro_id>/")
 def roteiro_detalhe(roteiro_id):
     roteiro = ROTEIROS_DB.get(str(roteiro_id))
@@ -70,12 +71,14 @@ def roteiro_detalhe(roteiro_id):
     return render_template("detalhe.html", roteiro=roteiro)
 
 
-# ERRO 404
+# ==================== ERRO 404 ====================
+
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+    return render_template("404.html"), 404
 
 
-# APP
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+# ==================== APP ====================
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5000)
