@@ -9,8 +9,7 @@
     <a href="{{ BASE_PATH }}/">Inicio</a>
     <span class="separator">›</span>
 
-    <!-- Roteiros - sem acento no menu -->
-    <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/">Cancao Nova</a>
+    <a href="{{ BASE_PATH }}/roteiros/">Roteiros</a>
 
     <span class="separator">›</span>
     <span class="current">{{ roteiro.title }}</span>
@@ -29,7 +28,9 @@
 
   <!-- IMAGEM -->
   <div class="detalhe-image-container">
-    <img src="{{ BASE_PATH }}/static/img/{{ roteiro.img }}" alt="{{ roteiro.title }}" class="img-detalhe">
+    <img src="{{ BASE_PATH }}/static/img/{{ roteiro.img }}"
+         alt="{{ roteiro.title }}"
+         class="img-detalhe">
   </div>
 
   <!-- INFO GRID -->
