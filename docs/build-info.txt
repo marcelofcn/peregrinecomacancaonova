@@ -1,3 +1,0 @@
-Build: 2025-11-28 19:34:35 UTC
-Commit: 4c07dadabeacb6a830948c7a5d13feb83ccfb47e
-Branch: main

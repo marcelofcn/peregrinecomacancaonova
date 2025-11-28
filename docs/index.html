@@ -1,170 +1,316 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Roteiros de peregrinação, fé e espiritualidade — conheça nossos destinos e programe sua próxima viagem de fé.">
-    <title>Roteiros de Peregrinação - Peregrine com a Canção Nova</title>
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://marcelofcn.github.io/peregrinecomacancaonova/" />
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .bg-cancao-blue { background-color: #0072BC; }
-        .text-cancao-blue { color: #0072BC; }
-        .hover-cancao-blue:hover { background-color: #005a9c; }
-        .border-cancao-blue { border-color: #0072BC; }
-        .fade-in { animation: fadeIn 0.45s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        html { scroll-behavior: smooth; }
-    </style>
-
-    
+    <title>Início — São José Peregrinações</title>
+    <link rel="stylesheet" href="/sao-jose-peregrinacoes/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-50">
-    <header class="bg-white shadow-md fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="peregrinecomacancaonova/index.html" class="flex items-center gap-3">
-                    <img src="peregrinecomacancaonova/static/img/logo.jpeg" alt="Logo" class="h-12" onerror="this.style.display='none'">
-                    <div>
-                        <h1 class="text-xl font-bold text-cancao-blue">Peregrine com a Canção Nova</h1>
-                        <p class="text-xs text-gray-600">Peregrine - Operadora de Viagens</p>
-                    </div>
-                </a>
-                <nav class="hidden md:flex gap-6">
-                    <a href="peregrinecomacancaonova/index.html" class="text-gray-700 hover:text-cancao-blue">Início</a>
-                    <a href="peregrinecomacancaonova/index.html#roteiros" class="text-gray-700 hover:text-cancao-blue">Roteiros</a>
-                    <a href="peregrinecomacancaonova/sobre/index.html" class="text-gray-700 hover:text-cancao-blue">Sobre</a>
-                    <a href="peregrinecomacancaonova/contato/index.html" class="text-gray-700 hover:text-cancao-blue">Contato</a>
-                </nav>
-                <button id="menuBtn" class="md:hidden text-cancao-blue">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                </button>
-            </div>
+<body>
+    <header class="site-header">
+      <div class="logo-container">
+        <a href="/sao-jose-peregrinacoes/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+          <img src="/sao-jose-peregrinacoes/static/img/logo.jpeg" alt="Logo" style="height: 55px; border-radius: 8px;">
+          <h1>São José Peregrinações</h1>
+        </a>
+      </div>
 
-            <nav id="mobileMenu" class="md:hidden mt-4 hidden flex-col gap-2 pb-2">
-                <a href="peregrinecomacancaonova/index.html" class="text-gray-700 hover:text-cancao-blue py-2">Início</a>
-                <a href="peregrinecomacancaonova/index.html#roteiros" class="text-gray-700 hover:text-cancao-blue py-2">Roteiros</a>
-                <a href="peregrinecomacancaonova/sobre/index.html" class="text-gray-700 hover:text-cancao-blue py-2">Sobre</a>
-                <a href="peregrinecomacancaonova/contato/index.html" class="text-gray-700 hover:text-cancao-blue py-2">Contato</a>
-            </nav>
-        </div>
+      <nav class="menu">
+  <a href="/sao-jose-peregrinacoes/">Início</a>
+  
+  <div class="dropdown">
+    <button class="dropbtn">Roteiros de Espiritualidade ▼</button>
+    <div class="dropdown-content">
+      <a href="/sao-jose-peregrinacoes/roteiros/espiritualidade/sao-jose/">São José</a>
+      <a href="/sao-jose-peregrinacoes/roteiros/espiritualidade/cancaonova/">Canção Nova</a>
+    </div>
+  </div>
+
+  <a href="/sao-jose-peregrinacoes/roteiros/turisticos/">Roteiros Turísticos</a>
+  <a href="#contato">Contato</a>
+</nav>
+
     </header>
 
-    <main class="pt-24">
+    <main>
         
-<div class="fade-in">
-    <section class="bg-gray-100 py-20 border-b border-gray-200">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-xl font-semibold text-cancao-blue mb-3">Momentos inesqueciveis pra sua alma</p>
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-6">Roteiros que vão lhe ajudar no seu caminho de Fé e Esperança!</h1>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">Roteiros de peregrinação, fé e espiritualidade — conheça nossos destinos e programe sua próxima viagem de fé.</p>
-            <a href="#roteiros" class="bg-cancao-blue hover-cancao-blue text-white px-8 py-3 rounded-full font-bold transition shadow-lg">Ver todos os Roteiros</a>
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-carousel">
+    
+      <div class="hero-slide">P R O J E T O  EM  C O N S T R U C Ã O</div>
+    
+      <div class="hero-slide">P O D E M   C O N T E R   E R R O S</div>
+    
+      <div class="hero-slide">F A V O R  E N T R A R  E M  C O N T A T O</div>
+    
+      <div class="hero-slide">Roteiros de Espiritualidade</div>
+    
+      <div class="hero-slide">Roteiros Turísticos com Fé</div>
+    
+      <div class="hero-slide">Experiências que transformam</div>
+    
+  </div>
+</section>
 
-    <section id="roteiros" class="container mx-auto px-4 py-16">
-        <h2 class="text-3xl font-bold text-gray-900 mb-10 border-b-4 border-cancao-blue inline-block pb-1">
-            <i data-lucide="compass" class="w-8 h-8 inline mr-2 text-cancao-blue"></i> Próximos Roteiros
-        </h2>
-        
-        
-        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
-            <div class="flex items-center">
-                <i data-lucide="alert-triangle" class="w-6 h-6 text-yellow-600 mr-3"></i>
-                <div>
-                    <h3 class="text-lg font-bold text-yellow-800">Nenhum roteiro disponível</h3>
-                    <p class="text-yellow-700">Entre em contato para conhecer nossas próximas viagens.</p>
-                </div>
-            </div>
-        </div>
-        
-    </section>
+<section id="espiritualidade" class="container">
+  <div class="section-header-with-link">
+    <h2>Roteiros de Espiritualidade</h2>
+    <div class="header-links">
+      <a href="/sao-jose-peregrinacoes/roteiros/espiritualidade/sao-jose/" class="link-ver-mais">Ver São José →</a>
+      <a href="/sao-jose-peregrinacoes/roteiros/espiritualidade/cancaonova/" class="link-ver-mais">Ver Canção Nova →</a>
+    </div>
+  </div>
+  
+  <div class="cards">
+    
+      <article class="card">
+        <img src="/sao-jose-peregrinacoes/static/img/img14.jpg" alt="Itália - Fevereiro">
+        <h3>Itália - Fevereiro</h3>
+        <p class="card-date">📅 10/02/2026 a 25/02/2026</p>
+        <a class="btn" href="/sao-jose-peregrinacoes/roteiro/14/">Ver detalhes</a>
 
-    <section class="bg-cancao-blue py-12 mt-16">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold text-white mb-4">Entre em contato e faça a sua experiência!</h3>
-            <p class="text-blue-100 mb-6">Estamos lhe aguardando, garanta sua vaga!</p>
-            <a href="peregrinecomacancaonova/contato/index.html" class="inline-block bg-white text-cancao-blue px-6 py-2.5 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg">Entrar em Contato</a>
-        </div>
-    </section>
-</div>
+      </article>
+    
+      <article class="card">
+        <img src="/sao-jose-peregrinacoes/static/img/img3.jpg" alt="Itália e Medjugorje">
+        <h3>Itália e Medjugorje</h3>
+        <p class="card-date">📅 17/03/2026 a 31/03/2026</p>
+        <a class="btn" href="/sao-jose-peregrinacoes/roteiro/3/">Ver detalhes</a>
 
+      </article>
+    
+      <article class="card">
+        <img src="/sao-jose-peregrinacoes/static/img/img23.jpg" alt="Itália - Abril 20">
+        <h3>Itália - Abril 20</h3>
+        <p class="card-date">📅 07/04/2026 a 18/04/2026</p>
+        <a class="btn" href="/sao-jose-peregrinacoes/roteiro/23/">Ver detalhes</a>
 
-<script>
-    lucide.createIcons();
-</script>
+      </article>
+    
+      <article class="card">
+        <img src="/sao-jose-peregrinacoes/static/img/img8.jpg" alt="México - Guadalupe">
+        <h3>México - Guadalupe</h3>
+        <p class="card-date">📅 12/05/2026 a 20/05/2026</p>
+        <a class="btn" href="/sao-jose-peregrinacoes/roteiro/8/">Ver detalhes</a>
 
+      </article>
+    
+  </div>
+</section>
+
+<section id="turismo" class="container">
+  <div class="section-header-with-link">
+    <h2>Roteiros Turísticos</h2>
+    <a href="/sao-jose-peregrinacoes/roteiros/turisticos/" class="link-ver-mais">Ver todos →</a>
+  </div>
+  
+  <div class="cards">
+    
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Pronto para sua próxima jornada espiritual?</h2>
+      <p>Entre em contato conosco e descubra o roteiro perfeito para você!</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/5567998927001?text=Olá! Gostaria de mais informações sobre os roteiros" 
+           class="btn btn-whatsapp-cta" 
+           target="_blank">
+          💬 Falar no WhatsApp
+        </a>
+        <a href="tel:+556732117001" class="btn btn-phone-cta">
+          📞 (67) 3211-7001
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.section-header-with-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--dourado);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-header-with-link h2 {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.header-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.link-ver-mais {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 6px;
+  background: rgba(111, 191, 115, 0.1);
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.link-ver-mais:hover {
+  background: var(--verde-claro);
+  color: var(--branco);
+  transform: translateX(5px);
+}
+
+.card-date {
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-claro) 100%);
+  color: var(--branco);
+  padding: 60px 20px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--branco);
+  border: none;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp-cta {
+  background: #25D366;
+  color: var(--branco);
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp-cta:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-phone-cta {
+  background: var(--dourado);
+  color: var(--verde-escuro);
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-phone-cta:hover {
+  background: var(--branco);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .section-header-with-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-links {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .link-ver-mais {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-whatsapp-cta,
+  .btn-phone-cta {
+    width: 100%;
+  }
+}
+</style>
 
     </main>
 
-    <footer id="rodape-contato" class="bg-gray-900 text-white py-12 mt-12">
-        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
-            <div>
-                <span class="text-2xl font-bold text-cancao-blue">Peregrine com a Canção Nova</span>
-                <p class="text-sm text-gray-400 mt-4">Direção Espiritual - Comunidade Canção Nova</p>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Navegação</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="peregrinecomacancaonova/index.html" class="hover:text-white">Início</a></li>
-                    <li><a href="peregrinecomacancaonova/index.html#roteiros" class="hover:text-white">Roteiros</a></li>
-                    <li><a href="peregrinecomacancaonova/contato/index.html" class="hover:text-white">Fale Conosco</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Fale Conosco</h4>
-                <ul class="space-y-3 text-sm">
-                    <li class="flex items-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cancao-blue"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        <a href="tel:(67) 99892-7001" class="hover:text-white">(67) 99892-7001</a>
-                    </li>
-                    <li class="flex items-center gap-3 font-bold bg-green-500/20 p-2 rounded">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-400"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                        <a href="https://wa.me/5567998927001" target="_blank" class="hover:text-white">WhatsApp</a>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cancao-blue"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-                        <a href="mailto:contato@peregrinecomacancaonova.com" class="hover:text-white">contato@peregrinecomacancaonova.com</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-semibold mb-4 border-b-2 border-cancao-blue inline-block pb-1">Sede São José Peregrinações</h4>
-                <p class="text-sm text-gray-400">Rua Dom Aquino, 1937 - Centro - CEP 79002-181<br>Campo Grande - MS</p>
-            </div>
+    <button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
+
+    <footer id="contato">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>São José Peregrinações</h3>
+            <p>Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contato</h3>
+            <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
+            <p>💬 <a href="https://wa.me/5567998927001" target="_blank">WhatsApp</a></p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <p><a href="/sao-jose-peregrinacoes/">Início</a></p>
+            <p><a href="/sao-jose-peregrinacoes/roteiros/espiritualidade/sao-jose/">Roteiros Espirituais</a></p>
+            <p><a href="/sao-jose-peregrinacoes/roteiros/turisticos/">Roteiros Turísticos</a></p>
+          </div>
         </div>
-        <div class="container mx-auto px-4 mt-8 pt-4 border-t border-gray-700 text-center text-sm text-gray-500">
-           &copy; 2025 Peregrine com a Canção Nova. Todos os direitos reservados.
+        
+        <div class="footer-bottom">
+          <p>&copy; 2025 São José Peregrinações — Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Menu mobile
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-        }
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     </script>
-
-    
-<script>
-    lucide.createIcons();
-</script>
-
 </body>
 </html>
