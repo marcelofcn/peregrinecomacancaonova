@@ -1,25 +1,83 @@
-<nav class="menu">
-  <a href="{{ BASE_PATH }}/">Início</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Peregrine com a Cancao Nova{% endblock %}</title>
 
-  <div class="dropdown">
-    <button class="dropbtn">🌙 Roteiros</button>
-    <div class="dropdown-content">
-      <a href="{{ BASE_PATH }}/roteiros/">Todos os roteiros</a>
-      <hr style="margin:6px 0; border-color: rgba(255,255,255,0.08);">
-      <a href="{{ BASE_PATH }}/roteiros/mes/janeiro/">Janeiro</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/fevereiro/">Fevereiro</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/marco/">Março</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/abril/">Abril</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/maio/">Maio</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/junho/">Junho</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/julho/">Julho</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/agosto/">Agosto</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/setembro/">Setembro</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/outubro/">Outubro</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/novembro/">Novembro</a>
-      <a href="{{ BASE_PATH }}/roteiros/mes/dezembro/">Dezembro</a>
+    <link rel="stylesheet" href="{{ BASE_PATH }}/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="logo-container">
+        <a href="{{ BASE_PATH }}/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+            <img src="{{ BASE_PATH }}/static/img/logo.jpeg" alt="Logo" style="height: 55px; border-radius: 8px;">
+            <h1>Peregrine com a Cancao Nova</h1>
+        </a>
     </div>
-  </div>
 
-  <a href="#contato">Contato</a>
-</nav>
+    <!-- ========================= MENU ========================= -->
+    <nav class="menu">
+        <a href="{{ BASE_PATH }}/">Inicio</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Roteiros ▼</button>
+            <div class="dropdown-content">
+                <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/">Cancao Nova</a>
+            </div>
+        </div>
+
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
+
+<footer id="contato">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Peregrine com a Cancao Nova</h3>
+            <p>Transformando jornadas em experiencias inesqueciveis de fe e cultura.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
+            <p>💬 <a href="https://wa.me/5567998927001" target="_blank">WhatsApp</a></p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Links Rapidos</h3>
+            <p><a href="{{ BASE_PATH }}/">Inicio</a></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Comunidade Cancao Nova — Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+backToTopButton.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
