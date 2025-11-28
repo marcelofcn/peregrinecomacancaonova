@@ -23,7 +23,7 @@ except Exception as e:
 # ------------------------------------------------------
 app_instance.config['FREEZER_DESTINATION'] = 'docs'
 app_instance.config['FREEZER_RELATIVE_URLS'] = False
-app_instance.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/sao-jose-peregrinacoes'
+app_instance.config['FREEZER_BASE_URL'] = 'https://marcelofcn.github.io/peregrinecomacancaonova'
 
 freezer = Freezer(app_instance)
 os.makedirs('docs', exist_ok=True)
@@ -52,9 +52,9 @@ if __name__ == '__main__':
             content = f.read()
 
         # Substitui caminhos absolutos por caminhos relativos ao repositório
-        content = content.replace('src="/static/', 'src="/sao-jose-peregrinacoes/static/')
-        content = content.replace('href="/static/', 'href="/sao-jose-peregrinacoes/static/')
-        content = content.replace('href="/roteiro/', 'href="/sao-jose-peregrinacoes/roteiro/')
+        content = content.replace('src="/static/', 'src="/peregrinecomacancaonova/static/')
+        content = content.replace('href="/static/', 'href="/peregrinecomacancaonova/static/')
+        content = content.replace('href="/roteiro/', 'href="/peregrinecomacancaonova/roteiro/')
 
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
