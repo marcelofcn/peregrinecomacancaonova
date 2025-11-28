@@ -17,7 +17,7 @@
     <div class="cards">
       {% for r in destaque %}
         <article class="card">
-          <img src="{{ url_for('static', filename='img/' + r.img) }}" alt="{{ r.title }}">
+          <img src="{{ BASE_PATH }}/static/img/{{ r.img }}" alt="{{ r.title }}">
           <h3>{{ r.title }}</h3>
           <p><strong>Período:</strong> {{ r.start }} a {{ r.end }}</p>
           <p><strong>Diretor:</strong> {{ r.director }}</p>
