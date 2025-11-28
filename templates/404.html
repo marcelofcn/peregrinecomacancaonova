@@ -1,39 +1,84 @@
 {% extends "base.html" %}
-
-{% block title %}Página não encontrada - {{ site_name }}{% endblock %}
+{% block title %}Página não encontrada — São José Peregrinações{% endblock %}
 
 {% block content %}
-<div class="container mx-auto px-4 py-20 text-center">
-    <div class="max-w-2xl mx-auto">
-        <div class="mb-8">
-            <i data-lucide="alert-circle" class="w-24 h-24 mx-auto text-cancao-blue"></i>
-        </div>
-        
-        <h1 class="text-6xl font-bold text-gray-900 mb-4">404</h1>
-        <h2 class="text-3xl font-bold text-gray-700 mb-6">Página não encontrada</h2>
-        
-        <p class="text-gray-600 mb-8 text-lg">
-            Desculpe, a página que você está procurando não existe ou foi movida.
-        </p>
-        
-        <div class="space-x-4">
-            <a href="{{ url_for('home') }}" 
-               class="inline-block bg-cancao-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                <i data-lucide="home" class="w-5 h-5 inline mr-2"></i>
-                Voltar para Início
-            </a>
-            
-            <a href="{{ url_for('home') }}#roteiros" 
-               class="inline-block bg-gray-200 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
-                Ver Roteiros
-            </a>
-        </div>
+<section class="container error-page">
+  <div class="error-content">
+    <div class="error-icon">🗺️</div>
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">Ops! Caminho não encontrado</h2>
+    <p class="error-message">
+      Parece que você se perdeu nesta jornada. A página que você procura não existe ou foi movida.
+    </p>
+    
+    <div class="error-actions">
+      <a href="/" class="btn btn-primary">
+        <span class="btn-icon">🏠</span>
+        Voltar para o Início
+      </a>
+      <a href="javascript:history.back()" class="btn btn-secondary">
+        <span class="btn-icon">←</span>
+        Página Anterior
+      </a>
     </div>
-</div>
-{% endblock %}
+  </div>
+</section>
 
-{% block extra_js %}
-<script>
-    lucide.createIcons();
-</script>
+<style>
+.error-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px 20px;
+}
+
+.error-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 700;
+  color: var(--dourado);
+  margin: 0;
+  line-height: 1;
+}
+
+.error-title {
+  font-size: 2rem;
+  color: var(--verde-escuro);
+  margin: 20px 0 15px 0;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.error-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  background: var(--verde-escuro);
+  color: var(--branco);
+}
+
+.btn-primary:hover {
+  background: var(--verde-claro);
+}
+</style>
 {% endblock %}
