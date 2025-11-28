@@ -1,87 +1,211 @@
 {% extends "base.html" %}
-{% block title %}Roteiros de Peregrinação - {{ site_name }}{% endblock %}
+{% block title %}Início — São José Peregrinações{% endblock %}
+
 {% block content %}
-<div class="fade-in">
-    <section class="bg-gray-100 py-20 border-b border-gray-200">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-xl font-semibold text-cancao-blue mb-3">Momentos inesqueciveis pra sua alma</p>
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-6">Roteiros que vão lhe ajudar no seu caminho de Fé e Esperança!</h1>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">{{ site_description }}</p>
-            <a href="#roteiros" class="bg-cancao-blue hover-cancao-blue text-white px-8 py-3 rounded-full font-bold transition shadow-lg">Ver todos os Roteiros</a>
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-carousel">
+    {% for txt in hero_texts %}
+      <div class="hero-slide">{{ txt }}</div>
+    {% endfor %}
+  </div>
+</section>
 
-    <section id="roteiros" class="container mx-auto px-4 py-16">
-        <h2 class="text-3xl font-bold text-gray-900 mb-10 border-b-4 border-cancao-blue inline-block pb-1">
-            <i data-lucide="compass" class="w-8 h-8 inline mr-2 text-cancao-blue"></i> Próximos Roteiros
-        </h2>
-        
-        {% if roteiros and roteiros|length > 0 %}
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {% for r in roteiros %}
-            <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                <div class="h-56 overflow-hidden relative bg-gray-200">
-                    {% if r.img and r.img != 'placeholder.jpg' %}
-                    <img src="{{ url_for('static', filename='img/' + r.img) }}" 
-                         alt="{{ r.title }}" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                         onerror="this.src='https://images.unsplash.com/photo-1542457635-43a290209598?w=500&q=80'">
-                    {% else %}
-                    <img src="https://images.unsplash.com/photo-1542457635-43a290209598?w=500&q=80" 
-                         alt="{{ r.title }}" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    {% endif %}
-                    <span class="absolute top-3 left-3 bg-cancao-blue text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">{{ r.duracao }}</span>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 truncate" title="{{ r.title }}">{{ r.title }}</h3>
-                    <div class="flex items-center text-gray-500 text-sm mb-4 space-x-4">
-                        <span class="flex items-center gap-1">
-                            <i data-lucide="user" class="w-4 h-4 text-gray-400"></i>
-                            {{ r.director_display.split(' - ')[0] }}
-                        </span>
-                    </div>
-                    <div class="mb-4">
-                        <p class="text-sm text-gray-600 flex items-center gap-2 mb-1">
-                            <i data-lucide="calendar" class="w-4 h-4 text-cancao-blue"></i>
-                            De {{ r.start }} a {{ r.end }}
-                        </p>
-                        <p class="text-2xl font-bold text-green-600 mt-2">{{ r.preco }}</p>
-                        <p class="text-xs text-gray-500">Valor por pessoa</p>
-                    </div>
-                    <a href="{{ url_for('roteiro_detalhe', id=r.id) }}" 
-                       class="mt-4 block w-full bg-green-600 text-white text-center py-2.5 rounded-lg font-semibold hover:bg-green-700 transition">
-                        Ver Detalhes
-                    </a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% else %}
-        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-lg">
-            <div class="flex items-center">
-                <i data-lucide="alert-triangle" class="w-6 h-6 text-yellow-600 mr-3"></i>
-                <div>
-                    <h3 class="text-lg font-bold text-yellow-800">Nenhum roteiro disponível</h3>
-                    <p class="text-yellow-700">Entre em contato para conhecer nossas próximas viagens.</p>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-    </section>
+<section id="espiritualidade" class="container">
+  <div class="section-header-with-link">
+    <h2>Roteiros de Espiritualidade</h2>
+    <div class="header-links">
+      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/sao-jose/" class="link-ver-mais">Ver São José →</a>
+      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/" class="link-ver-mais">Ver Canção Nova →</a>
+    </div>
+  </div>
+  
+  <div class="cards">
+    {% for r in roteiros_espirituais %}
+      <article class="card">
+        <img src="{{ BASE_PATH }}/static/img/{{ r.img }}" alt="{{ r.title }}">
+        <h3>{{ r.title }}</h3>
+        <p class="card-date">📅 {{ r.date }}</p>
+        <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ r.id }}/">Ver detalhes</a>
 
-    <section class="bg-cancao-blue py-12 mt-16">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold text-white mb-4">Entre em contato e faça a sua experiência!</h3>
-            <p class="text-blue-100 mb-6">Estamos lhe aguardando, garanta sua vaga!</p>
-            <a href="{{ url_for('contato') }}" class="inline-block bg-white text-cancao-blue px-6 py-2.5 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg">Entrar em Contato</a>
-        </div>
-    </section>
-</div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
 
-{% block extra_js %}
-<script>
-    lucide.createIcons();
-</script>
-{% endblock %}
+<section id="turismo" class="container">
+  <div class="section-header-with-link">
+    <h2>Roteiros Turísticos</h2>
+    <a href="{{ BASE_PATH }}/roteiros/turisticos/" class="link-ver-mais">Ver todos →</a>
+  </div>
+  
+  <div class="cards">
+    {% for t in roteiros_turisticos %}
+      <article class="card">
+        <img src="{{ BASE_PATH }}/static/img/{{ t.img }}" alt="{{ t.title }}">
+        <h3>{{ t.title }}</h3>
+        <p class="card-date">📅 {{ t.date }}</p>
+        <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ t.id }}">Ver detalhes</a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Pronto para sua próxima jornada espiritual?</h2>
+      <p>Entre em contato conosco e descubra o roteiro perfeito para você!</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/5567998927001?text=Olá! Gostaria de mais informações sobre os roteiros" 
+           class="btn btn-whatsapp-cta" 
+           target="_blank">
+          💬 Falar no WhatsApp
+        </a>
+        <a href="tel:+556732117001" class="btn btn-phone-cta">
+          📞 (67) 3211-7001
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.section-header-with-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--dourado);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-header-with-link h2 {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.header-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.link-ver-mais {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 6px;
+  background: rgba(111, 191, 115, 0.1);
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.link-ver-mais:hover {
+  background: var(--verde-claro);
+  color: var(--branco);
+  transform: translateX(5px);
+}
+
+.card-date {
+  color: #666;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-claro) 100%);
+  color: var(--branco);
+  padding: 60px 20px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--branco);
+  border: none;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp-cta {
+  background: #25D366;
+  color: var(--branco);
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp-cta:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-phone-cta {
+  background: var(--dourado);
+  color: var(--verde-escuro);
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-phone-cta:hover {
+  background: var(--branco);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .section-header-with-link {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-links {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .link-ver-mais {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-whatsapp-cta,
+  .btn-phone-cta {
+    width: 100%;
+  }
+}
+</style>
 {% endblock %}
