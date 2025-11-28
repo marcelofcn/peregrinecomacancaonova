@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ roteiro.title }} — São José Peregrinações{% endblock %}
+{% block title %}{{ roteiro.title }} — Peregrine com a Canção Nova{% endblock %}
 
 {% block content %}
 <section class="container detalhe-roteiro">
@@ -7,15 +7,11 @@
   <a href="{{ BASE_PATH }}/">Início</a>
   <span class="separator">›</span>
 
-  {% if roteiro.categoria == 'espiritualidade' %}
-    {% if roteiro.empresa == 'sao-jose' %}
-      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/sao-jose/">São José</a>
+    {% if roteiro.categoria == 'espiritualidade' %}
+    
     {% elif roteiro.empresa == 'cancaonova' %}
       <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/">Canção Nova</a>
-    {% endif %}
-  {% else %}
-      <a href="{{ BASE_PATH }}/roteiros/turisticos/">Roteiros Turísticos</a>
-  {% endif %}
+    
 
   <span class="separator">›</span>
   <span class="current">{{ roteiro.title }}</span>
@@ -27,8 +23,8 @@
     <div class="badge-container">
       {% if roteiro.categoria == 'espiritualidade' %}
         <span class="badge badge-espiritual">Roteiro Espiritual</span>
-      {% else %}
-        <span class="badge badge-turistico">Roteiro Turístico</span>
+      
+        
       {% endif %}
     </div>
   </div>
