@@ -1,4 +1,4 @@
-# freeze.py - VERSÃO FINAL OTIMIZADA
+# freeze.py - VERSÃO COM CÓPIA DE STATIC
 from flask_frozen import Freezer
 from main import app, ROTEIROS_DB
 import shutil
@@ -25,6 +25,7 @@ app.config["FREEZER_DESTINATION"] = "docs"
 app.config["FREEZER_BASE_URL"] = "https://marcelofcn.github.io/peregrinecomacancaonova/"
 app.config["FREEZER_REMOVE_EXTRA_FILES"] = False
 app.config["FREEZER_RELATIVE_URLS"] = True
+app.config["FREEZER_STATIC_IGNORE"] = []  # Não ignorar nada
 
 freezer = Freezer(app)
 
@@ -60,6 +61,28 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
     
+    # CRÍTICO: Copiar pasta static manualmente
+    print("\n📂 Copiando arquivos estáticos...")
+    static_src = "static"
+    static_dst = "docs/static"
+    
+    if os.path.exists(static_src):
+        if os.path.exists(static_dst):
+            shutil.rmtree(static_dst)
+        
+        shutil.copytree(static_src, static_dst)
+        print(f"✅ Pasta static copiada ({static_src} → {static_dst})")
+        
+        # Verificar imagens
+        img_dir = os.path.join(static_dst, "img")
+        if os.path.exists(img_dir):
+            img_count = len([f for f in os.listdir(img_dir) if f.endswith(('.jpg', '.jpeg', '.png', '.gif', '.webp'))])
+            print(f"   📸 {img_count} imagens encontradas em static/img/")
+        else:
+            print("   ⚠️  Pasta static/img/ não encontrada!")
+    else:
+        print("⚠️  Pasta static/ não existe no projeto!")
+    
     # Criar .nojekyll
     with open("docs/.nojekyll", 'w') as f:
         f.write('')
@@ -83,7 +106,7 @@ if __name__ == "__main__":
     
     # Verificar arquivos gerados
     print("\n" + "="*70)
-    print("🔍 VERIFICAÇÃO:")
+    print("🔍 VERIFICAÇÃO FINAL:")
     print("="*70)
     
     index_path = "docs/index.html"
@@ -91,7 +114,6 @@ if __name__ == "__main__":
         size = os.path.getsize(index_path)
         print(f"✅ index.html: {size:,} bytes")
         
-        # Verificar conteúdo
         with open(index_path, 'r', encoding='utf-8') as f:
             html = f.read()
             if 'Nenhum roteiro disponível' in html:
@@ -108,10 +130,11 @@ if __name__ == "__main__":
         if os.path.exists(path):
             roteiros_gerados += 1
     
-    print(f"\n📊 Páginas de roteiros geradas: {roteiros_gerados}/{len(ROTEIROS_DB)}")
+    print(f"\n📊 Páginas de roteiros: {roteiros_gerados}/{len(ROTEIROS_DB)}")
+    print(f"📂 Pasta static copiada: {'✅' if os.path.exists('docs/static') else '❌'}")
     
     if roteiros_gerados == len(ROTEIROS_DB) and len(ROTEIROS_DB) > 0:
-        print("\n✅ SUCESSO! Site gerado corretamente!")
+        print("\n✅ SUCESSO TOTAL! Site gerado corretamente!")
     else:
         print("\n⚠️  Alguns roteiros podem não ter sido gerados")
     
