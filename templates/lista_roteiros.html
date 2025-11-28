@@ -16,9 +16,13 @@
       {% for r in roteiros %}
         <article class="card">
           <img src="{{ url_for('static', filename='img/' + r.img) }}" alt="{{ r.title }}">
+          
           <h3>{{ r.title }}</h3>
+
+          <p><strong>Categoria:</strong> {{ r.categoria }}</p>
           <p><strong>Período:</strong> {{ r.start }} a {{ r.end }}</p>
           <p><strong>Diretor:</strong> {{ r.director }}</p>
+
           <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ r.id }}/">Ver detalhes</a>
         </article>
       {% endfor %}
