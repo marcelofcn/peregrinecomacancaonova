@@ -1,3 +1,22 @@
+.badge-espiritual {
+  background: #5a3df5;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tag-categoria {
+  background: #f0ecff;
+  color: #5a3df5;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  display: inline-block;
+  margin-top: -5px;
+}
+
 :root {
   --azul : #0177BC;
   --verde-claro: #6FBF73;
