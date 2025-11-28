@@ -4,11 +4,10 @@
 {% block content %}
 <section class="container">
   <nav class="breadcrumb">
-  <a href="{{ BASE_PATH }}/">← Início</a>
-  <span class="separator">›</span>
-  <span class="current">{{ titulo }}</span>
+    <a href="{{ BASE_PATH }}/">← Inicio</a>
+    <span class="separator">›</span>
+    <span class="current">{{ titulo }}</span>
   </nav>
-
 
   <h2>{{ titulo }}</h2>
   
@@ -24,6 +23,7 @@
         </article>
       {% endfor %}
     </div>
+  
   {% else %}
     <div class="empty-state">
       <p>Nenhum roteiro disponível no momento.</p>
