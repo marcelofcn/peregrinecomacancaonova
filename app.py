@@ -22,7 +22,6 @@ with open("roteiros.json", "r", encoding="utf-8") as f:
 # ==================== ROTAS ====================
 
 @app.route(f"{BASE_PATH}/")
-@app.route("/")
 def home():
     hero_texts = [
         "P R O J E T O  E M  C O N S T R U C A O",
@@ -64,7 +63,6 @@ def lista_roteiros():
 
 # DETALHES DO ROTEIRO
 @app.route(f"{BASE_PATH}/roteiro/<int:roteiro_id>/")
-@app.route("/roteiro/<int:roteiro_id>/")
 def roteiro_detalhe(roteiro_id):
     roteiro = ROTEIROS_DB.get(str(roteiro_id))
     if not roteiro:
