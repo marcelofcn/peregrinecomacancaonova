@@ -1,137 +1,133 @@
 {% extends "base.html" %}
-
-{% block title %}{{ roteiro.title }} - {{ site_name }}{% endblock %}
-
-{% block extra_css %}
-<style>
-/* pequenas customizações */
-</style>
-{% endblock %}
+{% block title %}{{ roteiro.title }} — São José Peregrinações{% endblock %}
 
 {% block content %}
-<div class="fade-in">
-    <section class="relative h-96 bg-gray-900">
-        <div class="absolute inset-0">
-            <img src="{{ url_for('static', filename='img/' + roteiro.img) }}" alt="{{ roteiro.title }}" class="w-full h-full object-cover opacity-60">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-        <div class="container mx-auto px-4 h-full flex items-end pb-12 relative z-10">
-            <div class="text-white">
-                <div class="flex items-center gap-2 mb-4 text-sm">
-                    <a href="{{ url_for('home') }}" class="hover:underline">Início</a><span>/</span>
-                    <a href="{{ url_for('home') }}#roteiros" class="hover:underline">Roteiros</a><span>/</span>
-                    <span class="font-light">{{ roteiro.title }}</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ roteiro.title }}</h1>
-                <div class="flex flex-wrap gap-4">
-                    <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2">{{ roteiro.duracao }}</span>
-                    <span class="bg-cancao-blue px-4 py-2 rounded-lg font-semibold">Investimento de {{ roteiro.preco }}</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="container detalhe-roteiro">
+  <nav class="breadcrumb">
+  <a href="{{ BASE_PATH }}/">Início</a>
+  <span class="separator">›</span>
 
-    <div class="container mx-auto px-4 py-12">
-        <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-8">
-                <section class="bg-white rounded-xl shadow-lg p-8">
-                    <h2 class="text-2xl font-bold text-cancao-blue mb-4">Sobre este Roteiro</h2>
-                    <p class="text-gray-700 leading-relaxed">Participe desta peregrinação: <strong>{{ roteiro.title }}</strong>, acompanhada por <strong>{{ roteiro.director_display }}</strong>. Datas: <strong>{{ roteiro.start }} a {{ roteiro.end }}</strong>.</p>
-                </section>
+  {% if roteiro.categoria == 'espiritualidade' %}
+    {% if roteiro.empresa == 'sao-jose' %}
+      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/sao-jose/">São José</a>
+    {% elif roteiro.empresa == 'cancaonova' %}
+      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/">Canção Nova</a>
+    {% endif %}
+  {% else %}
+      <a href="{{ BASE_PATH }}/roteiros/turisticos/">Roteiros Turísticos</a>
+  {% endif %}
 
-                <section class="bg-white rounded-xl shadow-lg p-8">
-                    <h2 class="text-2xl font-bold text-cancao-blue mb-6">Destaques e Inclui</h2>
-                    <div class="grid md:grid-cols-2 gap-4">
-                        {% for destaque in roteiro.incluso %}
-                        <div class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-cancao-blue"></i>
-                            <span class="text-gray-700">{{ destaque }}</span>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </section>
+  <span class="separator">›</span>
+  <span class="current">{{ roteiro.title }}</span>
+</nav>
 
-                <section class="bg-white rounded-xl shadow-lg p-8">
-                    <h2 class="text-2xl font-bold text-cancao-blue mb-6">Itinerário Dia a Dia</h2>
-                    <div class="space-y-6">
-                        {% for item in roteiro.itinerario %}
-                        <div class="flex gap-4 border-l-4 border-cancao-blue pl-4">
-                            <div class="flex-shrink-0">
-                                <div class="bg-cancao-blue text-white rounded-lg px-3 py-1 text-sm font-semibold">
-                                    {{ item.split(' – ')[0] if ' – ' in item else loop.index }}
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-bold text-gray-900 mb-1">{{ item.split(' – ')[1] if ' – ' in item else item }}</h3>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </section>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <section class="bg-white rounded-xl shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-green-600 mb-4"><i data-lucide="check" class="w-5 h-5"></i> Inclui</h3>
-                        <ul class="space-y-2">
-                            {% for item in roteiro.incluso %}
-                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="check" class="w-4 h-4 text-green-600"></i>{{ item }}</li>
-                            {% endfor %}
-                        </ul>
-                    </section>
+  <div class="detalhe-header">
+    <h1>{{ roteiro.title }}</h1>
+    <div class="badge-container">
+      {% if roteiro.categoria == 'espiritualidade' %}
+        <span class="badge badge-espiritual">Roteiro Espiritual</span>
+      {% else %}
+        <span class="badge badge-turistico">Roteiro Turístico</span>
+      {% endif %}
+    </div>
+  </div>
 
-                    <section class="bg-white rounded-xl shadow-lg p-6">
-                        <h3 class="text-xl font-bold text-red-600 mb-4"><i data-lucide="x" class="w-5 h-5"></i> Não Inclui</h3>
-                        <ul class="space-y-2">
-                            {% for item in roteiro.nao_incluso %}
-                            <li class="flex items-start gap-2 text-sm text-gray-700"><i data-lucide="x" class="w-4 h-4 text-red-600"></i>{{ item }}</li>
-                            {% endfor %}
-                        </ul>
-                    </section>
-                </div>
-            </div>
+  <div class="detalhe-image-container">
+  <img src="{{ BASE_PATH }}/static/img/{{ roteiro.img }}" alt="{{ roteiro.title }}" class="img-detalhe">
+  </div>
 
-            <div class="lg:col-span-1">
-                <div class="sticky top-28 space-y-6">
-                    <div class="bg-white rounded-xl shadow-lg p-6">
-                        <div class="text-center mb-6">
-                            <p class="text-gray-600 text-sm mb-2">Valor Total</p>
-                            <p class="text-4xl font-bold text-cancao-blue">{{ roteiro.preco }}</p>
-                            <p class="text-gray-500 text-sm mt-1">por pessoa em apto duplo</p>
-                        </div>
-                        <div class="space-y-4 mb-6">
-                            <div class="flex items-center gap-3 text-gray-700"><i data-lucide="clock" class="w-5 h-5 text-cancao-blue"></i><span class="text-sm">{{ roteiro.duracao }}</span></div>
-                            <div class="flex items-center gap-3 text-gray-700"><i data-lucide="user-check" class="w-5 h-5 text-cancao-blue"></i><span class="text-sm">Direção Espiritual: {{ roteiro.director_display }}</span></div>
-                            <div class="flex items-center gap-3 text-gray-700"><i data-lucide="calendar" class="w-5 h-5 text-cancao-blue"></i><span class="text-sm">Data: {{ roteiro.start }} a {{ roteiro.end }}</span></div>
-                        </div>
 
-                        <a href="{{ url_for('contato') }}?roteiro={{ roteiro.id }}" class="block w-full bg-cancao-blue text-white text-center py-3 rounded-lg font-semibold">Garante a sua Presença!</a>
-                    </div>
-
-                    <div class="bg-cancao-blue text-white rounded-xl p-6">
-                        <h3 class="text-lg font-bold mb-4">Dúvidas?</h3>
-                        <p class="text-sm mb-4 text-blue-100">Entre em contato conosco!</p>
-                        <div class="space-y-3 text-sm">
-                            <a href="tel:{{ phone }}" class="flex items-center gap-2 hover:text-blue-200"><i data-lucide="phone" class="w-4 h-4"></i>{{ phone }}</a>
-                            <a href="https://wa.me/{{ whatsapp }}" target="_blank" class="flex items-center gap-2 hover:text-blue-200"><i data-lucide="message-circle" class="w-4 h-4"></i>WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="detalhe-info-grid">
+    <div class="info-card">
+      <div class="info-icon">📅</div>
+      <div class="info-content">
+        <h4>Período</h4>
+        <p>{{ roteiro.start }} a {{ roteiro.end }}</p>
+      </div>
     </div>
 
-    <section class="bg-gradient-to-br from-cancao-blue to-blue-800 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4"> </h2>
-            <p class="text-xl mb-8 text-blue-100"> </p>
-            <a href="{{ url_for('contato') }}?roteiro={{ roteiro.id }}" class="inline-block bg-white text-cancao-blue px-8 py-3 rounded-lg font-semibold">Estamos lhe aguardando!</a>
-        </div>
-    </section>
-</div>
-{% endblock %}
+    <div class="info-card">
+      <div class="info-icon">⛪</div>
+      <div class="info-content">
+        <h4>Diretor Espiritual</h4>
+        <p>{{ roteiro.director }}</p>
+      </div>
+    </div>
 
-{% block extra_js %}
-<script>
-    document.addEventListener('DOMContentLoaded', () => { lucide.createIcons(); });
-</script>
+    {% if roteiro.preco %}
+    <div class="info-card info-card-destaque">
+      <div class="info-icon">💰</div>
+      <div class="info-content">
+        <h4>Investimento</h4>
+        <p class="preco">{{ roteiro.preco }}</p>
+        <small>Consulte formas de pagamento</small>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="detalhe-section">
+    <div class="section-header">
+      <h2>📍 Itinerário Completo</h2>
+    </div>
+    <div class="itinerario-timeline">
+      {% for dia in roteiro.itinerario %}
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p>{{ dia }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="detalhe-section">
+    <div class="section-header">
+      <h2>✓ O que está incluído</h2>
+    </div>
+    <div class="lista-grid">
+      {% for item in roteiro.incluso %}
+        <div class="lista-item lista-incluso">
+          <span class="check-icon">✓</span>
+          <span>{{ item }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="detalhe-section">
+    <div class="section-header">
+      <h2>✗ O que não está incluído</h2>
+    </div>
+    <div class="lista-grid">
+      {% for item in roteiro.nao_incluso %}
+        <div class="lista-item lista-nao-incluso">
+          <span class="x-icon">✗</span>
+          <span>{{ item }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="detalhe-actions">
+    <a href="https://wa.me/5567998927001?text=Olá! Gostaria de mais informações sobre: {{ roteiro.title }}" 
+       class="btn btn-whatsapp" 
+       target="_blank">
+      <span class="btn-icon">💬</span>
+      Falar no WhatsApp
+    </a>
+    
+    <a href="tel:+556732117001" class="btn btn-phone">
+      <span class="btn-icon">📞</span>
+      Ligar Agora
+    </a>
+    
+    <a href="javascript:history.back()" class="btn btn-secondary">
+      <span class="btn-icon">←</span>
+      Voltar
+    </a>
+  </div>
+</section>
 {% endblock %}
