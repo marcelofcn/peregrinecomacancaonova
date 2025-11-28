@@ -5,7 +5,7 @@ import os, json
 app = Flask(__name__,)
 
 # Caminho base usado no GitHub Pages
-BASE_PATH = "/sao-jose-peregrinacoes"
+BASE_PATH = "/peregrinecomacancaonova"
 app.config['FREEZER_BASE_URL'] = f"https://marcelofcn.github.io{BASE_PATH}"
 app.jinja_env.globals['BASE_PATH'] = BASE_PATH
 app.config['FREEZER_DESTINATION'] = 'docs'
@@ -27,7 +27,7 @@ BASE_PATH = "/sao-jose-peregrinacoes"
 def home():
     hero_texts = [
         "P R O J E T O  EM  C O N S T R U C Ã O", 
-        "P O D E M   C O N T E R   E R R O S", 
+        "P O D E    C O N T E R   E R R O S", 
         "F A V O R  E N T R A R  E M  C O N T A T O",
         "Roteiros de Espiritualidade","Roteiros Turísticos com Fé","Experiências que transformam"
     ]
@@ -46,33 +46,12 @@ def home():
         if r["categoria"] == "espiritualidade"
     ][:4]
 
-    roteiros_turisticos = [
-        {
-            "id": r["id"],
-            "img": r["img"],
-            "title": r["title"],
-            "date": f"{r['start']} a {r['end']}",
-            "url": f"{BASE_PATH}/roteiro/{r['id']}/"
-
-
-        }
-        for r in ROTEIROS_DB.values()
-        if r["categoria"] == "turistico"
-    ][:4]
+    
 
     return render_template("home.html",
                            hero_texts=hero_texts,
-                           roteiros_espirituais=roteiros_espirituais,
-                           roteiros_turisticos=roteiros_turisticos)
-
-
-@app.route('/roteiros/espiritualidade/sao-jose/')
-def roteiros_sao_jose():
-    roteiros = [r for r in ROTEIROS_DB.values()
-                if r["categoria"] == "espiritualidade" and r["empresa"] == "sao-jose"]
-    return render_template("lista_roteiros.html",
-                           titulo="São José Viagens",
-                           roteiros=roteiros)
+                           roteiros_espirituais=roteiros_espirituais
+                           )
 
 
 @app.route('/roteiros/espiritualidade/cancaonova/')
@@ -82,16 +61,6 @@ def roteiros_cancaonova():
     return render_template("lista_roteiros.html",
                            titulo="Comunidade Canção Nova",
                            roteiros=roteiros)
-
-
-@app.route('/roteiros/turisticos/')
-def roteiros_turisticos():
-    roteiros = [r for r in ROTEIROS_DB.values()
-                if r["categoria"] == "turistico"]
-    return render_template("lista_roteiros.html",
-                           titulo="Roteiros Turísticos",
-                           roteiros=roteiros)
-
 
 @app.route('/roteiro/<int:roteiro_id>/')
 def roteiro_detalhe(roteiro_id):
