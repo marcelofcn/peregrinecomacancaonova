@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Início — São José Peregrinações{% endblock %}
+{% block title %}Início — Peregrine com a Canção Nova{% endblock %}
 
 {% block content %}
 <section class="hero">
@@ -14,7 +14,6 @@
   <div class="section-header-with-link">
     <h2>Roteiros de Espiritualidade</h2>
     <div class="header-links">
-      <a href="{{ BASE_PATH }}/roteiros/espiritualidade/sao-jose/" class="link-ver-mais">Ver São José →</a>
       <a href="{{ BASE_PATH }}/roteiros/espiritualidade/cancaonova/" class="link-ver-mais">Ver Canção Nova →</a>
     </div>
   </div>
@@ -32,21 +31,6 @@
   </div>
 </section>
 
-<section id="turismo" class="container">
-  <div class="section-header-with-link">
-    <h2>Roteiros Turísticos</h2>
-    <a href="{{ BASE_PATH }}/roteiros/turisticos/" class="link-ver-mais">Ver todos →</a>
-  </div>
-  
-  <div class="cards">
-    {% for t in roteiros_turisticos %}
-      <article class="card">
-        <img src="{{ BASE_PATH }}/static/img/{{ t.img }}" alt="{{ t.title }}">
-        <h3>{{ t.title }}</h3>
-        <p class="card-date">📅 {{ t.date }}</p>
-        <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ t.id }}">Ver detalhes</a>
-      </article>
-    {% endfor %}
   </div>
 </section>
 
@@ -54,7 +38,7 @@
   <div class="container">
     <div class="cta-content">
       <h2>Pronto para sua próxima jornada espiritual?</h2>
-      <p>Entre em contato conosco e descubra o roteiro perfeito para você!</p>
+      <p>Venha fazer uma experiência junto da Canção Nova em um de nossos roteiros!</p>
       <div class="cta-buttons">
         <a href="https://wa.me/5567998927001?text=Olá! Gostaria de mais informações sobre os roteiros" 
            class="btn btn-whatsapp-cta" 
