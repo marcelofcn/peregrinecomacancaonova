@@ -1,10 +1,10 @@
 :root {
-  --verde-escuro: #17632D;
+  --azul : #0177BC;
   --verde-claro: #6FBF73;
   --dourado: #E3B505;
   --branco: #FFFFFF;
   --cinza: #F2F2F2;
-  --sombra: rgba(0, 0, 0, 0.1);
+  --sombra: rgb(1, 119, 188);
 }
 
 * {
