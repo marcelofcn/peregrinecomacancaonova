@@ -95,7 +95,7 @@ def get_meses_disponiveis():
             "ano": ano,
             "mes": mes,
             "nome": f"{nomes_meses[mes]}/{ano}",
-            "url": f"{BASE_PATH}/roteiros/{ano}/{mes:02d}/"
+            "url": f"{BASE_PATH}/roteiros/{ano}/{mes}/"
         }
         for ano, mes in meses_lista
     ]
