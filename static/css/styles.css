@@ -21,7 +21,6 @@
   --azul : #0177BC;
   --verde-claro: #6FBF73;
   --dourado: #E3B505;
-  --branco: #FFFFFF;
   --cinza: #F2F2F2;
   --sombra: rgb(1, 119, 188);
 }
@@ -34,7 +33,6 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: var(--cinza);
-  color: var(--verde-escuro);
   padding-top: 100px;
 }
 
@@ -45,7 +43,6 @@ body {
   left: 0;
   width: 100%;
   background-color: var(--verde-escuro);
-  color: var(--branco);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +70,7 @@ body {
 .logo-container h1 {
   font-size: 1.4rem;
   margin: 0;
-  color: var(--branco);
+  
 }
 
 /* ==================== MENU ==================== */
