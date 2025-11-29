@@ -58,57 +58,173 @@
 
 <main>
     
-<section class="hero">
-  <div class="container">
-    <h1>Bem-vindo à Canção Nova Peregrinações</h1>
-    <p>Viagens religiosas, roteiros exclusivos e experiência espiritual com a Canção Nova.</p>
-    <a class="btn" href="/peregrinecomacancaonova/roteiros/">Ver roteiros</a>
-  </div>
-</section>
 
-<section class="container">
-  <h2>Próximos roteiros</h2>
-
-  
-    <div class="cards">
-      
-        <article class="card">
-          <img src="/peregrinecomacancaonova/static/img/img14.jpg" alt="Itália - Fevereiro">
-          <h3>Itália - Fevereiro</h3>
-          <p><strong>Período:</strong> 10/02/2026 a 25/02/2026</p>
-          <p><strong>Diretor:</strong> Padre Elenildo (Canção Nova)</p>
-          <a class="btn" href="/peregrinecomacancaonova/roteiro/14/">Ver detalhes</a>
-        </article>
-      
-        <article class="card">
-          <img src="/peregrinecomacancaonova/static/img/img3.jpg" alt="Itália e Medjugorje">
-          <h3>Itália e Medjugorje</h3>
-          <p><strong>Período:</strong> 17/03/2026 a 31/03/2026</p>
-          <p><strong>Diretor:</strong> Padre Felipe - Canção Nova</p>
-          <a class="btn" href="/peregrinecomacancaonova/roteiro/3/">Ver detalhes</a>
-        </article>
-      
-        <article class="card">
-          <img src="/peregrinecomacancaonova/static/img/img23.jpg" alt="Itália - Abril 20">
-          <h3>Itália - Abril 20</h3>
-          <p><strong>Período:</strong> 07/04/2026 a 18/04/2026</p>
-          <p><strong>Diretor:</strong> Diac Renné Viana e Pitter di Laura - Canção Nova</p>
-          <a class="btn" href="/peregrinecomacancaonova/roteiro/23/">Ver detalhes</a>
-        </article>
-      
+<!-- ==================== SEÇÃO HERO COM IMAGEM ==================== -->
+<section class="hero" style="
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('/peregrinecomacancaonova/static/img/hero-bg.jpg') center/cover;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;">
+    
+    <div class="container" style="max-width: 800px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
+            Bem-vindo à Canção Nova Peregrinações
+        </h1>
+        
+        <p style="font-size: 1.3rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+            Viagens religiosas, roteiros exclusivos e experiência espiritual com a Canção Nova.
+        </p>
+        
+        <a class="btn" href="/peregrinecomacancaonova/roteiros/" 
+           style="background: #FF6B35; color: white; padding: 15px 40px; font-size: 1.1rem; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600; box-shadow: 0 4px 15px rgba(255,107,53,0.4); transition: all 0.3s;">
+            Ver Roteiros
+        </a>
     </div>
-  
 </section>
 
-<section class="container">
-  <h2>Por que viajar conosco?</h2>
-  <ul class="features">
-    <li>Guias experientes e formação espiritual</li>
-    <li>Roteiros selecionados e exclusivos</li>
-    <li>Atendimento personalizado</li>
-    <li>Parceria oficial com a Comunidade Canção Nova</li>
-  </ul>
+<!-- ==================== PRÓXIMOS ROTEIROS ==================== -->
+<section class="container" style="padding: 60px 20px;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 40px; color: #333;">
+        Próximos Roteiros
+    </h2>
+    
+    
+        <div class="cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            
+                <article class="card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/peregrinecomacancaonova/static/img/img14.jpg" 
+                         alt="Itália - Fevereiro"
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    
+                    <div style="padding: 20px;">
+                        <h3 style="font-size: 1.3rem; color: #333; margin-bottom: 15px;">
+                            Itália - Fevereiro
+                        </h3>
+                        
+                        <p style="margin: 10px 0; color: #666;">
+                            <strong>📅 Período:</strong> 10/02/2026 a 25/02/2026
+                        </p>
+                        
+                        <p style="margin: 10px 0; color: #666;">
+                            <strong>✝️ Diretor:</strong> Padre Elenildo (Canção Nova)
+                        </p>
+                        
+                        <a class="btn" href="/peregrinecomacancaonova/roteiro/14/"
+                           style="display: inline-block; margin-top: 15px; background: #FF6B35; color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none; transition: background 0.3s;">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </article>
+            
+                <article class="card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/peregrinecomacancaonova/static/img/img3.jpg" 
+                         alt="Itália e Medjugorje"
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    
+                    <div style="padding: 20px;">
+                        <h3 style="font-size: 1.3rem; color: #333; margin-bottom: 15px;">
+                            Itália e Medjugorje
+                        </h3>
+                        
+                        <p style="margin: 10px 0; color: #666;">
+                            <strong>📅 Período:</strong> 17/03/2026 a 31/03/2026
+                        </p>
+                        
+                        <p style="margin: 10px 0; color: #666;">
+                            <strong>✝️ Diretor:</strong> Padre Felipe - Canção Nova
+                        </p>
+                        
+                        <a class="btn" href="/peregrinecomacancaonova/roteiro/3/"
+                           style="display: inline-block; margin-top: 15px; background: #FF6B35; color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none; transition: background 0.3s;">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </article>
+            
+                <article class="card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/peregrinecomacancaonova/static/img/img23.jpg" 
+                         alt="Itália - Abril 20"
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    
+                    <div style="padding: 20px;">
+                        <h3 style="font-size: 1.3rem; color: #333; margin-bottom: 15px;">
+                            Itália - Abril 20
+                        </h3>
+                        
+                        <p style="margin: 10px 0; color: #666;">
+                            <strong>📅 Período:</strong> 07/04/2026 a 18/04/2026
+                        </p>
+                        
+                        <p style="margin: 10px 0; color: #666;">
+                            <strong>✝️ Diretor:</strong> Diac Renné Viana e Pitter di Laura - Canção Nova
+                        </p>
+                        
+                        <a class="btn" href="/peregrinecomacancaonova/roteiro/23/"
+                           style="display: inline-block; margin-top: 15px; background: #FF6B35; color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none; transition: background 0.3s;">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </article>
+            
+        </div>
+    
 </section>
+
+<!-- ==================== POR QUE VIAJAR CONOSCO ==================== -->
+<section class="container" style="padding: 60px 20px; background: #f8f9fa; margin-top: 40px;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 40px; color: #333;">
+        Por que viajar conosco?
+    </h2>
+    
+    <ul class="features" style="list-style: none; max-width: 800px; margin: 0 auto; padding: 0;">
+        <li style="padding: 15px; margin: 10px 0; background: white; border-left: 4px solid #FF6B35; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            ✨ <strong>Guias experientes</strong> e formação espiritual
+        </li>
+        <li style="padding: 15px; margin: 10px 0; background: white; border-left: 4px solid #FF6B35; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            🌍 <strong>Roteiros selecionados</strong> e exclusivos
+        </li>
+        <li style="padding: 15px; margin: 10px 0; background: white; border-left: 4px solid #FF6B35; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            💙 <strong>Atendimento personalizado</strong>
+        </li>
+        <li style="padding: 15px; margin: 10px 0; background: white; border-left: 4px solid #FF6B35; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            ⛪ <strong>Parceria oficial</strong> com a Comunidade Canção Nova
+        </li>
+    </ul>
+</section>
+
+<style>
+/* Efeitos hover nos cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.btn:hover {
+    background: #E55A2B !important;
+    transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .hero p {
+        font-size: 1rem !important;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr !important;
+    }
+}
+</style>
+
 
 </main>
 
