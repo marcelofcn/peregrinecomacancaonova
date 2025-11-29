@@ -100,6 +100,59 @@ backToTopButton.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// ==================== DROPDOWN MELHORADO ====================
+let dropdownTimeout;
+
+function toggleDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('dropdownContent');
+    const isVisible = dropdown.style.display === 'block';
+    
+    if (isVisible) {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+    }
+}
+
+// Manter aberto enquanto mouse está sobre o dropdown
+const menuRoteiros = document.getElementById('menuRoteiros');
+const dropdownContent = document.getElementById('dropdownContent');
+
+if (menuRoteiros && dropdownContent) {
+    // Mostrar ao passar mouse
+    menuRoteiros.addEventListener('mouseenter', function() {
+        clearTimeout(dropdownTimeout);
+        dropdownContent.style.display = 'block';
+    });
+    
+    // Esconder com delay ao sair
+    menuRoteiros.addEventListener('mouseleave', function() {
+        dropdownTimeout = setTimeout(function() {
+            dropdownContent.style.display = 'none';
+        }, 300); // 300ms de delay
+    });
+    
+    // Manter aberto se mouse está sobre o dropdown
+    dropdownContent.addEventListener('mouseenter', function() {
+        clearTimeout(dropdownTimeout);
+    });
+    
+    dropdownContent.addEventListener('mouseleave', function() {
+        dropdownTimeout = setTimeout(function() {
+            dropdownContent.style.display = 'none';
+        }, 300);
+    });
+}
+
+// Fechar ao clicar fora
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('menuRoteiros');
+    if (dropdown && !dropdown.contains(event.target)) {
+        document.getElementById('dropdownContent').style.display = 'none';
+    }
+});
+
 // Efeito hover no botão WhatsApp
 const whatsappBtn = document.querySelector('.whatsapp-cta');
 if (whatsappBtn) {
