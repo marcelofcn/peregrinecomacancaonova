@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roteiros de Abril 2026 — Peregrine com a Canção Nova</title>
+
+    <link rel="stylesheet" href="/peregrinecomacancaonova/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="logo-container">
+        <a href="/peregrinecomacancaonova/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+            <img src="/peregrinecomacancaonova/static/img/logo.jpeg" alt="Logo" style="height: 55px; border-radius: 8px;">
+            <h1>Peregrine com a Canção Nova</h1>
+        </a>
+    </div>
+
+    <!-- ========================= MENU SIMPLIFICADO ========================= -->
+    <nav class="menu">
+        <a href="/peregrinecomacancaonova/">Início</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Roteiros ▼</button>
+            <div class="dropdown-content">
+                <a href="/peregrinecomacancaonova/roteiros/">Todos os Roteiros</a>
+                <hr style="margin: 5px 0; border: none; border-top: 1px solid #eee;">
+                
+                
+            </div>
+        </div>
+
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+    
+<section class="container">
+  <nav class="breadcrumb">
+    <a href="/peregrinecomacancaonova/">← Inicio</a>
+    <span class="separator">›</span>
+    <span class="current">Roteiros de Abril 2026</span>
+  </nav>
+
+  <h2>Roteiros de Abril 2026</h2>
+  
+  
+    <div class="cards">
+      
+        <article class="card">
+          <img src="/peregrinecomacancaonova/static/img/img23.jpg" alt="Itália - Abril 20">
+          
+          <h3>Itália - Abril 20</h3>
+
+          <p><strong>Categoria:</strong> espiritualidade</p>
+          <p><strong>Período:</strong> 07/04/2026 a 18/04/2026</p>
+          <p><strong>Diretor:</strong> Diac Renné Viana e Pitter di Laura - Canção Nova</p>
+
+          <a class="btn" href="/peregrinecomacancaonova/roteiro/23/">Ver detalhes</a>
+        </article>
+      
+    </div>
+  
+  
+</section>
+
+</main>
+
+<button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
+
+<footer id="contato">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Peregrine com a Canção Nova</h3>
+            <p>Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
+            
+            <!-- WhatsApp Melhorado -->
+            <div style="margin-top: 15px;">
+                <a href="https://wa.me/5567998927001?text=Olá! Gostaria de informações sobre os roteiros da Canção Nova." 
+                   target="_blank" 
+                   class="whatsapp-cta"
+                   style="display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                    <span style="font-size: 20px;">💬</span>
+                    <span>Fale conosco no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <p><a href="/peregrinecomacancaonova/">Início</a></p>
+            <p><a href="/peregrinecomacancaonova/roteiros/">Ver Roteiros</a></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Comunidade Canção Nova — Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+backToTopButton.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Efeito hover no botão WhatsApp
+const whatsappBtn = document.querySelector('.whatsapp-cta');
+if (whatsappBtn) {
+    whatsappBtn.addEventListener('mouseenter', function() {
+        this.style.background = '#128C7E';
+        this.style.transform = 'scale(1.05)';
+    });
+    whatsappBtn.addEventListener('mouseleave', function() {
+        this.style.background = '#25D366';
+        this.style.transform = 'scale(1)';
+    });
+}
+</script>
+
+</body>
+</html>
