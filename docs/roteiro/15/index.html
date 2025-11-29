@@ -14,18 +14,21 @@
     <div class="logo-container">
         <a href="/peregrinecomacancaonova/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
             <img src="/peregrinecomacancaonova/static/img/logo.jpeg" alt="Logo" style="height: 55px; border-radius: 8px;">
-            <h1>Peregrine com a Cancao Nova</h1>
+            <h1>Peregrine com a Canção Nova</h1>
         </a>
     </div>
 
-    <!-- ========================= MENU ========================= -->
+    <!-- ========================= MENU SIMPLIFICADO ========================= -->
     <nav class="menu">
-        <a href="/peregrinecomacancaonova/">Inicio</a>
+        <a href="/peregrinecomacancaonova/">Início</a>
 
         <div class="dropdown">
             <button class="dropbtn">Roteiros ▼</button>
             <div class="dropdown-content">
-                <a href="/peregrinecomacancaonova/roteiros/espiritualidade/cancaonova/">Cancao Nova</a>
+                <a href="/peregrinecomacancaonova/roteiros/">Todos os Roteiros</a>
+                <hr style="margin: 5px 0; border: none; border-top: 1px solid #eee;">
+                
+                
             </div>
         </div>
 
@@ -322,24 +325,35 @@
 <footer id="contato">
     <div class="footer-content">
         <div class="footer-section">
-            <h3>Peregrine com a Cancao Nova</h3>
-            <p>Transformando jornadas em experiencias inesqueciveis de fe e cultura.</p>
+            <h3>Peregrine com a Canção Nova</h3>
+            <p>Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
         </div>
 
         <div class="footer-section">
             <h3>Contato</h3>
             <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
-            <p>💬 <a href="https://wa.me/5567998927001" target="_blank">WhatsApp</a></p>
+            
+            <!-- WhatsApp Melhorado -->
+            <div style="margin-top: 15px;">
+                <a href="https://wa.me/5567998927001?text=Olá! Gostaria de informações sobre os roteiros da Canção Nova." 
+                   target="_blank" 
+                   class="whatsapp-cta"
+                   style="display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                    <span style="font-size: 20px;">💬</span>
+                    <span>Fale conosco no WhatsApp</span>
+                </a>
+            </div>
         </div>
 
         <div class="footer-section">
-            <h3>Links Rapidos</h3>
-            <p><a href="/peregrinecomacancaonova/">Inicio</a></p>
+            <h3>Links Rápidos</h3>
+            <p><a href="/peregrinecomacancaonova/">Início</a></p>
+            <p><a href="/peregrinecomacancaonova/roteiros/">Ver Roteiros</a></p>
         </div>
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2025 Comunidade Cancao Nova — Todos os direitos reservados.</p>
+        <p>&copy; 2025 Comunidade Canção Nova — Todos os direitos reservados.</p>
     </div>
 </footer>
 
@@ -357,6 +371,19 @@ window.addEventListener('scroll', function() {
 backToTopButton.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// Efeito hover no botão WhatsApp
+const whatsappBtn = document.querySelector('.whatsapp-cta');
+if (whatsappBtn) {
+    whatsappBtn.addEventListener('mouseenter', function() {
+        this.style.background = '#128C7E';
+        this.style.transform = 'scale(1.05)';
+    });
+    whatsappBtn.addEventListener('mouseleave', function() {
+        this.style.background = '#25D366';
+        this.style.transform = 'scale(1)';
+    });
+}
 </script>
 
 </body>
