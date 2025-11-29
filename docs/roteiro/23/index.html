@@ -22,35 +22,35 @@
     <nav class="menu">
         <a href="/peregrinecomacancaonova/">Início</a>
 
-        <div class="dropdown">
-            <button class="dropbtn">Roteiros ▼</button>
-            <div class="dropdown-content">
+        <div class="dropdown" id="menuRoteiros">
+            <button class="dropbtn" onclick="toggleDropdown(event)">Roteiros ▼</button>
+            <div class="dropdown-content" id="dropdownContent">
                 <!-- Sempre mostrar "Todos os Roteiros" primeiro -->
-                <a href="/peregrinecomacancaonova/roteiros/" style="font-weight: 600;">📋 Todos os Roteiros</a>
+                <a href="/peregrinecomacancaonova/roteiros/" style="font-weight: 600; font-size: 1rem;">📋 Todos os Roteiros</a>
                 
                 
-                    <hr style="margin: 8px 0; border: none; border-top: 1px solid #ddd;">
-                    <div style="padding: 5px 15px; font-size: 0.85rem; color: #999; font-weight: 600;">
-                        POR MÊS:
+                    <hr style="margin: 10px 0; border: none; border-top: 2px solid #eee;">
+                    <div style="padding: 8px 15px; font-size: 0.75rem; color: #999; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                        Por Mês
                     </div>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/02/">📅 Fevereiro/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/02/" style="padding-left: 20px;">📅 Fevereiro/2026</a>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/03/">📅 Março/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/03/" style="padding-left: 20px;">📅 Março/2026</a>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/04/">📅 Abril/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/04/" style="padding-left: 20px;">📅 Abril/2026</a>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/05/">📅 Maio/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/05/" style="padding-left: 20px;">📅 Maio/2026</a>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/06/">📅 Junho/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/06/" style="padding-left: 20px;">📅 Junho/2026</a>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/07/">📅 Julho/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/07/" style="padding-left: 20px;">📅 Julho/2026</a>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/08/">📅 Agosto/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/08/" style="padding-left: 20px;">📅 Agosto/2026</a>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/10/">📅 Outubro/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/10/" style="padding-left: 20px;">📅 Outubro/2026</a>
                     
-                        <a href="/peregrinecomacancaonova/roteiros/2026/11/">📅 Novembro/2026</a>
+                        <a href="/peregrinecomacancaonova/roteiros/2026/11/" style="padding-left: 20px;">📅 Novembro/2026</a>
                     
                 
             </div>
@@ -375,6 +375,59 @@ window.addEventListener('scroll', function() {
 
 backToTopButton.addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ==================== DROPDOWN MELHORADO ====================
+let dropdownTimeout;
+
+function toggleDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('dropdownContent');
+    const isVisible = dropdown.style.display === 'block';
+    
+    if (isVisible) {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+    }
+}
+
+// Manter aberto enquanto mouse está sobre o dropdown
+const menuRoteiros = document.getElementById('menuRoteiros');
+const dropdownContent = document.getElementById('dropdownContent');
+
+if (menuRoteiros && dropdownContent) {
+    // Mostrar ao passar mouse
+    menuRoteiros.addEventListener('mouseenter', function() {
+        clearTimeout(dropdownTimeout);
+        dropdownContent.style.display = 'block';
+    });
+    
+    // Esconder com delay ao sair
+    menuRoteiros.addEventListener('mouseleave', function() {
+        dropdownTimeout = setTimeout(function() {
+            dropdownContent.style.display = 'none';
+        }, 300); // 300ms de delay
+    });
+    
+    // Manter aberto se mouse está sobre o dropdown
+    dropdownContent.addEventListener('mouseenter', function() {
+        clearTimeout(dropdownTimeout);
+    });
+    
+    dropdownContent.addEventListener('mouseleave', function() {
+        dropdownTimeout = setTimeout(function() {
+            dropdownContent.style.display = 'none';
+        }, 300);
+    });
+}
+
+// Fechar ao clicar fora
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('menuRoteiros');
+    if (dropdown && !dropdown.contains(event.target)) {
+        document.getElementById('dropdownContent').style.display = 'none';
+    }
 });
 
 // Efeito hover no botão WhatsApp
