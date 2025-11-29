@@ -105,12 +105,10 @@ def get_meses_disponiveis():
 @app.route('/')
 def home():
     proximos = get_proximos_roteiros(3)
-    meses = get_meses_disponiveis()
-    
+    # meses_menu já está disponível via context_processor
     return render_template(
         "home.html",
-        destaque=proximos,
-        meses_menu=meses
+        destaque=proximos
     )
 
 @app.route('/roteiros/')
