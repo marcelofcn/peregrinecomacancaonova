@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory, abort
+from flask import Flask, render_template, send_from_directory, abort, url_for
 import os, json
 from datetime import datetime
 
@@ -82,23 +82,23 @@ def get_meses_disponiveis():
             meses.add((data.year, data.month))
     
     meses_lista = sorted(list(meses))
+    nomes_meses = { ... }  # seu dict de meses
     
-    # Converte para formato legível
-    nomes_meses = {
-        1: "Janeiro", 2: "Fevereiro", 3: "Março", 4: "Abril",
-        5: "Maio", 6: "Junho", 7: "Julho", 8: "Agosto",
-        9: "Setembro", 10: "Outubro", 11: "Novembro", 12: "Dezembro"
-    }
-    
-    return [
-        {
+res = []
+    for ano, mes in meses_lista:
+        # use url_for para gerar caminho relativo correto
+        url = url_for('roteiros_por_mes', ano=ano, mes=mes)
+        # se quiser, prefix com BASE_PATH (para Freezer/GH-pages)
+        full_url = f"{BASE_PATH}{url}"
+        res.append({
             "ano": ano,
             "mes": mes,
             "nome": f"{nomes_meses[mes]}/{ano}",
-            "url": f"{BASE_PATH}/roteiros/{ano}/{mes}/"
-        }
-        for ano, mes in meses_lista
-    ]
+            "url": full_url
+        })
+    return res
+    
+    
 
 # ==================== ROTAS ====================
 
