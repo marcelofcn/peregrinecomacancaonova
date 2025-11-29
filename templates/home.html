@@ -2,41 +2,125 @@
 {% block title %}Início — Peregrine com a Canção Nova{% endblock %}
 
 {% block content %}
-<section class="hero">
-  <div class="container">
-    <h1>Bem-vindo à Canção Nova Peregrinações</h1>
-    <p>Viagens religiosas, roteiros exclusivos e experiência espiritual com a Canção Nova.</p>
-    <a class="btn" href="{{ BASE_PATH }}/roteiros/">Ver roteiros</a>
-  </div>
-</section>
 
-<section class="container">
-  <h2>Próximos roteiros</h2>
-
-  {% if destaque %}
-    <div class="cards">
-      {% for r in destaque %}
-        <article class="card">
-          <img src="{{ BASE_PATH }}/static/img/{{ r.img }}" alt="{{ r.title }}">
-          <h3>{{ r.title }}</h3>
-          <p><strong>Período:</strong> {{ r.start }} a {{ r.end }}</p>
-          <p><strong>Diretor:</strong> {{ r.director }}</p>
-          <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ r.id }}/">Ver detalhes</a>
-        </article>
-      {% endfor %}
+<!-- ==================== SEÇÃO HERO COM IMAGEM ==================== -->
+<section class="hero" style="
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('{{ BASE_PATH }}/static/img/hero-bg.jpg') center/cover;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;">
+    
+    <div class="container" style="max-width: 800px;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
+            Bem-vindo à Canção Nova Peregrinações
+        </h1>
+        
+        <p style="font-size: 1.3rem; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7);">
+            Viagens religiosas, roteiros exclusivos e experiência espiritual com a Canção Nova.
+        </p>
+        
+        <a class="btn" href="{{ BASE_PATH }}/roteiros/" 
+           style="background: #FF6B35; color: white; padding: 15px 40px; font-size: 1.1rem; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600; box-shadow: 0 4px 15px rgba(255,107,53,0.4); transition: all 0.3s;">
+            Ver Roteiros
+        </a>
     </div>
-  {% else %}
-    <p>Nenhum roteiro em destaque no momento.</p>
-  {% endif %}
 </section>
 
-<section class="container">
-  <h2>Por que viajar conosco?</h2>
-  <ul class="features">
-    <li>Guias experientes e formação espiritual</li>
-    <li>Roteiros selecionados e exclusivos</li>
-    <li>Atendimento personalizado</li>
-    <li>Parceria oficial com a Comunidade Canção Nova</li>
-  </ul>
+<!-- ==================== PRÓXIMOS ROTEIROS ==================== -->
+<section class="container" style="padding: 60px 20px;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 40px; color: #333;">
+        Próximos Roteiros
+    </h2>
+    
+    {% if destaque %}
+        <div class="cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            {% for r in destaque %}
+                <article class="card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="{{ BASE_PATH }}/static/img/{{ r.img }}" 
+                         alt="{{ r.title }}"
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    
+                    <div style="padding: 20px;">
+                        <h3 style="font-size: 1.3rem; color: #333; margin-bottom: 15px;">
+                            {{ r.title }}
+                        </h3>
+                        
+                        <p style="margin: 10px 0; color: #666;">
+                            <strong>📅 Período:</strong> {{ r.start }} a {{ r.end }}
+                        </p>
+                        
+                        <p style="margin: 10px 0; color: #666;">
+                            <strong>✝️ Diretor:</strong> {{ r.director }}
+                        </p>
+                        
+                        <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ r.id }}/"
+                           style="display: inline-block; margin-top: 15px; background: #FF6B35; color: white; padding: 10px 25px; border-radius: 6px; text-decoration: none; transition: background 0.3s;">
+                            Ver Detalhes
+                        </a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p style="text-align: center; color: #999; font-size: 1.1rem;">
+            Nenhum roteiro em destaque no momento.
+        </p>
+    {% endif %}
 </section>
+
+<!-- ==================== POR QUE VIAJAR CONOSCO ==================== -->
+<section class="container" style="padding: 60px 20px; background: #f8f9fa; margin-top: 40px;">
+    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 40px; color: #333;">
+        Por que viajar conosco?
+    </h2>
+    
+    <ul class="features" style="list-style: none; max-width: 800px; margin: 0 auto; padding: 0;">
+        <li style="padding: 15px; margin: 10px 0; background: white; border-left: 4px solid #FF6B35; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            ✨ <strong>Guias experientes</strong> e formação espiritual
+        </li>
+        <li style="padding: 15px; margin: 10px 0; background: white; border-left: 4px solid #FF6B35; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            🌍 <strong>Roteiros selecionados</strong> e exclusivos
+        </li>
+        <li style="padding: 15px; margin: 10px 0; background: white; border-left: 4px solid #FF6B35; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            💙 <strong>Atendimento personalizado</strong>
+        </li>
+        <li style="padding: 15px; margin: 10px 0; background: white; border-left: 4px solid #FF6B35; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+            ⛪ <strong>Parceria oficial</strong> com a Comunidade Canção Nova
+        </li>
+    </ul>
+</section>
+
+<style>
+/* Efeitos hover nos cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.btn:hover {
+    background: #E55A2B !important;
+    transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .hero p {
+        font-size: 1rem !important;
+    }
+    
+    .cards {
+        grid-template-columns: 1fr !important;
+    }
+}
+</style>
+
 {% endblock %}
