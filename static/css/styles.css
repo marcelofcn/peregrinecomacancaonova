@@ -52,8 +52,8 @@ body{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:12px;
-  padding:12px 24px;
+  gap:10px;
+  padding:10px 20px;
 }
 .site-brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--cn-text); }
 .site-brand img{ height:46px; width:auto; display:block; /* no rounding per manual */ }
