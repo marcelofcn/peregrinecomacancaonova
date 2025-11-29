@@ -1,17 +1,3 @@
-O que você receberá aqui:
-
-static/css/site.css — CSS final (substitui seu styles.css)
-
-templates/base.html — versão atualizada (head, header, footer, scripts; mantém o comportamento do dropdown e do botão voltar ao topo)
-
-Atualizações mínimas para home.html, lista_roteiros.html, detalhe.html, 404.html — troquei os trechos inline por classes do novo CSS (mantive estrutura e variáveis BASE_PATH para não quebrar o freezer)
-
-Instruções de implantação rápidas (o que colar/onde), e notas importantes relativas ao manual de marca
-
-Cole cuidadosamente (substitua os arquivos existentes), gere o site e me diga se quer que eu minifique o CSS e gere os componentes separados.
-Crie/cole este arquivo em static/css/site.css (substitua o styles.css antigo ou mantenha ambos — ajuste o link no base.html).
-
-1) static/css/site.css
 /* static/css/site.css
    Estilo institucional Canção Nova (híbrido moderno)
    Paleta e tipografia conforme manual CN
