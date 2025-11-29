@@ -19,6 +19,16 @@ def static_files(filename):
 with open("roteiros.json", "r", encoding="utf-8") as f:
     ROTEIROS_DB = json.load(f)
 
+# ==================== CONTEXT PROCESSOR ====================
+# Injeta variáveis em TODOS os templates automaticamente
+
+@app.context_processor
+def inject_menu_data():
+    """Disponibiliza meses_menu em todos os templates"""
+    return {
+        'meses_menu': get_meses_disponiveis()
+    }
+
 # ==================== FUNÇÕES AUXILIARES ====================
 
 def parse_date(date_str):
