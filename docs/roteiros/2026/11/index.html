@@ -1,66 +1,69 @@
+2) templates/base.html (substitua o seu base.html pelo conteúdo abaixo)
+
+Cole este arquivo substituindo o atual templates/base.html. Mantive o JS do dropdown e do back-to-top — só alinhei classes e troquei a referência de CSS para o novo arquivo e fonte Lato.
+
+Observação: o BASE_PATH continua em uso para compatibilidade com Freezer/GH Pages.
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roteiros de Novembro 2026 — Peregrine com a Canção Nova</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roteiros de Novembro 2026 — Peregrine com a Canção Nova</title>
 
-    <link rel="stylesheet" href="/peregrinecomacancaonova/static/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Tipografia institucional (Lato) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="/peregrinecomacancaonova/static/css/site.css">
 </head>
-
 <body>
-<header class="site-header">
-    <div class="logo-container">
-        <a href="/peregrinecomacancaonova/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-            <img src="/peregrinecomacancaonova/static/img/logo.jpeg" alt="Logo" style="height: 55px; border-radius: 8px;">
-            <h1>Peregrine com a Canção Nova</h1>
-        </a>
-    </div>
+  <header class="site-header">
+    <a class="site-brand" href="/peregrinecomacancaonova/">
+      <img src="/peregrinecomacancaonova/static/img/marca_cancao_nova_png_v140517.png" alt="Canção Nova" />
+      <div class="brand-title">Peregrine com a Canção Nova</div>
+    </a>
 
-    <!-- ========================= MENU SIMPLIFICADO ========================= -->
-    <nav class="menu">
-        <a href="/peregrinecomacancaonova/">Início</a>
+    <nav class="site-nav" role="navigation" aria-label="Menu principal">
+      <a href="/peregrinecomacancaonova/">Início</a>
 
-        <div class="dropdown" id="menuRoteiros">
-            <button class="dropbtn" onclick="toggleDropdown(event)">Roteiros ▼</button>
-            <div class="dropdown-content" id="dropdownContent">
-                <!-- Sempre mostrar "Todos os Roteiros" primeiro -->
-                <a href="/peregrinecomacancaonova/roteiros/" style="font-weight: 600; font-size: 1rem;">📋 Todos os Roteiros</a>
-                
-                
-                    <hr style="margin: 10px 0; border: none; border-top: 2px solid #eee;">
-                    <div style="padding: 8px 15px; font-size: 0.75rem; color: #999; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
-                        Por Mês
-                    </div>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/2/" style="padding-left: 20px;">📅 Fevereiro/2026</a>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/3/" style="padding-left: 20px;">📅 Março/2026</a>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/4/" style="padding-left: 20px;">📅 Abril/2026</a>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/5/" style="padding-left: 20px;">📅 Maio/2026</a>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/6/" style="padding-left: 20px;">📅 Junho/2026</a>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/7/" style="padding-left: 20px;">📅 Julho/2026</a>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/8/" style="padding-left: 20px;">📅 Agosto/2026</a>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/10/" style="padding-left: 20px;">📅 Outubro/2026</a>
-                    
-                        <a href="/peregrinecomacancaonova/roteiros/2026/11/" style="padding-left: 20px;">📅 Novembro/2026</a>
-                    
-                
-            </div>
+      <div class="dropdown" id="menuRoteiros">
+        <button class="dropbtn" onclick="toggleDropdown(event)">Roteiros ▾</button>
+        <div class="dropdown-content" id="dropdownContent" aria-hidden="true">
+          <a href="/peregrinecomacancaonova/roteiros/" style="font-weight:700;">📋 Todos os Roteiros</a>
+
+          
+            <hr style="margin:8px 0; border:none; border-top:1px solid rgba(0,0,0,0.04);">
+            <div style="padding:8px 12px; font-size:0.72rem; color:var(--cn-muted); font-weight:700; text-transform:uppercase; letter-spacing:1px;">Por mês</div>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/2/">📅 Fevereiro/2026</a>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/3/">📅 Março/2026</a>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/4/">📅 Abril/2026</a>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/5/">📅 Maio/2026</a>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/6/">📅 Junho/2026</a>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/7/">📅 Julho/2026</a>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/8/">📅 Agosto/2026</a>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/10/">📅 Outubro/2026</a>
+            
+              <a href="/peregrinecomacancaonova/roteiros/2026/11/">📅 Novembro/2026</a>
+            
+          
         </div>
+      </div>
 
-        <a href="#contato">Contato</a>
+      <a href="#contato">Contato</a>
     </nav>
-</header>
+  </header>
 
-<main>
+  <main>
     
 <section class="container">
   <nav class="breadcrumb">
@@ -91,125 +94,150 @@
   
 </section>
 
-</main>
+  </main>
 
-<button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
+  <button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
 
-<footer id="contato">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>Peregrine com a Canção Nova</h3>
-            <p>Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
+  <footer class="site-footer" id="contato" role="contentinfo">
+    <div class="footer-content container">
+      <div class="footer-section">
+        <h3 style="color:var(--cn-azul)">Peregrine com a Canção Nova</h3>
+        <p>Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
+
+        <div style="margin-top:12px;">
+          <a class="btn btn-whatsapp" href="https://wa.me/5567998927001?text=Olá! Gostaria de informações sobre os roteiros da Canção Nova." target="_blank">
+            💬 Fale conosco no WhatsApp
+          </a>
         </div>
+      </div>
 
-        <div class="footer-section">
-            <h3>Contato</h3>
-            <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
-            
-            <!-- WhatsApp Melhorado -->
-            <div style="margin-top: 15px;">
-                <a href="https://wa.me/5567998927001?text=Olá! Gostaria de informações sobre os roteiros da Canção Nova." 
-                   target="_blank" 
-                   class="whatsapp-cta"
-                   style="display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
-                    <span style="font-size: 20px;">💬</span>
-                    <span>Fale conosco no WhatsApp</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="footer-section">
-            <h3>Links Rápidos</h3>
-            <p><a href="/peregrinecomacancaonova/">Início</a></p>
-            <p><a href="/peregrinecomacancaonova/roteiros/">Ver Roteiros</a></p>
-        </div>
+      <div class="footer-section">
+        <h3>Links rápidos</h3>
+        <p><a href="/peregrinecomacancaonova/">Início</a></p>
+        <p><a href="/peregrinecomacancaonova/roteiros/">Ver Roteiros</a></p>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-        <p>&copy; 2025 Comunidade Canção Nova — Todos os direitos reservados.</p>
+    <div style="text-align:center; padding:18px 0; border-top:1px solid rgba(35,48,58,0.04);">
+      <small>&copy; 2025 Comunidade Canção Nova — Todos os direitos reservados.</small>
     </div>
-</footer>
+  </footer>
 
 <script>
+/* Back to top */
 const backToTopButton = document.getElementById('backToTop');
-
 window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-    } else {
-        backToTopButton.classList.remove('show');
-    }
+  if (window.pageYOffset > 300) backToTopButton.classList.add('show');
+  else backToTopButton.classList.remove('show');
 });
+backToTopButton.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-backToTopButton.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// ==================== DROPDOWN MELHORADO ====================
+/* Dropdown logic (preserve behavior) */
 let dropdownTimeout;
-
-function toggleDropdown(event) {
-    event.stopPropagation();
-    const dropdown = document.getElementById('dropdownContent');
-    const isVisible = dropdown.style.display === 'block';
-    
-    if (isVisible) {
-        dropdown.style.display = 'none';
-    } else {
-        dropdown.style.display = 'block';
-    }
+function toggleDropdown(event){
+  event.stopPropagation();
+  const dropdown = document.getElementById('dropdownContent');
+  if (!dropdown) return;
+  const isVisible = dropdown.style.display === 'block';
+  dropdown.style.display = isVisible ? 'none' : 'block';
 }
-
-// Manter aberto enquanto mouse está sobre o dropdown
 const menuRoteiros = document.getElementById('menuRoteiros');
 const dropdownContent = document.getElementById('dropdownContent');
 
-if (menuRoteiros && dropdownContent) {
-    // Mostrar ao passar mouse
-    menuRoteiros.addEventListener('mouseenter', function() {
-        clearTimeout(dropdownTimeout);
-        dropdownContent.style.display = 'block';
-    });
-    
-    // Esconder com delay ao sair
-    menuRoteiros.addEventListener('mouseleave', function() {
-        dropdownTimeout = setTimeout(function() {
-            dropdownContent.style.display = 'none';
-        }, 300); // 300ms de delay
-    });
-    
-    // Manter aberto se mouse está sobre o dropdown
-    dropdownContent.addEventListener('mouseenter', function() {
-        clearTimeout(dropdownTimeout);
-    });
-    
-    dropdownContent.addEventListener('mouseleave', function() {
-        dropdownTimeout = setTimeout(function() {
-            dropdownContent.style.display = 'none';
-        }, 300);
-    });
+if (menuRoteiros && dropdownContent){
+  menuRoteiros.addEventListener('mouseenter', function(){ clearTimeout(dropdownTimeout); dropdownContent.style.display = 'block'; });
+  menuRoteiros.addEventListener('mouseleave', function(){ dropdownTimeout = setTimeout(()=>dropdownContent.style.display='none', 260); });
+  dropdownContent.addEventListener('mouseenter', function(){ clearTimeout(dropdownTimeout); });
+  dropdownContent.addEventListener('mouseleave', function(){ dropdownTimeout = setTimeout(()=>dropdownContent.style.display='none', 260); });
 }
-
-// Fechar ao clicar fora
-document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('menuRoteiros');
-    if (dropdown && !dropdown.contains(event.target)) {
-        document.getElementById('dropdownContent').style.display = 'none';
-    }
+document.addEventListener('click', function(e){
+  const menu = document.getElementById('menuRoteiros');
+  if (menu && !menu.contains(e.target)){ const dd = document.getElementById('dropdownContent'); if (dd) dd.style.display = 'none'; }
 });
+</script>
+<script>
+/* Carousel fade controller - accessible, autoplay, pause on hover, keyboard */
+(function(){
+  const carousel = document.getElementById('mainCarousel');
+  if (!carousel) return;
 
-// Efeito hover no botão WhatsApp
-const whatsappBtn = document.querySelector('.whatsapp-cta');
-if (whatsappBtn) {
-    whatsappBtn.addEventListener('mouseenter', function() {
-        this.style.background = '#128C7E';
-        this.style.transform = 'scale(1.05)';
+  const track = carousel.querySelector('.carousel-track');
+  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+  const prevBtn = carousel.querySelector('[data-action="prev"]');
+  const nextBtn = carousel.querySelector('[data-action="next"]');
+  const indicators = Array.from(carousel.querySelectorAll('.indicator'));
+
+  let current = 0;
+  let interval = null;
+  const delay = 6000; // 6s
+  const fadeDuration = 900; // matches CSS
+
+  function goTo(index){
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    slides.forEach((s,i)=>{
+      s.classList.toggle('is-active', i === index);
+      // update aria-selected for indicators
+      if (indicators[i]) indicators[i].setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
-    whatsappBtn.addEventListener('mouseleave', function() {
-        this.style.background = '#25D366';
-        this.style.transform = 'scale(1)';
+    current = index;
+  }
+
+  function next(){ goTo(current + 1); }
+  function prev(){ goTo(current - 1); }
+
+  function startAuto(){
+    stopAuto();
+    interval = setInterval(next, delay);
+  }
+  function stopAuto(){
+    if (interval) { clearInterval(interval); interval = null; }
+  }
+
+  // Initialization
+  goTo(0);
+  startAuto();
+
+  // Controls
+  if (nextBtn) nextBtn.addEventListener('click', ()=>{ next(); startAuto(); });
+  if (prevBtn) prevBtn.addEventListener('click', ()=>{ prev(); startAuto(); });
+
+  // Indicators
+  indicators.forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      const idx = Number(btn.getAttribute('data-index'));
+      goTo(idx);
+      startAuto();
     });
-}
+  });
+
+  // Pause on hover (accessibility: pause on focus too)
+  carousel.addEventListener('mouseenter', stopAuto);
+  carousel.addEventListener('mouseleave', startAuto);
+  carousel.addEventListener('focusin', stopAuto);
+  carousel.addEventListener('focusout', startAuto);
+
+  // keyboard navigation
+  document.addEventListener('keydown', function(e){
+    if (['ArrowLeft','ArrowRight'].includes(e.key)){
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+      startAuto();
+    }
+  });
+
+  // ensure first slide visible (for users who have reduced motion)
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (prefersReduced.matches){
+    stopAuto();
+    slides.forEach((s,i)=> s.style.transition = 'none');
+  }
+})();
 </script>
 
 </body>
