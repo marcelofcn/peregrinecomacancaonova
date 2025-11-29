@@ -75,28 +75,33 @@ def get_meses_disponiveis():
     """Retorna lista de meses que têm roteiros disponíveis"""
     meses = set()
     hoje = datetime.now()
-    
+
     for r in ROTEIROS_DB.values():
         data = parse_date(r["start"])
         if data >= hoje:
             meses.add((data.year, data.month))
-    
+
     meses_lista = sorted(list(meses))
-    nomes_meses = { ... }  # seu dict de meses
-    
-res = []
+
+    nomes_meses = {
+        1: "Janeiro", 2: "Fevereiro", 3: "Março", 4: "Abril",
+        5: "Maio", 6: "Junho", 7: "Julho", 8: "Agosto",
+        9: "Setembro", 10: "Outubro", 11: "Novembro", 12: "Dezembro"
+    }
+
+    resultado = []
+
     for ano, mes in meses_lista:
-        # use url_for para gerar caminho relativo correto
-        url = url_for('roteiros_por_mes', ano=ano, mes=mes)
-        # se quiser, prefix com BASE_PATH (para Freezer/GH-pages)
-        full_url = f"{BASE_PATH}{url}"
-        res.append({
+        url = f"{BASE_PATH}/roteiros/{ano}/{mes}/"
+        resultado.append({
             "ano": ano,
             "mes": mes,
             "nome": f"{nomes_meses[mes]}/{ano}",
-            "url": full_url
+            "url": url
         })
-    return res
+
+    return resultado
+
     
     
 
