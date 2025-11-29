@@ -1120,3 +1120,174 @@ footer {
         font-size: 0.9rem;
     }
 }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Peregrine com a Canção Nova{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ BASE_PATH }}/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="site-header">
+    <div class="logo-container">
+        <a href="{{ BASE_PATH }}/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+            <img src="{{ BASE_PATH }}/static/img/logo.jpeg" alt="Logo" style="height: 55px; border-radius: 8px;">
+            <h1>Peregrine com a Canção Nova</h1>
+        </a>
+    </div>
+
+    <!-- ========================= MENU SIMPLIFICADO ========================= -->
+    <nav class="menu">
+        <a href="{{ BASE_PATH }}/">Início</a>
+
+        <div class="dropdown" id="menuRoteiros">
+            <button class="dropbtn" onclick="toggleDropdown(event)">Roteiros ▼</button>
+            <div class="dropdown-content" id="dropdownContent">
+                <!-- Sempre mostrar "Todos os Roteiros" primeiro -->
+                <a href="{{ BASE_PATH }}/roteiros/" style="font-weight: 600; font-size: 1rem;">📋 Todos os Roteiros</a>
+                
+                {% if meses_menu %}
+                    <hr style="margin: 10px 0; border: none; border-top: 2px solid #eee;">
+                    <div style="padding: 8px 15px; font-size: 0.75rem; color: #999; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                        Por Mês
+                    </div>
+                    {% for mes in meses_menu %}
+                        <a href="{{ mes.url }}" style="padding-left: 20px;">📅 {{ mes.nome }}</a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
+
+<footer id="contato">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Peregrine com a Canção Nova</h3>
+            <p>Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
+            
+            <!-- WhatsApp Melhorado -->
+            <div style="margin-top: 15px;">
+                <a href="https://wa.me/5567998927001?text=Olá! Gostaria de informações sobre os roteiros da Canção Nova." 
+                   target="_blank" 
+                   class="whatsapp-cta"
+                   style="display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                    <span style="font-size: 20px;">💬</span>
+                    <span>Fale conosco no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Links Rápidos</h3>
+            <p><a href="{{ BASE_PATH }}/">Início</a></p>
+            <p><a href="{{ BASE_PATH }}/roteiros/">Ver Roteiros</a></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Comunidade Canção Nova — Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+const backToTopButton = document.getElementById('backToTop');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+    } else {
+        backToTopButton.classList.remove('show');
+    }
+});
+
+backToTopButton.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ==================== DROPDOWN MELHORADO ====================
+let dropdownTimeout;
+
+function toggleDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('dropdownContent');
+    const isVisible = dropdown.style.display === 'block';
+    
+    if (isVisible) {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+    }
+}
+
+// Manter aberto enquanto mouse está sobre o dropdown
+const menuRoteiros = document.getElementById('menuRoteiros');
+const dropdownContent = document.getElementById('dropdownContent');
+
+if (menuRoteiros && dropdownContent) {
+    // Mostrar ao passar mouse
+    menuRoteiros.addEventListener('mouseenter', function() {
+        clearTimeout(dropdownTimeout);
+        dropdownContent.style.display = 'block';
+    });
+    
+    // Esconder com delay ao sair
+    menuRoteiros.addEventListener('mouseleave', function() {
+        dropdownTimeout = setTimeout(function() {
+            dropdownContent.style.display = 'none';
+        }, 300); // 300ms de delay
+    });
+    
+    // Manter aberto se mouse está sobre o dropdown
+    dropdownContent.addEventListener('mouseenter', function() {
+        clearTimeout(dropdownTimeout);
+    });
+    
+    dropdownContent.addEventListener('mouseleave', function() {
+        dropdownTimeout = setTimeout(function() {
+            dropdownContent.style.display = 'none';
+        }, 300);
+    });
+}
+
+// Fechar ao clicar fora
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('menuRoteiros');
+    if (dropdown && !dropdown.contains(event.target)) {
+        document.getElementById('dropdownContent').style.display = 'none';
+    }
+});
+
+// Efeito hover no botão WhatsApp
+const whatsappBtn = document.querySelector('.whatsapp-cta');
+if (whatsappBtn) {
+    whatsappBtn.addEventListener('mouseenter', function() {
+        this.style.background = '#128C7E';
+        this.style.transform = 'scale(1.05)';
+    });
+    whatsappBtn.addEventListener('mouseleave', function() {
+        this.style.background = '#25D366';
+        this.style.transform = 'scale(1)';
+    });
+}
+</script>
+
+</body>
+</html>
