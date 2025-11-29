@@ -22,19 +22,19 @@
     <nav class="menu">
         <a href="{{ BASE_PATH }}/">Início</a>
 
-        <div class="dropdown">
-            <button class="dropbtn">Roteiros ▼</button>
-            <div class="dropdown-content">
+        <div class="dropdown" id="menuRoteiros">
+            <button class="dropbtn" onclick="toggleDropdown(event)">Roteiros ▼</button>
+            <div class="dropdown-content" id="dropdownContent">
                 <!-- Sempre mostrar "Todos os Roteiros" primeiro -->
-                <a href="{{ BASE_PATH }}/roteiros/" style="font-weight: 600;">📋 Todos os Roteiros</a>
+                <a href="{{ BASE_PATH }}/roteiros/" style="font-weight: 600; font-size: 1rem;">📋 Todos os Roteiros</a>
                 
                 {% if meses_menu %}
-                    <hr style="margin: 8px 0; border: none; border-top: 1px solid #ddd;">
-                    <div style="padding: 5px 15px; font-size: 0.85rem; color: #999; font-weight: 600;">
-                        POR MÊS:
+                    <hr style="margin: 10px 0; border: none; border-top: 2px solid #eee;">
+                    <div style="padding: 8px 15px; font-size: 0.75rem; color: #999; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                        Por Mês
                     </div>
                     {% for mes in meses_menu %}
-                        <a href="{{ mes.url }}">📅 {{ mes.nome }}</a>
+                        <a href="{{ mes.url }}" style="padding-left: 20px;">📅 {{ mes.nome }}</a>
                     {% endfor %}
                 {% endif %}
             </div>
