@@ -1,133 +1,818 @@
-/* ============================
-   RODAPÉ CANÇÃO NOVA - LAYOUT
-   (substituir / adicionar ao final)
-   ============================ */
+/* ============================================================
+   site.css — PARTE 1/4
+   VARIÁVEIS, RESET, BASE, HEADER E NAVEGAÇÃO
+   Cole esta parte no início de static/css/site.css
+   ============================================================ */
 
-.cn-footer {
-  background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
-  margin-top: 48px;
+/* -------------------------
+   1. VARIÁVEIS (tema institucional)
+   ------------------------- */
+:root{
+  --cn-azul: #0177BC;
+  --cn-azul-escuro: #015F94;
+  --cn-azul-claro: #E7F4FF;
+  --cn-bg: #F7F9FB;
+  --cn-text: #23303A;
+  --cn-muted: #6E7B86;
+  --white: #ffffff;
+
+  --radius: 10px;
+  --card-shadow: 0 8px 24px rgba(15,30,45,0.06);
+  --card-shadow-hover: 0 12px 36px rgba(15,30,45,0.09);
+
+  --container: 1200px;
+  --gap: 20px;
+
+  --transition-fast: 180ms ease;
+}
+
+/* -------------------------
+   2. RESET / BASE
+   - mantém consistência entre navegadores
+   ------------------------- */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Lato", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--cn-bg);
+  color: var(--cn-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+  padding-top: 90px; /* espaço reservado para header fixo */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* tipografia padrão */
+h1,h2,h3,h4,h5,h6 { color: var(--cn-text); margin: 0; }
+p { margin: 0 0 12px 0; }
+a { color: inherit; text-decoration: none; }
+
+/* container central */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 28px;
+}
+
+/* utilitários simples */
+.u-center { text-align: center; }
+.text-muted { color: var(--cn-muted); font-size: 0.95rem; }
+
+/* -------------------------
+   3. HEADER (fixo, responsivo)
+   - logo, brand title, nav desktop
+   ------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  background: var(--white);
+  border-bottom: 1px solid rgba(35,48,58,0.06);
+  z-index: 1200;
+  transition: box-shadow var(--transition-fast);
+}
+
+/* marca (logo + texto) */
+.site-brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--cn-text); }
+.site-brand img {
+  height: 46px;       /* tamanho padrão desktop */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+.site-brand .brand-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* header sombra quando scrolled (JS adiciona .scrolled) */
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(1,119,188,0.06);
+}
+
+/* -------------------------
+   4. NAV (desktop)
+   - itens simples, dropdown minimal
+   ------------------------- */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* links / botões do nav */
+.site-nav a {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--cn-text);
+  transition: background var(--transition-fast), color var(--transition-fast), padding-left var(--transition-fast);
+}
+.site-nav a:hover {
+  background: rgba(1,119,188,0.06);
+  color: var(--cn-azul-escuro);
+}
+
+/* Dropdown container */
+.dropdown { position: relative; }
+.dropbtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 700;
   color: var(--cn-text);
 }
 
-/* faixa superior fina (onde a logo poderá ficar) */
-.footer-top-bar {
-  background: linear-gradient(90deg, var(--cn-azul), var(--cn-azul-escuro));
-  padding: 8px 0;
+/* dropdown-content (inicialmente escondido) */
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(20,40,60,0.08);
+  overflow: hidden;
+  z-index: 1400;
+  border: 1px solid rgba(2,27,46,0.05);
+}
+
+/* items do dropdown */
+.dropdown .dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  color: var(--cn-text);
+  font-weight: 600;
+}
+.dropdown .dropdown-content a:hover {
+  background: var(--cn-azul-claro);
+  color: var(--cn-azul);
+  padding-left: 18px;
+}
+
+/* utilitário para exibir (JS também pode controlar) */
+.dropdown.open .dropdown-content { display: block; }
+
+/* pequena linha separadora no menu */
+.dropdown .dropdown-content hr { border: none; border-top: 1px solid rgba(0,0,0,0.04); margin: 8px 0; }
+
+/* -------------------------
+   5. BOTÃO HAMBURGER / TOGGLE (mobile)
+   - estilo base (visível via media query)
+   ------------------------- */
+.mobile-menu-toggle {
+  display: none; /* visível apenas em mobile por media queries */
+  width: 36px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* linhas do hambúrguer */
+.mobile-menu-toggle .hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--cn-azul);
+  border-radius: 2px;
+  transition: transform 220ms ease, opacity 160ms ease;
+}
+
+/* estado ativo (adicionado via JS ao abrir) */
+.mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* -------------------------
+   6. MOBILE MENU OVERLAY (inicia aqui, detalhes em parte 2/4)
+   - overlay e container básico para o menu mobile
+   ------------------------- */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(1,119,188,0.95);
+  backdrop-filter: blur(6px);
+  z-index: 1300;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 220ms ease, visibility 220ms;
+  overflow-y: auto;
+}
+
+/* quando ativo (JS adiciona .active) */
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* container interno do mobile menu (centrado) */
+.mobile-menu {
+  max-width: 520px;
+  margin: 90px auto 40px;
+  padding: 12px 20px 40px;
+}
+
+/* links do mobile menu (animação e estilo) */
+.mobile-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.02rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 10px;
+  transform: translateX(-12px);
+  opacity: 0;
+  animation: mobileSlideIn 360ms ease forwards;
+}
+
+/* animação sequencial — delays controlados via nth-child (parte 2/4) */
+@keyframes mobileSlideIn {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* -------------------------
+   7. ACCESSIBILITY IMPROVEMENTS
+   ------------------------- */
+a:focus, button:focus { outline: 3px solid rgba(1,119,188,0.12); outline-offset: 3px; border-radius: 6px; }
+
+/* prefer-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* -------------------------
+   8. RESPONSIVENESS (início)
+   - mostra botão mobile; esconde nav desktop
+   - mais regras de mobile no final (parte 4/4)
+   ------------------------- */
+@media (max-width: 980px) {
+  .site-nav { display: none; }
+  .mobile-menu-toggle { display: flex; }
+  body { padding-top: 80px; } /* header compacta no mobile */
+}
+
+/* End of PART 1/4 */
+
+/* ============================================================
+   site.css — PARTE 2/4
+   HERO, CAROUSEL, CARDS, LISTAS, BREADCRUMB, EMPTY STATE
+   ============================================================ */
+
+/* ============================================================
+   1. HERO (carrossel ou banner)
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(1,119,188,0.18),
+      rgba(1,119,188,0.06)
+  );
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 40px;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+  font-weight: 900;
+  text-shadow: 0 6px 18px rgba(10,20,30,0.18);
+}
+
+.hero p {
+  margin: 0 0 22px;
+  font-size: 1.05rem;
+}
+
+
+/* ============================================================
+   2. CAROUSEL (compatível com o JS existente)
+   ============================================================ */
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
   position: relative;
 }
 
-/* inner container para alinhar conteúdo dentro da faixa */
-.footer-bar-inner {
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.carousel-slide.is-active {
+  position: relative;
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-media {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Caption dentro da imagem */
+.carousel-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 0; right: 0;
+  text-align: center;
+  color: white;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.28);
+}
+
+/* Controles */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  padding: 12px 16px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 20;
+}
+.carousel-control.prev { left: 16px; }
+.carousel-control.next { right: 16px; }
+
+/* Indicadores do carrossel */
+.carousel-indicators {
   display: flex;
-  align-items: center;
-  justify-content: flex-start; /* logo a esquerda */
-  gap: 18px;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 15px;
 }
 
-/* logo na faixa superior */
-.footer-cn-logo {
-  height: 36px;
-  width: auto;
-  display: block;
-  filter: none;
-  opacity: 0.98;
-  margin: 2px 0;
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  border: none;
+  cursor: pointer;
+}
+.indicator[aria-selected="true"] {
+  background: var(--cn-azul);
 }
 
-/* Conteúdo principal do footer (3 colunas em desktop) */
-.cn-footer .footer-content {
-  padding: 28px 18px;
+
+/* ============================================================
+   3. BOTÕES GERAIS
+   ============================================================ */
+
+.btn {
+  display: inline-block;
+  background: var(--cn-azul);
+  color: var(--white);
+  padding: 12px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(1,119,188,0.12);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.btn-secondary {
   background: transparent;
+  color: var(--cn-azul);
+  border: 1px solid rgba(1,119,188,0.12);
+  box-shadow: none;
 }
 
-.cn-footer .footer-section {
+.btn-whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.btn-phone {
+  background: var(--cn-azul-escuro);
+  color: white;
+}
+
+
+/* ============================================================
+   4. CARDS (lista de roteiros / vantagens)
+   ============================================================ */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+}
+
+.card h3 {
+  font-size: 1.12rem;
+  font-weight: 800;
+}
+
+.card p {
+  color: var(--cn-muted);
+  font-size: 0.95rem;
+}
+
+
+/* ============================================================
+   5. BREADCRUMB
+   ============================================================ */
+
+.breadcrumb {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--cn-muted);
   margin-bottom: 18px;
 }
 
-/* Títulos do footer */
-.footer-title {
+.breadcrumb a {
   color: var(--cn-azul);
-  font-size: 1rem;
-  font-weight: 800;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
+  font-weight: 700;
 }
 
-/* Links e contato */
-.footer-links { list-style:none; padding:0; margin:0; }
-.footer-links li { margin:8px 0; }
-.footer-links a { color:var(--cn-text); text-decoration:none; font-weight:600; transition: all .18s; }
-.footer-links a:hover { color:var(--cn-azul-escuro); padding-left:8px; }
-
-/* CONTACT */
-.footer-contact .contact-item { display:flex; align-items:center; gap:10px; margin:8px 0; }
-.footer-cta { margin-top:12px; }
-
-/* FAIXA INFERIOR (azul) - onde fica o copyright e elementos laterais) */
-.footer-bottom {
-  background: var(--cn-azul);
-  color: #fff;
-  padding: 14px 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
+.breadcrumb .separator {
+  color: rgba(35,48,58,0.3);
 }
 
-/* inner row of bottom bar: left - center - right */
-.footer-bottom-inner {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
+
+/* ============================================================
+   6. EMPTY STATE (mensagens sem conteúdo)
+   ============================================================ */
+
+.empty-state {
+  text-align: center;
+  background: var(--white);
+  padding: 36px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
 }
 
-/* left small links */
-.footer-bottom-left .footer-small-links a { color: rgba(255,255,255,0.9); text-decoration:none; margin-right: 14px; font-weight:600; }
-.footer-bottom-left .footer-small-links a:hover { text-decoration:underline; }
 
-/* center copyright */
-.footer-bottom-center { text-align:center; flex: 0 1 auto; }
-
-/* right contact / whatsapp */
-.footer-bottom-right { text-align:right; display:flex; align-items:center; gap:12px; justify-content:flex-end; }
-
-/* estilo dos botões brancos sobre azul (versão compacta) */
-.footer-bottom-right .btn { box-shadow:none; background: rgba(255,255,255,0.12); color:#fff; padding:8px 12px; border-radius:8px; font-weight:700; }
-.footer-bottom-right .btn:hover { background: rgba(255,255,255,0.18); }
-
-/* RESPONSIVIDADE */
-@media (max-width: 980px) {
-  .footer-bar-inner { justify-content: center; }
-  .footer-cn-logo { height: 34px; }
-
-  .footer-content.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 18px;
-    text-align: center;
-  }
-
-  .footer-bottom-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .footer-bottom-right { justify-content: center; }
-}
+/* ============================================================
+   7. MOBILE AJUSTES ESPECIAIS
+   ============================================================ */
 
 @media (max-width: 480px) {
-  .footer-cn-logo { height: 30px; }
-  .footer-top-bar { padding: 6px 0; }
-  .footer-bottom { padding: 12px 0; }
-}
-/* ============================================
-   FOOTER INSTITUCIONAL CANÇÃO NOVA
-   ============================================ */
+  .carousel-media {
+    height: 380px;
+    object-position: center 15%; /* mostra mais o topo */
+  }
 
-/* Barra azul superior do footer */
+  .hero h1 { font-size: 1.6rem; }
+  .card img { height: 160px; }
+}
+/* ============================================================
+   site.css — PARTE 3/4
+   DETALHE DE ROTEIRO / ITINERÁRIO / LISTAS / TABELAS
+   ============================================================ */
+
+
+/* ============================================================
+   1. CABEÇALHO DO DETALHE DO ROTEIRO
+   ============================================================ */
+
+.roteiro-header {
+  margin-bottom: 30px;
+}
+
+.roteiro-header h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: var(--cn-azul-escuro);
+}
+
+.roteiro-header .roteiro-meta {
+  color: var(--cn-muted);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+
+
+/* ============================================================
+   2. GALERIA / IMAGEM DESTACADA DO ROTEIRO
+   ============================================================ */
+
+.roteiro-cover {
+  width: 100%;
+  height: 360px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  box-shadow: var(--card-shadow);
+}
+
+.roteiro-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* ============================================================
+   3. SEÇÃO DESCRITIVA
+   ============================================================ */
+
+.roteiro-section {
+  margin-bottom: 35px;
+}
+
+.roteiro-section h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--cn-azul);
+  margin-bottom: 12px;
+}
+
+
+
+/* ============================================================
+   4. LISTA DE INCLUSO / NÃO INCLUSO
+   ============================================================ */
+
+.incluso-box,
+.nao-incluso-box {
+  background: var(--white);
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.incluso-box h3,
+.nao-incluso-box h3 {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.incluso-list li,
+.nao-incluso-list li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cn-text);
+}
+
+.incluso-list li::before {
+  content: "✔";
+  color: #0ab050;
+  font-weight: 900;
+}
+
+.nao-incluso-list li::before {
+  content: "✖";
+  color: #cc0033;
+  font-weight: 900;
+}
+
+
+
+/* ============================================================
+   5. ITINERÁRIO — LINHA DO TEMPO
+   ============================================================ */
+
+.itinerario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-left: 4px solid var(--cn-azul);
+  padding-left: 22px;
+}
+
+.itinerario-item {
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.itinerario-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  background: var(--cn-azul);
+  border-radius: 50%;
+}
+
+.itinerario-item h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.itinerario-item p {
+  color: var(--cn-muted);
+  line-height: 1.5;
+}
+
+
+
+/* ============================================================
+   6. TABELA DE PREÇOS / DATAS
+   ============================================================ */
+
+.roteiro-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.roteiro-table th {
+  background: var(--cn-azul);
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.roteiro-table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.roteiro-table tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+
+
+/* ============================================================
+   7. CTA — AÇÕES DO ROTEIRO
+   ============================================================ */
+
+.roteiro-actions {
+  margin-top: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.roteiro-actions .btn {
+  font-size: 1.05rem;
+  padding: 14px 26px;
+  border-radius: 12px;
+}
+
+
+
+/* ============================================================
+   8. BOX DE ALERTA E INFORMAÇÕES COMPLEMENTARES
+   ============================================================ */
+
+.roteiro-alert {
+  background: #fff6d9;
+  border-left: 6px solid #ffc107;
+  padding: 18px;
+  border-radius: 10px;
+  margin-top: 26px;
+  color: #664d03;
+}
+
+
+
+/* ============================================================
+   9. MOBILE AJUSTES
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .roteiro-cover { height: 260px; }
+
+  .roteiro-actions {
+    flex-direction: column;
+  }
+
+  .itinerario {
+    border-left-width: 3px;
+    padding-left: 14px;
+  }
+
+  .itinerario-item::before {
+    left: -22px;
+  }
+}
+/* =======================================================================
+   site.css — PARTE 4/4 (FINAL)
+   FOOTER CANÇÃO NOVA — LIMPO, UNIFICADO, 100% COMPATÍVEL COM SEU HTML
+   ======================================================================= */
+
+/* --------------------------------------------------------------
+   1. ÁREA GERAL DO FOOTER
+-----------------------------------------------------------------*/
+.cn-footer {
+  background: #ffffff;
+  margin-top: 40px;
+  color: #333;
+  font-family: var(--cn-font);
+}
+
+/* --------------------------------------------------------------
+   2. FAIXA AZUL SUPERIOR COM A LOGO
+-----------------------------------------------------------------*/
 .footer-top-bar {
-  background-color: #005baa; /* azul CN institucional */
-  padding: 10px 0;
+  background: var(--cn-azul);
+  padding: 12px 0;
 }
 
 .footer-bar-inner {
@@ -137,28 +822,46 @@
 }
 
 .footer-cn-logo {
-  height: 48px;
+  height: 52px;
+  display: block;
   width: auto;
+  filter: brightness(1.05);
 }
 
-/* Container do rodapé (Links + Contato) */
+/* --------------------------------------------------------------
+   3. CONTEÚDO DO FOOTER (3 COLUNAS)
+-----------------------------------------------------------------*/
 .footer-content {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  align-items: flex-start;
   padding: 40px 0;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 240px;
 }
 
 /* Títulos */
 .footer-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: #003366;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--cn-azul-escuro);
+  margin-bottom: 12px;
 }
 
-/* Links da esquerda */
+/* Descrição */
+.footer-desc {
+  color: var(--cn-muted);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------
+   4. LINKS RÁPIDOS (COLUNA ESQUERDA)
+-----------------------------------------------------------------*/
 .footer-links {
   list-style: none;
   padding: 0;
@@ -166,44 +869,50 @@
 }
 
 .footer-links li {
-  margin-bottom: 8px;
+  margin: 7px 0;
 }
 
 .footer-links a {
   text-decoration: none;
-  color: #003366;
+  font-weight: 600;
+  color: var(--cn-text);
+  transition: 0.2s;
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
+  padding-left: 6px;
+  color: var(--cn-azul);
 }
 
-/* Contato do lado direito */
+/* --------------------------------------------------------------
+   5. CONTATO (COLUNA DIREITA)
+-----------------------------------------------------------------*/
 .footer-contact .contact-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 10px;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 0.95rem;
 }
 
 .footer-contact a {
-  color: #003366;
   text-decoration: none;
+  color: var(--cn-text);
 }
 
 .footer-contact a:hover {
-  text-decoration: underline;
+  color: var(--cn-azul);
 }
 
-/* Botão WhatsApp dentro do footer */
+/* Botão WhatsApp */
 .footer-cta {
+  display: inline-block;
   margin-top: 15px;
   padding: 10px 16px;
-  display: inline-block;
-  background-color: #25d366;
+  background: #25d366;
   color: white;
-  font-weight: bold;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -211,84 +920,95 @@
   opacity: 0.85;
 }
 
-/* Parte inferior com copyright */
+/* --------------------------------------------------------------
+   6. BARRA INFERIOR AZUL (COPYRIGHT)
+-----------------------------------------------------------------*/
 .footer-bottom {
-  background: #f2f2f2;
-  padding: 15px 0;
-  text-align: center;
-  border-top: 1px solid #ddd;
+  background: var(--cn-azul);
+  padding: 18px 0;
+  color: white;
+  border-top: 1px solid rgba(255,255,255,0.12);
 }
 
-.footer-bottom p {
-  margin: 3px 0;
-  color: #333;
-}
-
-/* Responsivo — mobile */
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .footer-cn-logo {
-    height: 40px;
-  }
-}
-/* =======================================================================
-   FOOTER CANÇÃO NOVA – ESTILOS COMPLETOS
-   Cole este bloco no FINAL do seu site.css
-   ======================================================================= */
-
-/* -----------------------------
-   Estrutura geral do rodapé
---------------------------------*/
-.cn-footer {
-  background: #ffffff;
-  margin-top: 40px;
-  font-family: "Arial", sans-serif;
-  color: #333;
-}
-
-/* -----------------------------
-   Barra azul superior com logo
---------------------------------*/
-.footer-top-bar {
-  background: #005bbb; /* Azul institucional */
-  padding: 15px 0;
-}
-
-.footer-cn-logo {
-  height: 55px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* ------------------------------------------------------------------
-   CONTEÚDO PRINCIPAL DO FOOTER (links à esquerda, contato à direita)
--------------------------------------------------------------------*/
-.footer-content {
+.footer-bottom-inner {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 40px 0;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-/* Cada coluna */
-.footer-section {
-  flex: 1;
+.footer-bottom-left .footer-small-links a {
+  color: rgba(255,255,255,0.9);
+  margin-right: 16px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* Títulos das seções */
-.footer-title {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  font-weight: bold;
-  color: #004a99;
+.footer-bottom-left .footer-small-links a:hover {
+  text-decoration: underline;
 }
 
-/* Links rápidos */
-.footer-links {
-  list-sty
+/* Copyright centro */
+.footer-bottom-center {
+  text-align: center;
+}
+
+.footer-bottom-center p {
+  margin: 2px 0;
+  font-size: 0.93rem;
+}
+
+/* WhatsApp + Telefone na direita */
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-bottom-right .contact-item a {
+  color: white;
+}
+
+.footer-bottom-right .btn {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.footer-bottom-right .btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* --------------------------------------------------------------
+   7. RESPONSIVO (CELULAR)
+-----------------------------------------------------------------*/
+@media (max-width: 900px) {
+  .footer-content {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom-right {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-cn-logo {
+    height: 42px;
+  }
+
+  .footer-top-bar {
+    padding: 8px 0;
+  }
+}
