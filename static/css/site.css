@@ -1012,3 +1012,57 @@ a:focus, button:focus { outline: 3px solid rgba(1,119,188,0.12); outline-offset:
     padding: 8px 0;
   }
 }
+/* ==========================================================
+   PÁGINA 404 — estilo institucional Canção Nova
+   ========================================================== */
+
+.page-404 {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.page-404-box {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.page-404-title {
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--cn-azul);
+  margin-bottom: 10px;
+}
+
+.page-404-subtitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+.page-404-text {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.page-404-actions {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.page-404-help {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  color: #555;
+}
+
+.page-404-help .contact-item a {
+  color: var(--cn-azul);
+  font-weight: 700;
+}
