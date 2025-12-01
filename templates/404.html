@@ -2,47 +2,43 @@
 {% block title %}Página não encontrada — Peregrine com a Canção Nova{% endblock %}
 
 {% block content %}
-<section class="container" style="text-align: center; padding: 100px 20px;">
-    <div style="max-width: 600px; margin: 0 auto;">
-        <h1 style="font-size: 6rem; color: #FF6B35; margin: 0;">404</h1>
-        
-        <h2 style="font-size: 2rem; color: #333; margin: 20px 0;">
-            Página não encontrada
-        </h2>
-        
-        <p style="font-size: 1.1rem; color: #666; margin: 20px 0;">
-            Desculpe, a página que você está procurando não existe ou foi movida.
-        </p>
-        
-        <div style="margin-top: 40px;">
-            <a href="{{ BASE_PATH }}/" 
-               class="btn" 
-               style="display: inline-block; background: #FF6B35; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; margin: 10px; font-weight: 600;">
-                ← Voltar ao Início
-            </a>
-            
-            <a href="{{ BASE_PATH }}/roteiros/" 
-               class="btn" 
-               style="display: inline-block; background: #4CAF50; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; margin: 10px; font-weight: 600;">
-                Ver Roteiros
-            </a>
-        </div>
-        
-        <div style="margin-top: 60px; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-            <p style="margin: 0; color: #666;">
-                Precisa de ajuda? Entre em contato conosco:
-            </p>
-            <p style="margin: 10px 0;">
-                📞 <a href="tel:+556732117001" style="color: #FF6B35;">(67) 3211-7001</a>
-            </p>
-            <p style="margin: 10px 0;">
-                <a href="https://wa.me/5567998927001" 
-                   target="_blank"
-                   style="display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none;">
-                    💬 WhatsApp
-                </a>
-            </p>
-        </div>
+<section class="container page-404">
+
+  <div class="page-404-box">
+    
+    <h1 class="page-404-title">404</h1>
+
+    <h2 class="page-404-subtitle">Página não encontrada</h2>
+
+    <p class="page-404-text">
+      Desculpe, a página que você está procurando não existe, foi movida ou está temporariamente indisponível.
+    </p>
+
+    <div class="page-404-actions">
+      <a href="{{ BASE_PATH }}/" class="btn btn-primary">
+        ← Voltar ao Início
+      </a>
+
+      <a href="{{ BASE_PATH }}/roteiros/" class="btn btn-secondary">
+        Ver Roteiros
+      </a>
     </div>
+
+    <div class="page-404-help">
+      <p>Precisa de ajuda? Entre em contato:</p>
+
+      <p class="contact-item">
+        📞 <a href="tel:+556732117001">(67) 3211-7001</a>
+      </p>
+
+      <a class="btn btn-whatsapp"
+         href="https://wa.me/5567998927001"
+         target="_blank">
+        💬 WhatsApp
+      </a>
+    </div>
+
+  </div>
+
 </section>
 {% endblock %}
