@@ -19,6 +19,7 @@
       <div class="brand-title">Peregrine com a Canção Nova</div>
     </a>
 
+    <!-- Menu Desktop -->
     <nav class="site-nav" role="navigation" aria-label="Menu principal">
       <a href="/peregrinecomacancaonova/">Início</a>
 
@@ -55,7 +56,87 @@
 
       <a href="#contato">Contato</a>
     </nav>
+
+    <!-- Botão Hamburger Mobile -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </header>
+
+  <!-- Menu Mobile Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <nav class="mobile-menu" role="navigation">
+      <a href="/peregrinecomacancaonova/" class="mobile-menu-link">
+        <span class="menu-icon">🏠</span>
+        <span>Início</span>
+      </a>
+
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-title">Roteiros</div>
+        <a href="/peregrinecomacancaonova/roteiros/" class="mobile-menu-link indent">
+          <span class="menu-icon">📋</span>
+          <span>Todos os Roteiros</span>
+        </a>
+        
+        
+          <div class="mobile-menu-subtitle">Por Mês:</div>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/2/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Fevereiro/2026</span>
+            </a>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/3/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Março/2026</span>
+            </a>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/4/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Abril/2026</span>
+            </a>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/5/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Maio/2026</span>
+            </a>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/6/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Junho/2026</span>
+            </a>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/7/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Julho/2026</span>
+            </a>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/8/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Agosto/2026</span>
+            </a>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/10/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Outubro/2026</span>
+            </a>
+          
+            <a href="/peregrinecomacancaonova/roteiros/2026/11/" class="mobile-menu-link indent">
+              <span class="menu-icon">📅</span>
+              <span>Novembro/2026</span>
+            </a>
+          
+        
+      </div>
+
+      <a href="#contato" class="mobile-menu-link" onclick="closeMobileMenu()">
+        <span class="menu-icon">📞</span>
+        <span>Contato</span>
+      </a>
+    </nav>
+  </div>
 
   <main>
     
@@ -104,37 +185,108 @@
 
   <button id="backToTop" class="back-to-top" title="Voltar ao topo">↑</button>
 
-  <footer class="site-footer" id="contato" role="contentinfo">
+  <!-- Footer com identidade CN -->
+  <footer class="site-footer cn-footer" id="contato" role="contentinfo">
+    <!-- Barra superior azul CN -->
+    <div class="footer-top-bar"></div>
+    
     <div class="footer-content container">
       <div class="footer-section">
-        <h3 style="color:var(--cn-azul)">Peregrine com a Canção Nova</h3>
-        <p>Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
-      </div>
-
-      <div class="footer-section">
-        <h3>Contato</h3>
-        <p>📞 Telefone: <a href="tel:+556732117001">(67) 3211-7001</a></p>
-
-        <div style="margin-top:12px;">
-          <a class="btn btn-whatsapp" href="https://wa.me/5567998927001?text=Olá! Gostaria de informações sobre os roteiros da Canção Nova." target="_blank">
-            💬 Fale conosco no WhatsApp
-          </a>
+        <h3 class="footer-title">Peregrine com a Canção Nova</h3>
+        <p class="footer-desc">Transformando jornadas em experiências inesquecíveis de fé e cultura.</p>
+        
+        <!-- Logo CN no footer -->
+        <div class="footer-logo">
+          <img src="/peregrinecomacancaonova/static/img/marca_cancao_nova_png_v140517.png" alt="Canção Nova" style="height:40px; opacity:0.9;">
         </div>
       </div>
 
       <div class="footer-section">
-        <h3>Links rápidos</h3>
-        <p><a href="/peregrinecomacancaonova/">Início</a></p>
-        <p><a href="/peregrinecomacancaonova/roteiros/">Ver Roteiros</a></p>
+        <h3 class="footer-title">Contato</h3>
+        <div class="footer-contact">
+          <p class="contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="tel:+556732117001">(67) 3211-7001</a>
+          </p>
+          
+          <p class="contact-item">
+            <span class="contact-icon">💬</span>
+            <a href="https://wa.me/5567998927001?text=Olá! Gostaria de informações sobre os roteiros da Canção Nova." target="_blank">
+              WhatsApp
+            </a>
+          </p>
+        </div>
+
+        <a class="btn btn-whatsapp footer-cta" href="https://wa.me/5567998927001?text=Olá! Gostaria de informações sobre os roteiros da Canção Nova." target="_blank">
+          💬 Fale conosco
+        </a>
+      </div>
+
+      <div class="footer-section">
+        <h3 class="footer-title">Links Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="/peregrinecomacancaonova/">Início</a></li>
+          <li><a href="/peregrinecomacancaonova/roteiros/">Ver Roteiros</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
       </div>
     </div>
 
-    <div style="text-align:center; padding:18px 0; border-top:1px solid rgba(35,48,58,0.04);">
-      <small>&copy; 2025 Comunidade Canção Nova — Todos os direitos reservados.</small>
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Comunidade Canção Nova — Todos os direitos reservados.</p>
+        <p class="footer-legal">Peregrinações | Turismo Religioso</p>
+      </div>
     </div>
   </footer>
 
 <script>
+/* Mobile Menu Toggle */
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+const body = document.body;
+
+function openMobileMenu() {
+  mobileMenuOverlay.classList.add('active');
+  mobileMenuToggle.classList.add('active');
+  mobileMenuToggle.setAttribute('aria-expanded', 'true');
+  body.style.overflow = 'hidden'; // Previne scroll
+}
+
+function closeMobileMenu() {
+  mobileMenuOverlay.classList.remove('active');
+  mobileMenuToggle.classList.remove('active');
+  mobileMenuToggle.setAttribute('aria-expanded', 'false');
+  body.style.overflow = '';
+}
+
+if (mobileMenuToggle) {
+  mobileMenuToggle.addEventListener('click', function() {
+    if (mobileMenuOverlay.classList.contains('active')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  });
+}
+
+// Fechar ao clicar fora do menu
+if (mobileMenuOverlay) {
+  mobileMenuOverlay.addEventListener('click', function(e) {
+    if (e.target === mobileMenuOverlay) {
+      closeMobileMenu();
+    }
+  });
+}
+
+// Fechar ao clicar em link
+document.querySelectorAll('.mobile-menu-link').forEach(link => {
+  link.addEventListener('click', function() {
+    closeMobileMenu();
+  });
+});
+
 /* Back to top */
 const backToTopButton = document.getElementById('backToTop');
 window.addEventListener('scroll', function() {
@@ -180,15 +332,14 @@ document.addEventListener('click', function(e){
 
   let current = 0;
   let interval = null;
-  const delay = 6000; // 6s
-  const fadeDuration = 900; // matches CSS
+  const delay = 6000;
+  const fadeDuration = 900;
 
   function goTo(index){
     if (index < 0) index = slides.length - 1;
     if (index >= slides.length) index = 0;
     slides.forEach((s,i)=>{
       s.classList.toggle('is-active', i === index);
-      // update aria-selected for indicators
       if (indicators[i]) indicators[i].setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
     current = index;
@@ -205,15 +356,12 @@ document.addEventListener('click', function(e){
     if (interval) { clearInterval(interval); interval = null; }
   }
 
-  // Initialization
   goTo(0);
   startAuto();
 
-  // Controls
   if (nextBtn) nextBtn.addEventListener('click', ()=>{ next(); startAuto(); });
   if (prevBtn) prevBtn.addEventListener('click', ()=>{ prev(); startAuto(); });
 
-  // Indicators
   indicators.forEach(btn=>{
     btn.addEventListener('click', (e)=>{
       const idx = Number(btn.getAttribute('data-index'));
@@ -222,13 +370,11 @@ document.addEventListener('click', function(e){
     });
   });
 
-  // Pause on hover (accessibility: pause on focus too)
   carousel.addEventListener('mouseenter', stopAuto);
   carousel.addEventListener('mouseleave', startAuto);
   carousel.addEventListener('focusin', stopAuto);
   carousel.addEventListener('focusout', startAuto);
 
-  // keyboard navigation
   document.addEventListener('keydown', function(e){
     if (['ArrowLeft','ArrowRight'].includes(e.key)){
       if (e.key === 'ArrowLeft') prev();
@@ -237,7 +383,6 @@ document.addEventListener('click', function(e){
     }
   });
 
-  // ensure first slide visible (for users who have reduced motion)
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (prefersReduced.matches){
     stopAuto();
