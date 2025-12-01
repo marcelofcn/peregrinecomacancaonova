@@ -2,34 +2,31 @@
 {% block title %}Início — Peregrine com a Canção Nova{% endblock %}
 
 {% block content %}
-<!-- HERO CARROSSEL - Peregrinações Canção Nova -->
-<section class="hero hero-carousel" aria-label=>
-  <div class="carousel" id="mainCarousel" role="region" aria-roledescription="carousel" />
-    <!-- Slides -->
+
+<!-- HERO CARROSSEL -->
+<section class="hero hero-carousel" aria-label="Carrossel principal">
+  <div class="carousel" id="mainCarousel" role="region" aria-roledescription="carousel">
+    
     <div class="carousel-track">
 
       <!-- Slide 1 -->
       <figure class="carousel-slide" data-index="0" role="group" aria-roledescription="slide" aria-label="Slide 1 de 3">
         <picture>
-          <!-- WEBP preferencial -->
           <source type="image/webp"
                   srcset="{{ BASE_PATH }}/static/img/carousel1-1920.webp 1920w,
                           {{ BASE_PATH }}/static/img/carousel1-1280.webp 1280w,
                           {{ BASE_PATH }}/static/img/carousel1-800.webp 800w"
                   sizes="(min-width:1200px) 1920px, (min-width:768px) 1280px, 100vw">
-          <!-- Fallback JPEG/PNG -->
           <img
             src="{{ BASE_PATH }}/static/img/carousel1-1280.jpg"
             srcset="{{ BASE_PATH }}/static/img/carousel1-1920.jpg 1920w,
                     {{ BASE_PATH }}/static/img/carousel1-1280.jpg 1280w,
                     {{ BASE_PATH }}/static/img/carousel1-800.jpg 800w"
             sizes="(min-width:1200px) 1920px, (min-width:768px) 1280px, 100vw"
-            alt=""
+            alt="Paisagem de peregrinação"
             loading="lazy"
             class="carousel-media">
         </picture>
-
-        <!-- Overlay textual (SEO H1) -->
         <figcaption class="carousel-caption">
           <h1>Peregrinações Canção Nova</h1>
         </figcaption>
@@ -49,11 +46,10 @@
                     {{ BASE_PATH }}/static/img/carousel2-1280.jpg 1280w,
                     {{ BASE_PATH }}/static/img/carousel2-800.jpg 800w"
             sizes="(min-width:1200px) 1920px, (min-width:768px) 1280px, 100vw"
-            alt=""
+            alt="Igreja histórica"
             loading="lazy"
             class="carousel-media">
         </picture>
-
         <figcaption class="carousel-caption">
           <h1>Peregrinações Canção Nova</h1>
         </figcaption>
@@ -73,33 +69,33 @@
                     {{ BASE_PATH }}/static/img/carousel3-1280.jpg 1280w,
                     {{ BASE_PATH }}/static/img/carousel3-800.jpg 800w"
             sizes="(min-width:1200px) 1920px, (min-width:768px) 1280px, 100vw"
-            alt="Caminho de peregrinação - imagem ilustrativa"
+            alt="Caminho de peregrinação"
             loading="lazy"
             class="carousel-media">
         </picture>
-
         <figcaption class="carousel-caption">
           <h1>Peregrinações Canção Nova</h1>
         </figcaption>
       </figure>
 
-    </div> <!-- /.carousel-track -->
+    </div>
 
-    <!-- Controls -->
+    <!-- Controles -->
     <button class="carousel-control prev" aria-label="Slide anterior" data-action="prev">‹</button>
     <button class="carousel-control next" aria-label="Próximo slide" data-action="next">›</button>
 
-    <!-- Indicators -->
-    <div class="carousel-indicators" role="tablist" aria-label="Seleção de slides">
+    <!-- Indicadores -->
+    <div class="carousel-indicators" role="tablist">
       <button class="indicator" aria-label="Ir para slide 1" data-index="0" aria-selected="true"></button>
-      <button class="indicator" aria-label="Ir para slide 2" data-index="1" aria-selected="false"></button>
-      <button class="indicator" aria-label="Ir para slide 3" data-index="2" aria-selected="false"></button>
+      <button class="indicator" aria-label="Ir para slide 2" data-index="1"></button>
+      <button class="indicator" aria-label="Ir para slide 3" data-index="2"></button>
     </div>
+
   </div>
 </section>
-<!-- /HERO CARROSSEL -->
 
 
+<!-- ROTEIROS EM DESTAQUE -->
 <section class="container" style="padding: 40px 0;">
   <h2 class="u-center">Próximos Roteiros</h2>
   {% if destaque %}
@@ -119,29 +115,22 @@
       {% endfor %}
     </div>
   {% else %}
-    <div class="empty-state">
-      <p>Nenhum roteiro em destaque no momento.</p>
-    </div>
+    <p style="text-align:center;">Nenhum roteiro em destaque no momento.</p>
   {% endif %}
 </section>
 
+
+<!-- POR QUE VIAJAR CONOSCO -->
 <section class="container" style="padding: 40px 0;">
   <h2 class="u-center">Por que viajar conosco?</h2>
   <div style="max-width:900px; margin: 0 auto;">
-    <ul style="list-style:none; padding:0; margin:0; display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px;">
-      <li class="card" style="padding:18px; text-align:left;">
-        ✨ <strong>Guias experientes</strong> e formação espiritual
-      </li>
-      <li class="card" style="padding:18px; text-align:left;">
-        🌍 <strong>Roteiros selecionados</strong> e exclusivos
-      </li>
-      <li class="card" style="padding:18px; text-align:left;">
-        💙 <strong>Atendimento personalizado</strong>
-      </li>
-      <li class="card" style="padding:18px; text-align:left;">
-        ⛪ <strong>Parceria oficial</strong> Canção Nova & São José Peregrinações (Operador Logístico)
-      </li>
+    <ul class="benefits-list">
+      <li class="card">✨ <strong>Guias experientes</strong> e formação espiritual</li>
+      <li class="card">🌍 <strong>Roteiros selecionados</strong> e exclusivos</li>
+      <li class="card">💙 <strong>Atendimento personalizado</strong></li>
+      <li class="card">⛪ <strong>Parceria oficial</strong> Canção Nova & São José Peregrinações</li>
     </ul>
   </div>
 </section>
+
 {% endblock %}
