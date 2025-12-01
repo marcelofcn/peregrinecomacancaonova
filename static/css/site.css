@@ -236,3 +236,59 @@
     height: 40px;
   }
 }
+/* =======================================================================
+   FOOTER CANÇÃO NOVA – ESTILOS COMPLETOS
+   Cole este bloco no FINAL do seu site.css
+   ======================================================================= */
+
+/* -----------------------------
+   Estrutura geral do rodapé
+--------------------------------*/
+.cn-footer {
+  background: #ffffff;
+  margin-top: 40px;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+/* -----------------------------
+   Barra azul superior com logo
+--------------------------------*/
+.footer-top-bar {
+  background: #005bbb; /* Azul institucional */
+  padding: 15px 0;
+}
+
+.footer-cn-logo {
+  height: 55px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------
+   CONTEÚDO PRINCIPAL DO FOOTER (links à esquerda, contato à direita)
+-------------------------------------------------------------------*/
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+/* Cada coluna */
+.footer-section {
+  flex: 1;
+}
+
+/* Títulos das seções */
+.footer-title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #004a99;
+}
+
+/* Links rápidos */
+.footer-links {
+  list-sty
