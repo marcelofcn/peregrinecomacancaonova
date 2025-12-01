@@ -1084,3 +1084,19 @@ a:focus, button:focus { outline: 3px solid rgba(1,119,188,0.12); outline-offset:
 .dropdown-content a:hover {
   background: #f5f5f5;
 }
+.img-detalhe {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+.img-detalhe {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
