@@ -549,10 +549,6 @@ a:focus, button:focus { outline: 3px solid rgba(1,119,188,0.12); outline-offset:
   margin-top: 12px;
 }
 
-/* ========================================
-   FOOTER CN - Identidade Visual
-   ======================================== */
-
 .cn-footer {
   background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
   border-top: 4px solid var(--cn-azul);
