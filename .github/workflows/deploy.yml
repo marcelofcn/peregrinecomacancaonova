@@ -39,4 +39,4 @@ jobs:
           git commit -m "Atualiza site estático [auto]" || echo "Nada novo para commitar"
           git push
 
-# Deploy corrigido em 01/12/2025 12h02
+# Deploy corrigido em 01/12/2025 12h19
