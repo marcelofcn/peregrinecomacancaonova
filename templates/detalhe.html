@@ -1,39 +1,42 @@
 {% extends "base.html" %}
-{% block title %}{{ roteiro.title }} — Peregrine com a Cancao Nova{% endblock %}
+{% block title %}{{ roteiro.title }} — Peregrine com a Canção Nova{% endblock %}
 
 {% block content %}
 <section class="container detalhe-roteiro">
 
   <!-- BREADCRUMB -->
-  <nav class="breadcrumb">
-    <a href="{{ BASE_PATH }}/">Inicio</a>
+  <nav class="breadcrumb" aria-label="Você está aqui">
+    <a href="{{ BASE_PATH }}/">← Início</a>
     <span class="separator">›</span>
-
     <a href="{{ BASE_PATH }}/roteiros/">Roteiros</a>
-
     <span class="separator">›</span>
     <span class="current">{{ roteiro.title }}</span>
   </nav>
 
-  <!-- CABECALHO -->
+  <!-- TÍTULO + BADGE -->
   <div class="detalhe-header">
     <h1>{{ roteiro.title }}</h1>
 
+    {% if roteiro.categoria %}
     <div class="badge-container">
-      <span class="badge badge-espiritual">Roteiro de Espiritualidade</span>
+      <span class="badge badge-espiritual">
+        {{ roteiro.categoria }}
+      </span>
     </div>
+    {% endif %}
   </div>
 
-  <!-- IMAGEM -->
+  <!-- IMAGEM PRINCIPAL -->
   <div class="detalhe-image-container">
     <img src="{{ BASE_PATH }}/static/img/{{ roteiro.img }}"
          alt="{{ roteiro.title }}"
          class="img-detalhe">
   </div>
 
-  <!-- INFO GRID -->
+  <!-- INFO EM GRID -->
   <div class="detalhe-info-grid">
 
+    <!-- Período -->
     <div class="info-card">
       <div class="info-icon">📅</div>
       <div class="info-content">
@@ -42,6 +45,7 @@
       </div>
     </div>
 
+    <!-- Diretor -->
     <div class="info-card">
       <div class="info-icon">⛪</div>
       <div class="info-content">
@@ -50,6 +54,7 @@
       </div>
     </div>
 
+    <!-- Preço (se existir) -->
     {% if roteiro.preco %}
     <div class="info-card info-card-destaque">
       <div class="info-icon">💰</div>
@@ -63,7 +68,7 @@
 
   </div>
 
-  <!-- ITINERARIO -->
+  <!-- ITINERÁRIO -->
   <div class="detalhe-section">
     <div class="section-header">
       <h2>📍 Itinerário Completo</h2>
@@ -81,7 +86,7 @@
     </div>
   </div>
 
-  <!-- INCLUIDO -->
+  <!-- INCLUSO -->
   <div class="detalhe-section">
     <div class="section-header">
       <h2>✓ O que está incluído</h2>
@@ -97,7 +102,7 @@
     </div>
   </div>
 
-  <!-- NAO INCLUIDO -->
+  <!-- NÃO INCLUSO -->
   <div class="detalhe-section">
     <div class="section-header">
       <h2>✗ O que não está incluído</h2>
@@ -113,25 +118,23 @@
     </div>
   </div>
 
-  <!-- BOTOES -->
+  <!-- BOTÕES DE AÇÃO -->
   <div class="detalhe-actions">
-
     <a href="https://wa.me/5567998927001?text=Olá! Gostaria de mais informações sobre: {{ roteiro.title }}"
-       class="btn btn-whatsapp" target="_blank">
-      <span class="btn-icon">💬</span>
-      Falar no WhatsApp
+       class="btn btn-whatsapp"
+       target="_blank">
+      💬 Falar no WhatsApp
     </a>
 
-    <a href="tel:+556732117001" class="btn btn-phone">
-      <span class="btn-icon">📞</span>
-      Ligar Agora
+    <a href="tel:+556732117001"
+       class="btn btn-phone">
+      📞 Ligar Agora
     </a>
 
-    <a href="javascript:history.back()" class="btn btn-secondary">
-      <span class="btn-icon">←</span>
-      Voltar
+    <a href="javascript:history.back()"
+       class="btn btn-secondary">
+      ← Voltar
     </a>
-
   </div>
 
 </section>
