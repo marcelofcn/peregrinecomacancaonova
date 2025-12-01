@@ -3,8 +3,10 @@
 
 {% block content %}
 <section class="container">
-  <nav class="breadcrumb">
-    <a href="{{ BASE_PATH }}/">← Inicio</a>
+  
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Você está aqui">
+    <a href="{{ BASE_PATH }}/">← Início</a>
     <span class="separator">›</span>
     <span class="current">{{ titulo }}</span>
   </nav>
@@ -15,15 +17,32 @@
     <div class="cards">
       {% for r in roteiros %}
         <article class="card">
-          <img src="{{ url_for('static', filename='img/' + r.img) }}" alt="{{ r.title }}">
-          
-          <h3>{{ r.title }}</h3>
 
-          <p><strong>Categoria:</strong> {{ r.categoria }}</p>
-          <p><strong>Período:</strong> {{ r.start }} a {{ r.end }}</p>
-          <p><strong>Diretor:</strong> {{ r.director }}</p>
+          <!-- Imagem -->
+          <img src="{{ BASE_PATH }}/static/img/{{ r.img }}" 
+               alt="{{ r.title }}">
 
-          <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ r.id }}/">Ver detalhes</a>
+          <!-- Corpo do card -->
+          <div class="card-body">
+            <h3>{{ r.title }}</h3>
+
+            <p class="text-muted">
+              <strong>Categoria:</strong> {{ r.categoria }}
+            </p>
+            <p class="text-muted">
+              <strong>Período:</strong> {{ r.start }} a {{ r.end }}
+            </p>
+            <p class="text-muted">
+              <strong>Diretor:</strong> {{ r.director }}
+            </p>
+
+            <div style="margin-top:auto;">
+              <a class="btn" href="{{ BASE_PATH }}/roteiro/{{ r.id }}/">
+                Ver detalhes
+              </a>
+            </div>
+          </div>
+
         </article>
       {% endfor %}
     </div>
@@ -35,5 +54,6 @@
       <a class="btn" href="#contato">Falar conosco</a>
     </div>
   {% endif %}
+
 </section>
 {% endblock %}
