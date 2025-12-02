@@ -163,4 +163,195 @@ body{
 .carousel-control.next{ right:16px; }
 
 /* Indicators */
-.carousel-indicators{ position:absolute; bottom:20px; left:50%; transform:translateX
+.carousel-indicators{ position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:25; }
+.indicator{ width:12px; height:12px; border-radius:50%; background: rgba(255,255,255,0.6); border:none; cursor:pointer; }
+.indicator[aria-selected="true"]{ background: var(--cn-azul); }
+
+/* temporary accessibility/fallback: ensure images show if JS not initialized */
+.carousel-track > .carousel-slide { position:relative; opacity:1; }
+
+/* mobile carousel tweaks */
+@media (max-width:480px){
+  .carousel-media{ height:380px; object-position:center 15%; }
+  .hero h1{ font-size:1.6rem; }
+}
+
+/* ==========================
+   5. BUTTONS / CTAS
+   ========================== */
+.btn{ display:inline-block; background:var(--cn-azul); color:var(--white); padding:12px 26px; border-radius:10px; text-decoration:none; font-weight:800; box-shadow:0 8px 22px rgba(1,119,188,0.12); transition: transform .14s ease, box-shadow .14s ease; }
+.btn:hover{ transform: translateY(-3px); box-shadow: var(--card-shadow-hover); }
+.btn-secondary{ background:transparent; color:var(--cn-azul); border:1px solid rgba(1,119,188,0.12); box-shadow:none; }
+.btn-whatsapp{ background:#25D366; color:#fff; }
+.btn-phone{ background:var(--cn-azul-escuro); color:#fff; }
+
+/* ==========================
+   6. CARDS / LISTS / BREADCRUMB
+   ========================== */
+.cards{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:22px; }
+.card{ background:var(--white); border-radius:12px; overflow:hidden; box-shadow:var(--card-shadow); display:flex; flex-direction:column; transition: transform .18s ease, box-shadow .18s ease; }
+.card:hover{ transform: translateY(-8px); box-shadow: var(--card-shadow-hover); }
+.card img{ width:100%; height:190px; object-fit:cover; display:block; }
+.card-body{ padding:16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.card h3{ margin:0; font-size:1.12rem; font-weight:800; color:var(--cn-text); }
+.card p{ margin:0; color:var(--cn-muted); font-size:0.95rem; }
+
+.breadcrumb{ display:flex; gap:10px; align-items:center; color:var(--cn-muted); margin-bottom:18px; }
+.breadcrumb a{ color:var(--cn-azul); font-weight:700; text-decoration:none; }
+.breadcrumb .separator{ color: rgba(35,48,58,0.12); }
+
+/* empty state */
+.empty-state{ text-align:center; background:var(--white); padding:36px; border-radius:12px; box-shadow:var(--card-shadow); }
+
+/* ==========================
+   7. DETALHE ROTEIRO / ITINERÁRIO / LISTAS
+   ========================== */
+.detalhe-roteiro{ display:grid; grid-template-columns: 1fr 360px; gap:28px; align-items:start; }
+@media (max-width:980px){ .detalhe-roteiro{ grid-template-columns:1fr; } }
+
+.detalhe-image-container{ width:100%; overflow:hidden; border-radius:12px; box-shadow:var(--card-shadow); }
+.img-detalhe{ width:100%; max-width:900px; height:auto; border-radius:12px; display:block; margin:0 auto; object-fit:cover; }
+
+.detalhe-info-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:20px; margin-top:18px; }
+.info-card{ background:var(--white); border-radius:10px; padding:18px; display:flex; gap:12px; align-items:center; box-shadow: 0 6px 18px rgba(15,30,45,0.04); }
+.info-card .info-icon{ font-size:1.8rem; }
+.info-card h4{ margin:0; font-size:0.85rem; color:var(--cn-muted); text-transform:uppercase; letter-spacing:0.6px; }
+.info-card p{ margin:0; font-weight:700; color:var(--cn-azul-escuro); }
+
+.info-card-destaque{ border:1px solid rgba(1,119,188,0.08); background: linear-gradient(180deg, rgba(1,119,188,0.03), var(--white)); }
+
+/* timeline */
+.itinerario-timeline{ position:relative; padding-left:30px; }
+.timeline-item{ position:relative; padding-bottom:24px; }
+.timeline-marker{ position:absolute; left:-34px; top:6px; width:14px; height:14px; border-radius:50%; background:var(--cn-azul); border:3px solid var(--white); box-shadow:0 6px 18px rgba(1,119,188,0.15); }
+.timeline-item:before{ content:''; position:absolute; left:-27px; top:26px; width:2px; height:100%; background: rgba(1,119,188,0.08); }
+.timeline-content{ background: #F8FBFF; padding:12px 16px; border-radius:8px; border-left:4px solid rgba(1,119,188,0.12); }
+
+/* lists inclusos / nao */
+.lista-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:14px; }
+.lista-item{ display:flex; gap:12px; align-items:flex-start; padding:14px; border-radius:8px; background:var(--white); box-shadow: 0 6px 14px rgba(12,24,40,0.04); }
+.lista-incluso{ border-left:4px solid #2FAF66; background:#F3FFF6; }
+.lista-nao-incluso{ border-left:4px solid #E35C5C; background:#FFF5F6; }
+
+/* detalhe actions */
+.detalhe-actions{ display:flex; gap:12px; justify-content:center; margin-top:26px; flex-wrap:wrap; padding:20px; background:transparent; }
+
+/* ==========================
+   8. FOOTER — FAIXA AZUL SUPERIOR COM LOGO (OPÇÃO 1)
+   ========================== */
+/* Container geral do footer (zona branca abaixo da faixa azul) */
+.cn-footer{ background: #ffffff; margin-top:40px; color:#333; }
+
+/* Faixa azul superior — A LOGO fica sobre o azul (opção 1) */
+.footer-top-bar{
+  background: linear-gradient(90deg, var(--cn-azul) 0%, var(--cn-azul-escuro) 100%);
+  padding:12px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+/* inner container para alinhar logo */
+.footer-bar-inner{ display:flex; align-items:center; justify-content:center; gap:18px; width:100%; max-width:var(--container); margin:0 auto; padding:0 20px; }
+
+/* LOGO sobre a faixa azul:
+   - ideal: usar um arquivo PNG/SVG em versão BRANCA (logo branca)
+   - se o arquivo for colorido e quiser forçar branco, adicione a classe
+     "footer-cn-logo--invert" ao <img> para inverter/ajustar via CSS (pode alterar o visual)
+*/
+.footer-cn-logo{ height:52px; width:auto; display:block; filter:none; }
+
+/* forçar logo branca (opcional): adicionar class footer-cn-logo--invert no HTML */
+.footer-cn-logo--invert{ filter: brightness(0) invert(1) contrast(1.05); }
+
+/* Conteúdo principal do footer (zona branca com 3 colunas) */
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:40px 0;
+  gap:40px;
+  flex-wrap:wrap;
+  max-width:var(--container);
+  margin:0 auto;
+  padding-left:28px; padding-right:28px;
+}
+.footer-section{ flex:1; min-width:240px; }
+
+/* títulos e textos do footer */
+.footer-title{ font-size:1.15rem; font-weight:900; color:var(--cn-azul-escuro); margin-bottom:12px; }
+.footer-desc{ color:var(--cn-muted); line-height:1.5; }
+
+/* Links rápidos */
+.footer-links{ list-style:none; padding:0; margin:0; }
+.footer-links li{ margin:7px 0; }
+.footer-links a{ text-decoration:none; font-weight:600; color:var(--cn-text); transition:0.18s; }
+.footer-links a:hover{ padding-left:6px; color:var(--cn-azul); }
+
+/* Contato (coluna direita) */
+.footer-contact .contact-item{ display:flex; align-items:center; gap:8px; margin:8px 0; font-size:0.95rem; }
+.footer-contact a{ color:var(--cn-text); text-decoration:none; }
+.footer-contact a:hover{ color:var(--cn-azul); }
+.footer-cta{ display:inline-block; margin-top:12px; padding:10px 16px; background:#25d366; color:#fff; border-radius:8px; font-weight:700; text-decoration:none; }
+
+/* Faixa inferior (copyright) — mantém o azul institucional */
+.footer-bottom{ background: var(--cn-azul); padding:18px 0; color:#fff; border-top:1px solid rgba(255,255,255,0.12); }
+.footer-bottom-inner{ display:flex; justify-content:space-between; align-items:center; gap:16px; max-width:var(--container); margin:0 auto; padding-left:28px; padding-right:28px; flex-wrap:wrap; }
+.footer-bottom-left .footer-small-links a{ color: rgba(255,255,255,0.9); margin-right:16px; text-decoration:none; font-weight:600; }
+.footer-bottom-left .footer-small-links a:hover{ text-decoration:underline; }
+.footer-bottom-center{ text-align:center; }
+.footer-bottom-center p{ margin:2px 0; font-size:0.93rem; }
+.footer-bottom-right{ display:flex; align-items:center; gap:12px; }
+.footer-bottom-right .contact-item a{ color:#fff; text-decoration:none; }
+.footer-bottom-right .btn{ background: rgba(255,255,255,0.15); color:#fff; padding:8px 12px; border-radius:8px; font-weight:700; }
+.footer-bottom-right .btn:hover{ background: rgba(255,255,255,0.25); }
+
+/* ==========================
+   9. 404 / pagina de erro
+   ========================== */
+.page-404{ text-align:center; padding:80px 20px; }
+.page-404-box{ max-width:600px; margin:0 auto; }
+.page-404-title{ font-size:6rem; font-weight:900; color:var(--cn-azul); margin-bottom:10px; }
+.page-404-subtitle{ font-size:2rem; font-weight:700; color:#333; margin-bottom:18px; }
+.page-404-text{ color:#666; font-size:1.1rem; margin-bottom:30px; }
+
+/* ==========================
+   10. SMALL HELPERS / ACCESSIBILITY
+   ========================== */
+a:focus, button:focus{ outline:3px solid rgba(1,119,188,0.12); outline-offset:3px; border-radius:6px; }
+@media (prefers-reduced-motion: reduce){ *{ transition:none !important; animation:none !important; } }
+
+/* ==========================
+   11. RESPONSIVIDADE FINAL
+   ========================== */
+@media (max-width:980px){
+  .footer-content{ text-align:center; justify-content:center; padding-left:18px; padding-right:18px; }
+  .footer-bar-inner{ justify-content:center; }
+  .footer-cn-logo{ height:46px; }
+}
+
+@media (max-width:768px){
+  .detalhe-roteiro{ grid-template-columns:1fr; gap:20px; }
+  .footer-bottom-inner{ flex-direction:column; text-align:center; gap:10px; }
+  .footer-bottom-right{ justify-content:center; }
+}
+
+@media (max-width:480px){
+  .carousel-media{ height:320px; }
+  .card img{ height:160px; }
+  .footer-cn-logo{ height:40px; }
+  .site-brand img{ height:38px; }
+}
+
+/* ==========================
+   12. NOTES / USAGE (comentários rápidos)
+   ==========================
+   - Se o logo da Canção Nova que você tem for colorido e não branco,
+     preferível gerar/usar a versão BRANCA (PNG/SVG) para aplicar sobre a faixa azul.
+   - Alternativa: adicione class "footer-cn-logo--invert" ao <img> no HTML para forçar
+     uma inversão via CSS (pode não ficar perfeito em todas as artes).
+   - Para controlar o dropdown via JS, adicione/remoção .open em .dropdown.
+   - O carrossel JS existente (no seu template) espera slides com .carousel-slide e
+     troca .is-active; o CSS tem fallback para mostrar imagens mesmo sem JS.
+   ========================== */
