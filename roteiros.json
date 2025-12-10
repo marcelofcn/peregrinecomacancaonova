@@ -80,9 +80,11 @@
     ],
     "nao_incluso": [
       "Excesso de bagagens",
-      "Despesas pessoais",
+      "Marcação de assentos nos voos, que deverá ser feito apenas pelo passageiro na hora do check-in (no balcão da companhia aérea)",
+      "Despesas de carater pessoal: bebidas, lanches, telefonemas, consumo de frigobar nos hotéis e tudo o que não estiver especificado no contrato de viagem",
       "Ingressos extras",
       "Assentos",
+      "Ingressos e traslados para visitar não especificadas neste roteiro",
       "Maleteiros"
     ],
     "preco": "R$ 26.980,00"
@@ -95,7 +97,7 @@
     "title": "Itália - Abril",
     "start": "07/04/2026",
     "end": "18/04/2026",
-    "director": "Diac Renné Viana e Pitter di Laura - Canção Nova",
+    "director": "Padre Renné Viana e Pitter di Laura - Canção Nova",
     "itinerario": [
       "Dia 1: (07/04/2026) – São Paulo / Veneza. Apresentação no aeroporto de Guarulhos. Todos os voos e roteiro em grupo.",
       "Dia 2: (08/04/2026) – Veneza. Chegada, recepção e traslado ao hotel. Acomodação e jantar.",
